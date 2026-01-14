@@ -1,0 +1,1351 @@
+{
+	"@context": {
+		"choppr": "http://ontology.tno.nl/normengineering/choppr#",
+		"src": "http://ontology.tno.nl/normengineering/source#",
+		"xsd": "http://www.w3.org/2001/XMLSchema#",
+		"po": "http://www.essepuntato.it/2008/12/pattern",
+		"rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+		"rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+		"choppr.recipe": "http://choppr.app/decompositions/50bdb7d2-497a-4f45-a85a-30ec3c6f0dd7/recipe/",
+		"choppr.separators": "http://choppr.app/decompositions/50bdb7d2-497a-4f45-a85a-30ec3c6f0dd7/separators/",
+		"@base": "http://choppr.app/decompositions/50bdb7d2-497a-4f45-a85a-30ec3c6f0dd7/",
+		"IRI": "@id",
+		"typelabel": "src:hasTypeLabel",
+		"actorLabel": "rdfs:label",
+		"numbering": "src:hasNumbering",
+		"content": "src:hasContent",
+		"hasOrigin": "src:hasOrigin",
+		"containsAsHeader": {
+			"@type": "@id",
+			"@id": "src:containsAsHeader"
+		},
+		"separator": {
+			"@type": "@id",
+			"@id": "choppr:chunkSeparator"
+		},
+		"children": {
+			"@id": "src:hasChildElementOrdering",
+			"@container": "@list"
+		},
+		"decompositionPreprocessors": "choppr:decompositionPreprocessors",
+		"decompositionSeparators": "choppr:decompositionSeparators",
+		"decompositionRecipe": "choppr:decompositionRecipe",
+		"begins": "src:begins",
+		"ends": "src:ends",
+		"authoredBy": "src:authoredBy",
+		"editedBy": "src:editedBy",
+		"title": "src:hasTitle",
+		"version": "src:hasVersion",
+		"decompositionVersion": "src:hasDecompositionVersion",
+		"applicableAt": "src:applicableAt",
+		"applicableFrom": {
+			"@id": "src:applicableFrom",
+			"@type": "xsd:dateTime"
+		},
+		"applicableUntil": {
+			"@id": "src:applicableUntil",
+			"@type": "xsd:dateTime"
+		},
+		"generatedBy": {
+			"@type": "@id",
+			"@id": "src:generatedBy"
+		},
+		"generates": {
+			"@type": "@id",
+			"@id": "src:generates"
+		}
+	},
+	"@id": "http://choppr.app/decompositions/50bdb7d2-497a-4f45-a85a-30ec3c6f0dd7",
+	"@graph": [
+		{
+			"@type": "src:Source",
+			"@id": "http://choppr.app/documents/50bdb7d2-497a-4f45-a85a-30ec3c6f0dd7/document",
+			"decompositionPreprocessors": {
+				"@context": {
+					"choppr": "http://ontology.tno.nl/normengineering/choppr#",
+					"rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+					"rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+					"src": "http://ontology.tno.nl/normengineering/source#",
+					"@base": "http://choppr.app/decompositions/50bdb7d2-497a-4f45-a85a-30ec3c6f0dd7/preprocessors/",
+					"id": "@id",
+					"regexp": "choppr:regExp",
+					"replaceBy": "choppr:replaceBy",
+					"name": "rdfs:label",
+					"description": "rdfs:comment",
+					"active": "choppr:isActive"
+				},
+				"@list": []
+			},
+			"decompositionRecipe": {
+				"@context": {
+					"choppr": "http://ontology.tno.nl/normengineering/choppr#",
+					"rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+					"rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+					"src": "http://ontology.tno.nl/normengineering/source#",
+					"choppr.separators": "http://choppr.app/decompositions/50bdb7d2-497a-4f45-a85a-30ec3c6f0dd7/separators/",
+					"@base": "http://choppr.app/decompositions/50bdb7d2-497a-4f45-a85a-30ec3c6f0dd7/",
+					"IRI": "@id",
+					"id": "choppr:originalId",
+					"separatorId": {
+						"@type": "@id",
+						"@id": "choppr:separatorId"
+					},
+					"code": "choppr:separatorContent",
+					"typelabel": "choppr:typeLabel",
+					"numbering": "choppr:captureNumbering",
+					"title": "choppr:captureTitle",
+					"separators": {
+						"@id": "choppr:stepSeparators",
+						"@container": "@list"
+					},
+					"actions": {
+						"@id": "choppr:stepActions",
+						"@container": "@list"
+					},
+					"on": "choppr:onId",
+					"offsets": "choppr:actionOffset"
+				},
+				"@list": []
+			},
+			"decompositionSeparators": {
+				"@context": {
+					"choppr": "http://ontology.tno.nl/normengineering/choppr#",
+					"rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+					"rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+					"src": "http://ontology.tno.nl/normengineering/source#",
+					"@base": "http://choppr.app/decompositions/50bdb7d2-497a-4f45-a85a-30ec3c6f0dd7/separators/",
+					"hash": "@id",
+					"code": "choppr:separatorContent",
+					"typelabel": "choppr:typeLabel",
+					"numbering": "choppr:captureNumbering",
+					"title": "choppr:captureTitle",
+					"name": "rdfs:label",
+					"description": "rdfs:comment",
+					"separatorTags": "choppr:separatorTags"
+				},
+				"@list": []
+			},
+			"children": [
+				{
+					"IRI": "Document/0002_chunk",
+					"id": "0002",
+					"content": "Beleidsregel Individuele Inkomenstoeslag gemeente Utrecht",
+					"@type": [
+						"src:LeafElement"
+					]
+				},
+				{
+					"IRI": "Document/0003_chunk",
+					"id": "0003",
+					"content": "Geldend van 05-10-2022 t/m heden met terugwerkende kracht vanaf 01-10-2022",
+					"@type": [
+						"src:LeafElement"
+					]
+				},
+				{
+					"IRI": "Document/001t_intitule",
+					"id": "001t",
+					"children": [
+						{
+							"IRI": "Document/001t_intitule/0004_chunk",
+							"id": "0004",
+							"content": "Intitulé",
+							"@type": [
+								"src:LeafElement"
+							]
+						},
+						{
+							"IRI": "Document/001t_intitule/0005_chunk",
+							"id": "0005",
+							"content": "Beleidsregel Individuele Inkomenstoeslag gemeente Utrecht",
+							"@type": [
+								"src:LeafElement"
+							]
+						},
+						{
+							"IRI": "Document/001t_intitule/0006_chunk",
+							"id": "0006",
+							"content": "Burgemeester en wethouders van de gemeente Utrecht,",
+							"@type": [
+								"src:LeafElement"
+							]
+						},
+						{
+							"IRI": "Document/001t_intitule/0007_chunk",
+							"id": "0007",
+							"content": "Gelet op de artikel 8, eerste lid, van de Participatiewet en artikel 36 van de Participatiewet en de Verordening Individuele Inkomenstoeslag Utrecht 2019;",
+							"@type": [
+								"src:LeafElement"
+							]
+						},
+						{
+							"IRI": "Document/001t_intitule/0008_chunk",
+							"id": "0008",
+							"content": "Overwegende dat:",
+							"@type": [
+								"src:LeafElement"
+							]
+						},
+						{
+							"IRI": "Document/001t_intitule/0009_chunk",
+							"id": "0009",
+							"content": "- Zij op grond van artikel 8, eerste lid, van de Participatiewet en artikel 36 van de Participatiewet en de Verordening Individuele Inkomenstoeslag Utrecht 2019 bevoegd zijn, op verzoek van een persoon van 21 jaar of ouder doch jonger dan de pensioengerechtigde leeftijd, een individuele inkomenstoeslag te verlenen;",
+							"@type": [
+								"src:LeafElement"
+							]
+						},
+						{
+							"IRI": "Document/001t_intitule/000a_chunk",
+							"id": "000a",
+							"content": "- De persoon recht heeft op een individuele inkomenstoeslag wanneer er sprake is van een langdurig laag inkomen en geen in aanmerking te nemen vermogen als bedoeld in artikel 34 van de wet en de persoon geen uitzicht heeft op inkomensverbetering;",
+							"@type": [
+								"src:LeafElement"
+							]
+						},
+						{
+							"IRI": "Document/001t_intitule/000b_chunk",
+							"id": "000b",
+							"content": "- De Participatiewet het college verplicht om bij de beoordeling van de aanspraak op een individuele inkomenstoeslag de omstandigheden en inspanningen van de persoon mede in overweging te nemen alsmede invulling geeft aan de wijze waarop het inkomen als bedoeld in artikel 36 van de wet wordt vastgesteld;",
+							"@type": [
+								"src:LeafElement"
+							]
+						},
+						{
+							"IRI": "Document/001t_intitule/000c_chunk",
+							"id": "000c",
+							"content": "Besluiten vast te stellen de volgende Beleidsregel Individuele Inkomenstoeslag gemeente Utrecht",
+							"@type": [
+								"src:LeafElement"
+							]
+						},
+						{
+							"IRI": "Document/001t_intitule/000d_chunk",
+							"id": "000d",
+							"content": "Hoofdstuk 1 Algemene bepalingen",
+							"@type": [
+								"src:LeafElement"
+							]
+						}
+					],
+					"@type": [
+						"src:NonLeafElement"
+					],
+					"containsAsHeader": "Document/001t_intitule/0004_chunk",
+					"typelabel": "intitule"
+				},
+				{
+					"IRI": "Document/001u_Artikel_1%20Definities",
+					"id": "001u",
+					"children": [
+						{
+							"IRI": "Document/001u_Artikel_1%20Definities/000e_chunk",
+							"id": "000e",
+							"content": "Artikel 1 Definities",
+							"@type": [
+								"src:LeafElement"
+							]
+						},
+						{
+							"IRI": "Document/001u_Artikel_1%20Definities/000f_chunk",
+							"id": "000f",
+							"content": "Deze beleidsregel verstaat onder:",
+							"@type": [
+								"src:LeafElement"
+							]
+						},
+						{
+							"IRI": "Document/001u_Artikel_1%20Definities/001T_Sub_a",
+							"id": "001T",
+							"children": [
+								{
+									"IRI": "Document/001u_Artikel_1%20Definities/001T_Sub_a/000g_chunk",
+									"id": "000g",
+									"content": "a.",
+									"@type": [
+										"src:LeafElement"
+									]
+								},
+								{
+									"IRI": "Document/001u_Artikel_1%20Definities/001T_Sub_a/0021_Begrip",
+									"id": "0021",
+									"children": [
+										{
+											"IRI": "Document/001u_Artikel_1%20Definities/001T_Sub_a/0021_Begrip/000h_chunk",
+											"id": "000h",
+											"content": "arrangement 4:",
+											"@type": [
+												"src:LeafElement"
+											]
+										},
+										{
+											"IRI": "Document/001u_Artikel_1%20Definities/001T_Sub_a/0021_Begrip/000i_chunk",
+											"id": "000i",
+											"content": "De afdeling Werk in Inkomen van de Gemeente Utrecht maakt gebruik van zogenoemde arrangementen. ",
+											"@type": [
+												"src:LeafElement"
+											]
+										},
+										{
+											"IRI": "Document/001u_Artikel_1%20Definities/001T_Sub_a/0021_Begrip/000j_chunk",
+											"id": "000j",
+											"content": "",
+											"@type": [
+												"src:LeafElement"
+											]
+										},
+										{
+											"IRI": "Document/001u_Artikel_1%20Definities/001T_Sub_a/0021_Begrip/000k_chunk",
+											"id": "000k",
+											"content": "De arrangementindeling is een klantenindeling op basis van de afstand tot de arbeidsmarkt. ",
+											"@type": [
+												"src:LeafElement"
+											]
+										},
+										{
+											"IRI": "Document/001u_Artikel_1%20Definities/001T_Sub_a/0021_Begrip/000l_chunk",
+											"id": "000l",
+											"content": "",
+											"@type": [
+												"src:LeafElement"
+											]
+										},
+										{
+											"IRI": "Document/001u_Artikel_1%20Definities/001T_Sub_a/0021_Begrip/000m_chunk",
+											"id": "000m",
+											"content": "In arrangement 4 zitten inwoners met de grootste afstand tot de arbeidsmarkt. ",
+											"@type": [
+												"src:LeafElement"
+											]
+										},
+										{
+											"IRI": "Document/001u_Artikel_1%20Definities/001T_Sub_a/0021_Begrip/000n_chunk",
+											"id": "000n",
+											"content": "",
+											"@type": [
+												"src:LeafElement"
+											]
+										},
+										{
+											"IRI": "Document/001u_Artikel_1%20Definities/001T_Sub_a/0021_Begrip/000o_chunk",
+											"id": "000o",
+											"content": "De kans op een duurzame terugkeer naar betaald werk is voor deze groep het kleinst, meestal als gevolg van psychische en/of lichamelijke klachten. ",
+											"@type": [
+												"src:LeafElement"
+											]
+										},
+										{
+											"IRI": "Document/001u_Artikel_1%20Definities/001T_Sub_a/0021_Begrip/000p_chunk",
+											"id": "000p",
+											"content": "",
+											"@type": [
+												"src:LeafElement"
+											]
+										},
+										{
+											"IRI": "Document/001u_Artikel_1%20Definities/001T_Sub_a/0021_Begrip/000q_chunk",
+											"id": "000q",
+											"content": "De dienstverlening aan deze groep is niet primair gericht op begeleiding naar betaald werk, maar op meedoen naar vermogen.",
+											"@type": [
+												"src:LeafElement"
+											]
+										}
+									],
+									"@type": [
+										"src:NonLeafElement"
+									],
+									"title": "arrangement 4",
+									"typelabel": "Begrip"
+								}
+							],
+							"@type": [
+								"src:NonLeafElement",
+								"src:ListItem"
+							],
+							"numbering": "a",
+							"typelabel": "Sub"
+						},
+						{
+							"IRI": "Document/001u_Artikel_1%20Definities/001U_Sub_b",
+							"id": "001U",
+							"children": [
+								{
+									"IRI": "Document/001u_Artikel_1%20Definities/001U_Sub_b/000r_chunk",
+									"id": "000r",
+									"content": "b.",
+									"@type": [
+										"src:LeafElement"
+									]
+								},
+								{
+									"IRI": "Document/001u_Artikel_1%20Definities/001U_Sub_b/0022_Begrip",
+									"id": "0022",
+									"children": [
+										{
+											"IRI": "Document/001u_Artikel_1%20Definities/001U_Sub_b/0022_Begrip/000s_chunk",
+											"id": "000s",
+											"content": "gezin:",
+											"@type": [
+												"src:LeafElement"
+											]
+										},
+										{
+											"IRI": "Document/001u_Artikel_1%20Definities/001U_Sub_b/0022_Begrip/000t_chunk",
+											"id": "000t",
+											"content": "de gehuwden/samenwonenden tezamen en de alleenstaande met zijn of haar ten laste komende kind of kinderen;",
+											"@type": [
+												"src:LeafElement"
+											]
+										}
+									],
+									"@type": [
+										"src:NonLeafElement"
+									],
+									"title": "gezin",
+									"typelabel": "Begrip"
+								}
+							],
+							"@type": [
+								"src:NonLeafElement",
+								"src:ListItem"
+							],
+							"numbering": "b",
+							"typelabel": "Sub"
+						},
+						{
+							"IRI": "Document/001u_Artikel_1%20Definities/001V_Sub_c",
+							"id": "001V",
+							"children": [
+								{
+									"IRI": "Document/001u_Artikel_1%20Definities/001V_Sub_c/000u_chunk",
+									"id": "000u",
+									"content": "c.",
+									"@type": [
+										"src:LeafElement"
+									]
+								},
+								{
+									"IRI": "Document/001u_Artikel_1%20Definities/001V_Sub_c/0023_Begrip",
+									"id": "0023",
+									"children": [
+										{
+											"IRI": "Document/001u_Artikel_1%20Definities/001V_Sub_c/0023_Begrip/000v_chunk",
+											"id": "000v",
+											"content": "individuele inkomenstoeslag:",
+											"@type": [
+												"src:LeafElement"
+											]
+										},
+										{
+											"IRI": "Document/001u_Artikel_1%20Definities/001V_Sub_c/0023_Begrip/000w_chunk",
+											"id": "000w",
+											"content": "toeslag zoals bedoeld in artikel 36 van de wet;",
+											"@type": [
+												"src:LeafElement"
+											]
+										}
+									],
+									"@type": [
+										"src:NonLeafElement"
+									],
+									"title": "individuele inkomenstoeslag",
+									"typelabel": "Begrip"
+								}
+							],
+							"@type": [
+								"src:NonLeafElement",
+								"src:ListItem"
+							],
+							"numbering": "c",
+							"typelabel": "Sub"
+						},
+						{
+							"IRI": "Document/001u_Artikel_1%20Definities/001W_Sub_d",
+							"id": "001W",
+							"children": [
+								{
+									"IRI": "Document/001u_Artikel_1%20Definities/001W_Sub_d/000x_chunk",
+									"id": "000x",
+									"content": "d.",
+									"@type": [
+										"src:LeafElement"
+									]
+								},
+								{
+									"IRI": "Document/001u_Artikel_1%20Definities/001W_Sub_d/0024_Begrip",
+									"id": "0024",
+									"children": [
+										{
+											"IRI": "Document/001u_Artikel_1%20Definities/001W_Sub_d/0024_Begrip/000y_chunk",
+											"id": "000y",
+											"content": "inkomen:",
+											"@type": [
+												"src:LeafElement"
+											]
+										},
+										{
+											"IRI": "Document/001u_Artikel_1%20Definities/001W_Sub_d/0024_Begrip/000z_chunk",
+											"id": "000z",
+											"content": "totaal van het inkomen, bedoeld in artikel 32 van de wet, al dan niet aangevuld met algemene bijstand;",
+											"@type": [
+												"src:LeafElement"
+											]
+										}
+									],
+									"@type": [
+										"src:NonLeafElement"
+									],
+									"title": "inkomen",
+									"typelabel": "Begrip"
+								}
+							],
+							"@type": [
+								"src:NonLeafElement",
+								"src:ListItem"
+							],
+							"numbering": "d",
+							"typelabel": "Sub"
+						},
+						{
+							"IRI": "Document/001u_Artikel_1%20Definities/001X_Sub_e",
+							"id": "001X",
+							"children": [
+								{
+									"IRI": "Document/001u_Artikel_1%20Definities/001X_Sub_e/000A_chunk",
+									"id": "000A",
+									"content": "e.",
+									"@type": [
+										"src:LeafElement"
+									]
+								},
+								{
+									"IRI": "Document/001u_Artikel_1%20Definities/001X_Sub_e/0025_Begrip",
+									"id": "0025",
+									"children": [
+										{
+											"IRI": "Document/001u_Artikel_1%20Definities/001X_Sub_e/0025_Begrip/000B_chunk",
+											"id": "000B",
+											"content": "wet:",
+											"@type": [
+												"src:LeafElement"
+											]
+										},
+										{
+											"IRI": "Document/001u_Artikel_1%20Definities/001X_Sub_e/0025_Begrip/000C_chunk",
+											"id": "000C",
+											"content": "Participatiewet",
+											"@type": [
+												"src:LeafElement"
+											]
+										}
+									],
+									"@type": [
+										"src:NonLeafElement"
+									],
+									"title": "wet",
+									"typelabel": "Begrip"
+								}
+							],
+							"@type": [
+								"src:NonLeafElement",
+								"src:ListItem"
+							],
+							"numbering": "e",
+							"typelabel": "Sub"
+						},
+						{
+							"IRI": "Document/001u_Artikel_1%20Definities/001Y_Sub_f",
+							"id": "001Y",
+							"children": [
+								{
+									"IRI": "Document/001u_Artikel_1%20Definities/001Y_Sub_f/000D_chunk",
+									"id": "000D",
+									"content": "f.",
+									"@type": [
+										"src:LeafElement"
+									]
+								},
+								{
+									"IRI": "Document/001u_Artikel_1%20Definities/001Y_Sub_f/0026_Begrip",
+									"id": "0026",
+									"children": [
+										{
+											"IRI": "Document/001u_Artikel_1%20Definities/001Y_Sub_f/0026_Begrip/000E_chunk",
+											"id": "000E",
+											"content": "peildatum:",
+											"@type": [
+												"src:LeafElement"
+											]
+										},
+										{
+											"IRI": "Document/001u_Artikel_1%20Definities/001Y_Sub_f/0026_Begrip/000F_chunk",
+											"id": "000F",
+											"content": "datum waarop een persoon individuele inkomenstoeslag aanvraagt;",
+											"@type": [
+												"src:LeafElement"
+											]
+										}
+									],
+									"@type": [
+										"src:NonLeafElement"
+									],
+									"title": "peildatum",
+									"typelabel": "Begrip"
+								}
+							],
+							"@type": [
+								"src:NonLeafElement",
+								"src:ListItem"
+							],
+							"numbering": "f",
+							"typelabel": "Sub"
+						},
+						{
+							"IRI": "Document/001u_Artikel_1%20Definities/001Z_Sub_g",
+							"id": "001Z",
+							"children": [
+								{
+									"IRI": "Document/001u_Artikel_1%20Definities/001Z_Sub_g/000G_chunk",
+									"id": "000G",
+									"content": "g.",
+									"@type": [
+										"src:LeafElement"
+									]
+								},
+								{
+									"IRI": "Document/001u_Artikel_1%20Definities/001Z_Sub_g/0027_Begrip",
+									"id": "0027",
+									"children": [
+										{
+											"IRI": "Document/001u_Artikel_1%20Definities/001Z_Sub_g/0027_Begrip/000H_chunk",
+											"id": "000H",
+											"content": "referteperiode:",
+											"@type": [
+												"src:LeafElement"
+											]
+										},
+										{
+											"IRI": "Document/001u_Artikel_1%20Definities/001Z_Sub_g/0027_Begrip/000I_chunk",
+											"id": "000I",
+											"content": "periode van drie jaar voorafgaand aan de peildatum;",
+											"@type": [
+												"src:LeafElement"
+											]
+										}
+									],
+									"@type": [
+										"src:NonLeafElement"
+									],
+									"title": "referteperiode",
+									"typelabel": "Begrip"
+								}
+							],
+							"@type": [
+								"src:NonLeafElement",
+								"src:ListItem"
+							],
+							"numbering": "g",
+							"typelabel": "Sub"
+						},
+						{
+							"IRI": "Document/001u_Artikel_1%20Definities/0020_Sub_h",
+							"id": "0020",
+							"children": [
+								{
+									"IRI": "Document/001u_Artikel_1%20Definities/0020_Sub_h/000J_chunk",
+									"id": "000J",
+									"content": "h.",
+									"@type": [
+										"src:LeafElement"
+									]
+								},
+								{
+									"IRI": "Document/001u_Artikel_1%20Definities/0020_Sub_h/0028_Begrip",
+									"id": "0028",
+									"children": [
+										{
+											"IRI": "Document/001u_Artikel_1%20Definities/0020_Sub_h/0028_Begrip/000K_chunk",
+											"id": "000K",
+											"content": "verordening:",
+											"@type": [
+												"src:LeafElement"
+											]
+										},
+										{
+											"IRI": "Document/001u_Artikel_1%20Definities/0020_Sub_h/0028_Begrip/000L_chunk",
+											"id": "000L",
+											"content": "de verordening individuele inkomenstoeslag gemeente Utrecht 2019",
+											"@type": [
+												"src:LeafElement"
+											]
+										},
+										{
+											"IRI": "Document/001u_Artikel_1%20Definities/0020_Sub_h/0028_Begrip/000M_chunk",
+											"id": "000M",
+											"content": "Hoofdstuk 2 Recht op toekenning van de individuele Inkomenstoeslag",
+											"@type": [
+												"src:LeafElement"
+											]
+										}
+									],
+									"@type": [
+										"src:NonLeafElement"
+									],
+									"title": "verordening",
+									"typelabel": "Begrip"
+								}
+							],
+							"@type": [
+								"src:NonLeafElement",
+								"src:ListItem"
+							],
+							"numbering": "h",
+							"typelabel": "Sub"
+						}
+					],
+					"@type": [
+						"src:NonLeafElement"
+					],
+					"containsAsHeader": "Document/001u_Artikel_1%20Definities/000e_chunk",
+					"numbering": "1 Definities",
+					"typelabel": "Artikel"
+				},
+				{
+					"IRI": "Document/001v_Artikel_2%20Laag%20inkomen",
+					"id": "001v",
+					"children": [
+						{
+							"IRI": "Document/001v_Artikel_2%20Laag%20inkomen/000N_chunk",
+							"id": "000N",
+							"content": "Artikel 2 Laag inkomen",
+							"@type": [
+								"src:LeafElement"
+							]
+						},
+						{
+							"IRI": "Document/001v_Artikel_2%20Laag%20inkomen/001D_Lid_1",
+							"id": "001D",
+							"children": [
+								{
+									"IRI": "Document/001v_Artikel_2%20Laag%20inkomen/001D_Lid_1/000O_chunk",
+									"id": "000O",
+									"content": "1.Voor de vaststelling of sprake is van een laag inkomen gedurende de referteperiode geldt niet als onderbreking: maximaal één aaneengesloten periode van 31 dagen in de twaalf maanden voorafgaand aan de peildatum, waarin een inkomen is ontvangen dat meer bedraagt dan het inkomen bedoeld in artikel 3, eerste lid, van de verordening.",
+									"@type": [
+										"src:LeafElement"
+									]
+								}
+							],
+							"@type": [
+								"src:NonLeafElement",
+								"src:ListItem"
+							],
+							"numbering": "1",
+							"typelabel": "Lid"
+						},
+						{
+							"IRI": "Document/001v_Artikel_2%20Laag%20inkomen/001E_Lid_2",
+							"id": "001E",
+							"children": [
+								{
+									"IRI": "Document/001v_Artikel_2%20Laag%20inkomen/001E_Lid_2/000P_chunk",
+									"id": "000P",
+									"content": "2.De aanvrager dient aannemelijk te maken, aan de hand van bewijsstukken over het inkomen en vermogen, dat hij gedurende de referteperiode heeft geleefd van een laag inkomen, als bedoeld in artikel 3, eerste lid, van de verordening.",
+									"@type": [
+										"src:LeafElement"
+									]
+								}
+							],
+							"@type": [
+								"src:NonLeafElement",
+								"src:ListItem"
+							],
+							"numbering": "2",
+							"typelabel": "Lid"
+						}
+					],
+					"@type": [
+						"src:NonLeafElement"
+					],
+					"containsAsHeader": "Document/001v_Artikel_2%20Laag%20inkomen/000N_chunk",
+					"numbering": "2 Laag inkomen",
+					"typelabel": "Artikel"
+				},
+				{
+					"IRI": "Document/001w_Artikel_3%20Omstandigheden%20van%20de%20persoon",
+					"id": "001w",
+					"children": [
+						{
+							"IRI": "Document/001w_Artikel_3%20Omstandigheden%20van%20de%20persoon/000Q_chunk",
+							"id": "000Q",
+							"content": "Artikel 3 Omstandigheden van de persoon",
+							"@type": [
+								"src:LeafElement"
+							]
+						},
+						{
+							"IRI": "Document/001w_Artikel_3%20Omstandigheden%20van%20de%20persoon/001F_Lid_1",
+							"id": "001F",
+							"children": [
+								{
+									"IRI": "Document/001w_Artikel_3%20Omstandigheden%20van%20de%20persoon/001F_Lid_1/000R_chunk",
+									"id": "000R",
+									"content": "1.In de beoordeling van het recht op de Individuele Inkomenstoeslag worden in ieder geval de omstandigheden van de betreffende persoon betrokken. ",
+									"@type": [
+										"src:LeafElement"
+									]
+								},
+								{
+									"IRI": "Document/001w_Artikel_3%20Omstandigheden%20van%20de%20persoon/001F_Lid_1/000S_chunk",
+									"id": "000S",
+									"content": "",
+									"@type": [
+										"src:LeafElement"
+									]
+								},
+								{
+									"IRI": "Document/001w_Artikel_3%20Omstandigheden%20van%20de%20persoon/001F_Lid_1/000T_chunk",
+									"id": "000T",
+									"content": "Tot de omstandigheden worden in ieder geval gerekend:",
+									"@type": [
+										"src:LeafElement"
+									]
+								},
+								{
+									"IRI": "Document/001w_Artikel_3%20Omstandigheden%20van%20de%20persoon/001F_Lid_1/001O_Sub_a",
+									"id": "001O",
+									"children": [
+										{
+											"IRI": "Document/001w_Artikel_3%20Omstandigheden%20van%20de%20persoon/001F_Lid_1/001O_Sub_a/000U_chunk",
+											"id": "000U",
+											"content": "a.",
+											"@type": [
+												"src:LeafElement"
+											]
+										},
+										{
+											"IRI": "Document/001w_Artikel_3%20Omstandigheden%20van%20de%20persoon/001F_Lid_1/001O_Sub_a/000V_chunk",
+											"id": "000V",
+											"content": "de krachten en bekwaamheden van de persoon, en",
+											"@type": [
+												"src:LeafElement"
+											]
+										}
+									],
+									"@type": [
+										"src:NonLeafElement",
+										"src:ListItem"
+									],
+									"numbering": "a",
+									"typelabel": "Sub"
+								},
+								{
+									"IRI": "Document/001w_Artikel_3%20Omstandigheden%20van%20de%20persoon/001F_Lid_1/001P_Sub_b",
+									"id": "001P",
+									"children": [
+										{
+											"IRI": "Document/001w_Artikel_3%20Omstandigheden%20van%20de%20persoon/001F_Lid_1/001P_Sub_b/000W_chunk",
+											"id": "000W",
+											"content": "b.",
+											"@type": [
+												"src:LeafElement"
+											]
+										},
+										{
+											"IRI": "Document/001w_Artikel_3%20Omstandigheden%20van%20de%20persoon/001F_Lid_1/001P_Sub_b/000X_chunk",
+											"id": "000X",
+											"content": "de inspanningen die de persoon heeft verricht om tot inkomensverbetering te komen.",
+											"@type": [
+												"src:LeafElement"
+											]
+										}
+									],
+									"@type": [
+										"src:NonLeafElement",
+										"src:ListItem"
+									],
+									"numbering": "b",
+									"typelabel": "Sub"
+								}
+							],
+							"@type": [
+								"src:NonLeafElement",
+								"src:ListItem"
+							],
+							"numbering": "1",
+							"typelabel": "Lid"
+						},
+						{
+							"IRI": "Document/001w_Artikel_3%20Omstandigheden%20van%20de%20persoon/001G_Lid_2",
+							"id": "001G",
+							"children": [
+								{
+									"IRI": "Document/001w_Artikel_3%20Omstandigheden%20van%20de%20persoon/001G_Lid_2/000Y_chunk",
+									"id": "000Y",
+									"content": "2.Personen die blijvend volledig arbeidsongeschikt zijn, dan wel ten tijde van de aanvraag zijn ingedeeld in arrangement 4 worden geacht over onvoldoende krachten en bekwaamheden te beschikken die binnen een redelijke termijn uitzicht bieden op inkomensverbetering.",
+									"@type": [
+										"src:LeafElement"
+									]
+								}
+							],
+							"@type": [
+								"src:NonLeafElement",
+								"src:ListItem"
+							],
+							"numbering": "2",
+							"typelabel": "Lid"
+						},
+						{
+							"IRI": "Document/001w_Artikel_3%20Omstandigheden%20van%20de%20persoon/001H_Lid_3",
+							"id": "001H",
+							"children": [
+								{
+									"IRI": "Document/001w_Artikel_3%20Omstandigheden%20van%20de%20persoon/001H_Lid_3/000Z_chunk",
+									"id": "000Z",
+									"content": "3.De volgende categorieën personen worden geacht zich in voldoende mate te hebben ingespannen om tot inkomensverbetering te komen:",
+									"@type": [
+										"src:LeafElement"
+									]
+								},
+								{
+									"IRI": "Document/001w_Artikel_3%20Omstandigheden%20van%20de%20persoon/001H_Lid_3/001Q_Sub_a",
+									"id": "001Q",
+									"children": [
+										{
+											"IRI": "Document/001w_Artikel_3%20Omstandigheden%20van%20de%20persoon/001H_Lid_3/001Q_Sub_a/0010_chunk",
+											"id": "0010",
+											"content": "a.",
+											"@type": [
+												"src:LeafElement"
+											]
+										},
+										{
+											"IRI": "Document/001w_Artikel_3%20Omstandigheden%20van%20de%20persoon/001H_Lid_3/001Q_Sub_a/0011_chunk",
+											"id": "0011",
+											"content": "personen zonder actieve arbeidsverplichtingen;",
+											"@type": [
+												"src:LeafElement"
+											]
+										}
+									],
+									"@type": [
+										"src:NonLeafElement",
+										"src:ListItem"
+									],
+									"numbering": "a",
+									"typelabel": "Sub"
+								},
+								{
+									"IRI": "Document/001w_Artikel_3%20Omstandigheden%20van%20de%20persoon/001H_Lid_3/001R_Sub_b",
+									"id": "001R",
+									"children": [
+										{
+											"IRI": "Document/001w_Artikel_3%20Omstandigheden%20van%20de%20persoon/001H_Lid_3/001R_Sub_b/0012_chunk",
+											"id": "0012",
+											"content": "b.",
+											"@type": [
+												"src:LeafElement"
+											]
+										},
+										{
+											"IRI": "Document/001w_Artikel_3%20Omstandigheden%20van%20de%20persoon/001H_Lid_3/001R_Sub_b/0013_chunk",
+											"id": "0013",
+											"content": "personen met een aan het recht op uitkering verbonden actieve arbeidsverplichting, die gedurende een periode van 12 maanden geen sanctie opgelegd hebben gekregen wegens schending van die verplichting;",
+											"@type": [
+												"src:LeafElement"
+											]
+										}
+									],
+									"@type": [
+										"src:NonLeafElement",
+										"src:ListItem"
+									],
+									"numbering": "b",
+									"typelabel": "Sub"
+								},
+								{
+									"IRI": "Document/001w_Artikel_3%20Omstandigheden%20van%20de%20persoon/001H_Lid_3/001S_Sub_c",
+									"id": "001S",
+									"children": [
+										{
+											"IRI": "Document/001w_Artikel_3%20Omstandigheden%20van%20de%20persoon/001H_Lid_3/001S_Sub_c/0014_chunk",
+											"id": "0014",
+											"content": "c.",
+											"@type": [
+												"src:LeafElement"
+											]
+										},
+										{
+											"IRI": "Document/001w_Artikel_3%20Omstandigheden%20van%20de%20persoon/001H_Lid_3/001S_Sub_c/0015_chunk",
+											"id": "0015",
+											"content": "alsmede personen die gedurende de referteperiode naar vermogen arbeid hebben verricht zonder reële kansen op uitbreiding van het aantal arbeidsuren.",
+											"@type": [
+												"src:LeafElement"
+											]
+										}
+									],
+									"@type": [
+										"src:NonLeafElement",
+										"src:ListItem"
+									],
+									"numbering": "c",
+									"typelabel": "Sub"
+								}
+							],
+							"@type": [
+								"src:NonLeafElement",
+								"src:ListItem"
+							],
+							"numbering": "3",
+							"typelabel": "Lid"
+						}
+					],
+					"@type": [
+						"src:NonLeafElement"
+					],
+					"containsAsHeader": "Document/001w_Artikel_3%20Omstandigheden%20van%20de%20persoon/000Q_chunk",
+					"numbering": "3 Omstandigheden van de persoon",
+					"typelabel": "Artikel"
+				},
+				{
+					"IRI": "Document/001x_Artikel_4%20Opleiding%20of%20studie",
+					"id": "001x",
+					"children": [
+						{
+							"IRI": "Document/001x_Artikel_4%20Opleiding%20of%20studie/0016_chunk",
+							"id": "0016",
+							"content": "Artikel 4 Opleiding of studie",
+							"@type": [
+								"src:LeafElement"
+							]
+						},
+						{
+							"IRI": "Document/001x_Artikel_4%20Opleiding%20of%20studie/001I_Lid_1",
+							"id": "001I",
+							"children": [
+								{
+									"IRI": "Document/001x_Artikel_4%20Opleiding%20of%20studie/001I_Lid_1/0017_chunk",
+									"id": "0017",
+									"content": "1.Uitzicht op inkomensverbetering wordt aanwezig geacht bij degenen die op de peildatum of in de referteperiode een inkomen op grond de Wet Studiefinanciering (WSF 2000) of de Wet tegemoetkoming onderwijsbijdrage en schoolkosten (WTOS) hebben genoten en/of een voltijd studie volgden.",
+									"@type": [
+										"src:LeafElement"
+									]
+								}
+							],
+							"@type": [
+								"src:NonLeafElement",
+								"src:ListItem"
+							],
+							"numbering": "1",
+							"typelabel": "Lid"
+						},
+						{
+							"IRI": "Document/001x_Artikel_4%20Opleiding%20of%20studie/001J_Lid_2",
+							"id": "001J",
+							"children": [
+								{
+									"IRI": "Document/001x_Artikel_4%20Opleiding%20of%20studie/001J_Lid_2/0018_chunk",
+									"id": "0018",
+									"content": "2.Het college kan afwijken van het voorgaande lid, indien het college van oordeel is dat er sprake is van bijzondere omstandigheden die inkomensverbetering in de weg staan.",
+									"@type": [
+										"src:LeafElement"
+									]
+								}
+							],
+							"@type": [
+								"src:NonLeafElement",
+								"src:ListItem"
+							],
+							"numbering": "2",
+							"typelabel": "Lid"
+						}
+					],
+					"@type": [
+						"src:NonLeafElement"
+					],
+					"containsAsHeader": "Document/001x_Artikel_4%20Opleiding%20of%20studie/0016_chunk",
+					"numbering": "4 Opleiding of studie",
+					"typelabel": "Artikel"
+				},
+				{
+					"IRI": "Document/001y_Artikel_5%20Aanvraag%20en%20toekenning",
+					"id": "001y",
+					"children": [
+						{
+							"IRI": "Document/001y_Artikel_5%20Aanvraag%20en%20toekenning/0019_chunk",
+							"id": "0019",
+							"content": "Artikel 5 Aanvraag en toekenning",
+							"@type": [
+								"src:LeafElement"
+							]
+						},
+						{
+							"IRI": "Document/001y_Artikel_5%20Aanvraag%20en%20toekenning/001K_Lid_1",
+							"id": "001K",
+							"children": [
+								{
+									"IRI": "Document/001y_Artikel_5%20Aanvraag%20en%20toekenning/001K_Lid_1/001a_chunk",
+									"id": "001a",
+									"content": "1.De Individuele Inkomenstoeslag wordt ambtshalve verstrekt indien het college beschikt over de daarvoor benodigde informatie. ",
+									"@type": [
+										"src:LeafElement"
+									]
+								},
+								{
+									"IRI": "Document/001y_Artikel_5%20Aanvraag%20en%20toekenning/001K_Lid_1/001b_chunk",
+									"id": "001b",
+									"content": "",
+									"@type": [
+										"src:LeafElement"
+									]
+								},
+								{
+									"IRI": "Document/001y_Artikel_5%20Aanvraag%20en%20toekenning/001K_Lid_1/001c_chunk",
+									"id": "001c",
+									"content": "In alle overige situaties dient de Individuele Inkomenstoeslag schriftelijk te worden aangevraagd door middel van een daarvoor bestemd aanvraagformulier.",
+									"@type": [
+										"src:LeafElement"
+									]
+								}
+							],
+							"@type": [
+								"src:NonLeafElement",
+								"src:ListItem"
+							],
+							"numbering": "1",
+							"typelabel": "Lid"
+						},
+						{
+							"IRI": "Document/001y_Artikel_5%20Aanvraag%20en%20toekenning/001L_Lid_2",
+							"id": "001L",
+							"children": [
+								{
+									"IRI": "Document/001y_Artikel_5%20Aanvraag%20en%20toekenning/001L_Lid_2/001d_chunk",
+									"id": "001d",
+									"content": "2.Op verzoek van het college verstrekt de aanvrager gegevens die naar oordeel van het college noodzakelijk zijn voor het vaststellen van het recht op de Individuele Inkomenstoeslag.",
+									"@type": [
+										"src:LeafElement"
+									]
+								}
+							],
+							"@type": [
+								"src:NonLeafElement",
+								"src:ListItem"
+							],
+							"numbering": "2",
+							"typelabel": "Lid"
+						},
+						{
+							"IRI": "Document/001y_Artikel_5%20Aanvraag%20en%20toekenning/001M_Lid_3",
+							"id": "001M",
+							"children": [
+								{
+									"IRI": "Document/001y_Artikel_5%20Aanvraag%20en%20toekenning/001M_Lid_3/001e_chunk",
+									"id": "001e",
+									"content": "3.Het college neemt een besluit uiterlijk acht weken na de datum waarop de aanvraag is ingediend.",
+									"@type": [
+										"src:LeafElement"
+									]
+								}
+							],
+							"@type": [
+								"src:NonLeafElement",
+								"src:ListItem"
+							],
+							"numbering": "3",
+							"typelabel": "Lid"
+						},
+						{
+							"IRI": "Document/001y_Artikel_5%20Aanvraag%20en%20toekenning/001N_Lid_4",
+							"id": "001N",
+							"children": [
+								{
+									"IRI": "Document/001y_Artikel_5%20Aanvraag%20en%20toekenning/001N_Lid_4/001f_chunk",
+									"id": "001f",
+									"content": "4.De Individuele Inkomenstoeslag kan slechts eenmaal per twaalf maanden worden toegekend. ",
+									"@type": [
+										"src:LeafElement"
+									]
+								},
+								{
+									"IRI": "Document/001y_Artikel_5%20Aanvraag%20en%20toekenning/001N_Lid_4/001g_chunk",
+									"id": "001g",
+									"content": "",
+									"@type": [
+										"src:LeafElement"
+									]
+								},
+								{
+									"IRI": "Document/001y_Artikel_5%20Aanvraag%20en%20toekenning/001N_Lid_4/001h_chunk",
+									"id": "001h",
+									"content": "De periode van twaalf maanden vangt aan op de datum waarop eerder een inkomenstoeslag is aangevraagd.",
+									"@type": [
+										"src:LeafElement"
+									]
+								},
+								{
+									"IRI": "Document/001y_Artikel_5%20Aanvraag%20en%20toekenning/001N_Lid_4/001i_chunk",
+									"id": "001i",
+									"content": "Hoofdstuk 3 Slotbepalingen",
+									"@type": [
+										"src:LeafElement"
+									]
+								}
+							],
+							"@type": [
+								"src:NonLeafElement",
+								"src:ListItem"
+							],
+							"numbering": "4",
+							"typelabel": "Lid"
+						}
+					],
+					"@type": [
+						"src:NonLeafElement"
+					],
+					"containsAsHeader": "Document/001y_Artikel_5%20Aanvraag%20en%20toekenning/0019_chunk",
+					"numbering": "5 Aanvraag en toekenning",
+					"typelabel": "Artikel"
+				},
+				{
+					"IRI": "Document/001z_Artikel_6%20Intrekking",
+					"id": "001z",
+					"children": [
+						{
+							"IRI": "Document/001z_Artikel_6%20Intrekking/001j_chunk",
+							"id": "001j",
+							"content": "Artikel 6 Intrekking",
+							"@type": [
+								"src:LeafElement"
+							]
+						},
+						{
+							"IRI": "Document/001z_Artikel_6%20Intrekking/001k_chunk",
+							"id": "001k",
+							"content": "Op de dag van inwerkingtreding van deze beleidsregel worden de Beleidsregels Individuele Inkomenstoeslag Utrecht 2019 ingetrokken.",
+							"@type": [
+								"src:LeafElement"
+							]
+						}
+					],
+					"@type": [
+						"src:NonLeafElement"
+					],
+					"containsAsHeader": "Document/001z_Artikel_6%20Intrekking/001j_chunk",
+					"numbering": "6 Intrekking",
+					"typelabel": "Artikel"
+				},
+				{
+					"IRI": "Document/001A_Artikel_7%20Inwerkingtreding",
+					"id": "001A",
+					"children": [
+						{
+							"IRI": "Document/001A_Artikel_7%20Inwerkingtreding/001l_chunk",
+							"id": "001l",
+							"content": "Artikel 7 Inwerkingtreding",
+							"@type": [
+								"src:LeafElement"
+							]
+						},
+						{
+							"IRI": "Document/001A_Artikel_7%20Inwerkingtreding/001m_chunk",
+							"id": "001m",
+							"content": "Deze beleidsregel treedt in werking op de dag na bekendmaking.",
+							"@type": [
+								"src:LeafElement"
+							]
+						}
+					],
+					"@type": [
+						"src:NonLeafElement"
+					],
+					"containsAsHeader": "Document/001A_Artikel_7%20Inwerkingtreding/001l_chunk",
+					"numbering": "7 Inwerkingtreding",
+					"typelabel": "Artikel"
+				},
+				{
+					"IRI": "Document/001B_Artikel_8%20Citeertitel",
+					"id": "001B",
+					"children": [
+						{
+							"IRI": "Document/001B_Artikel_8%20Citeertitel/001n_chunk",
+							"id": "001n",
+							"content": "Artikel 8 Citeertitel",
+							"@type": [
+								"src:LeafElement"
+							]
+						},
+						{
+							"IRI": "Document/001B_Artikel_8%20Citeertitel/001o_chunk",
+							"id": "001o",
+							"content": "Deze beleidsregel wordt aangehaald als Beleidsregel Individuele Inkomenstoeslag gemeente Utrecht.",
+							"@type": [
+								"src:LeafElement"
+							]
+						}
+					],
+					"@type": [
+						"src:NonLeafElement"
+					],
+					"containsAsHeader": "Document/001B_Artikel_8%20Citeertitel/001n_chunk",
+					"numbering": "8 Citeertitel",
+					"typelabel": "Artikel"
+				},
+				{
+					"IRI": "Document/001C_Ondertekening",
+					"id": "001C",
+					"children": [
+						{
+							"IRI": "Document/001C_Ondertekening/001p_chunk",
+							"id": "001p",
+							"content": "Ondertekening",
+							"@type": [
+								"src:LeafElement"
+							]
+						},
+						{
+							"IRI": "Document/001C_Ondertekening/001q_chunk",
+							"id": "001q",
+							"content": "Aldus vastgesteld door het college van burgemeester en wethouders van de gemeente Utrecht op 14 juli 2020.",
+							"@type": [
+								"src:LeafElement"
+							]
+						},
+						{
+							"IRI": "Document/001C_Ondertekening/001r_chunk",
+							"id": "001r",
+							"content": "De burgemeester, De secretaris,",
+							"@type": [
+								"src:LeafElement"
+							]
+						},
+						{
+							"IRI": "Document/001C_Ondertekening/001s_chunk",
+							"id": "001s",
+							"content": "",
+							"@type": [
+								"src:LeafElement"
+							]
+						}
+					],
+					"@type": [
+						"src:NonLeafElement"
+					],
+					"containsAsHeader": "Document/001C_Ondertekening/001p_chunk",
+					"typelabel": "Ondertekening"
+				}
+			],
+			"title": "Beleidsregel Individuele Inkomenstoeslag gemeente Utrecht",
+			"version": null,
+			"decompositionVersion": "0.1",
+			"generatedBy": "http://choppr.app/decompositions/50bdb7d2-497a-4f45-a85a-30ec3c6f0dd7/DecompositionEvent/",
+			"original": "",
+			"hasOrigin": "https://lokaleregelgeving.overheid.nl/CVDR642743"
+		},
+		{
+			"@type": "src:DecompositionEvent",
+			"@id": "http://choppr.app/decompositions/50bdb7d2-497a-4f45-a85a-30ec3c6f0dd7/DecompositionEvent/",
+			"begins": "2024-01-23T14:53:13.986Z",
+			"ends": "2024-01-23T14:53:13.986Z",
+			"generates": "http://choppr.app/decompositions/50bdb7d2-497a-4f45-a85a-30ec3c6f0dd7"
+		}
+	]
+}

@@ -1,0 +1,825 @@
+{
+	"@context": {
+		"choppr": "http://ontology.tno.nl/normengineering/choppr#",
+		"src": "http://ontology.tno.nl/normengineering/source#",
+		"xsd": "http://www.w3.org/2001/XMLSchema#",
+		"po": "http://www.essepuntato.it/2008/12/pattern",
+		"rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+		"rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+		"choppr.recipe": "http://choppr.app/documents/1701332075054/recipe/",
+		"choppr.separators": "http://choppr.app/documents/1701332075054/separators/",
+		"@base": "http://choppr.app/documents/1701332075054/",
+		"IRI": "@id",
+		"typelabel": "src:hasTypeLabel",
+		"actorLabel": "rdfs:label",
+		"numbering": "src:hasNumbering",
+		"content": "src:hasContent",
+		"hasOrigin": "src:hasOrigin",
+		"containsAsHeader": {
+			"@type": "@id",
+			"@id": "src:containsAsHeader"
+		},
+		"separator": {
+			"@type": "@id",
+			"@id": "choppr:chunkSeparator"
+		},
+		"children": {
+			"@id": "src:hasChildElementOrdering",
+			"@container": "@list"
+		},
+		"decompositionPreprocessors": "choppr:decompositionPreprocessors",
+		"decompositionSeparators": "choppr:decompositionSeparators",
+		"decompositionRecipe": "choppr:decompositionRecipe",
+		"begins": "src:begins",
+		"ends": "src:ends",
+		"authoredBy": "src:authoredBy",
+		"editedBy": "src:editedBy",
+		"title": "src:hasTitle",
+		"version": "src:hasVersion",
+		"decompositionVersion": "src:hasDecompositionVersion",
+		"applicableAt": "src:applicableAt",
+		"applicableFrom": {
+			"@id": "src:applicableFrom",
+			"@type": "xsd:dateTime"
+		},
+		"applicableUntil": {
+			"@id": "src:applicableUntil",
+			"@type": "xsd:dateTime"
+		},
+		"generatedBy": {
+			"@type": "@id",
+			"@id": "src:generatedBy"
+		},
+		"generates": {
+			"@type": "@id",
+			"@id": "src:generates"
+		}
+	},
+	"@id": "http://choppr.app/documents/1701332075054",
+	"@graph": [
+		{
+			"@type": "src:Source",
+			"@id": "http://choppr.app/documents/1701332075054/document",
+			"decompositionPreprocessors": {
+				"@context": {
+					"choppr": "http://ontology.tno.nl/normengineering/choppr#",
+					"rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+					"rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+					"src": "http://ontology.tno.nl/normengineering/source#",
+					"@base": "http://choppr.app/documents/1701332075054/preprocessors/",
+					"id": "@id",
+					"regexp": "choppr:regExp",
+					"replaceBy": "choppr:replaceBy",
+					"name": "rdfs:label",
+					"description": "rdfs:comment",
+					"active": "choppr:isActive"
+				},
+				"@list": []
+			},
+			"decompositionRecipe": {
+				"@context": {
+					"choppr": "http://ontology.tno.nl/normengineering/choppr#",
+					"rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+					"rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+					"src": "http://ontology.tno.nl/normengineering/source#",
+					"choppr.separators": "http://choppr.app/documents/1701332075054/separators/",
+					"@base": "http://choppr.app/documents/1701332075054/",
+					"IRI": "@id",
+					"id": "choppr:originalId",
+					"separatorId": {
+						"@type": "@id",
+						"@id": "choppr:separatorId"
+					},
+					"code": "choppr:separatorContent",
+					"typelabel": "choppr:typeLabel",
+					"numbering": "choppr:captureNumbering",
+					"title": "choppr:captureTitle",
+					"separators": {
+						"@id": "choppr:stepSeparators",
+						"@container": "@list"
+					},
+					"actions": {
+						"@id": "choppr:stepActions",
+						"@container": "@list"
+					},
+					"on": "choppr:onId",
+					"offsets": "choppr:actionOffset"
+				},
+				"@list": []
+			},
+			"decompositionSeparators": {
+				"@context": {
+					"choppr": "http://ontology.tno.nl/normengineering/choppr#",
+					"rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+					"rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+					"src": "http://ontology.tno.nl/normengineering/source#",
+					"@base": "http://choppr.app/documents/1701332075054/separators/",
+					"hash": "@id",
+					"code": "choppr:separatorContent",
+					"typelabel": "choppr:typeLabel",
+					"numbering": "choppr:captureNumbering",
+					"title": "choppr:captureTitle",
+					"name": "rdfs:label",
+					"description": "rdfs:comment",
+					"separatorTags": "choppr:separatorTags"
+				},
+				"@list": []
+			},
+			"children": [
+				{
+					"IRI": "Document/0002_chunk",
+					"id": "0002",
+					"content": "",
+					"@type": [
+						"src:LeafElement"
+					]
+				},
+				{
+					"IRI": "Document/00tn_Chapter_I",
+					"id": "00tn",
+					"children": [
+						{
+							"IRI": "Document/00tn_Chapter_I/005U_chunk",
+							"id": "005U",
+							"content": "CHAPTER I",
+							"@type": [
+								"src:LeafElement"
+							]
+						},
+						{
+							"IRI": "Document/00tn_Chapter_I/005V_chunk",
+							"id": "005V",
+							"content": "General provisions",
+							"@type": [
+								"src:LeafElement"
+							]
+						},
+						{
+							"IRI": "Document/00tn_Chapter_I/00tB_Article_4",
+							"id": "00tB",
+							"children": [
+								{
+									"IRI": "Document/00tn_Chapter_I/00tB_Article_4/006o_chunk",
+									"id": "006o",
+									"content": "Article 4",
+									"@type": [
+										"src:LeafElement"
+									]
+								},
+								{
+									"IRI": "Document/00tn_Chapter_I/00tB_Article_4/006p_chunk",
+									"id": "006p",
+									"content": "Definitions",
+									"@type": [
+										"src:LeafElement"
+									]
+								},
+								{
+									"IRI": "Document/00tn_Chapter_I/00tB_Article_4/006q_chunk",
+									"id": "006q",
+									"content": "For the purposes of this Regulation:",
+									"@type": [
+										"src:LeafElement"
+									]
+								},
+								{
+									"IRI": "Document/00tn_Chapter_I/00tB_Article_4/00JY_enum_(1)",
+									"id": "00JY",
+									"children": [
+										{
+											"IRI": "Document/00tn_Chapter_I/00tB_Article_4/00JY_enum_(1)/006r_chunk",
+											"id": "006r",
+											"content": "(1)",
+											"@type": [
+												"src:LeafElement"
+											]
+										},
+										{
+											"IRI": "Document/00tn_Chapter_I/00tB_Article_4/00JY_enum_(1)/006s_chunk",
+											"id": "006s",
+											"content": "‘personal data’ means any information relating to an identified or identifiable natural person (‘data subject’); an identifiable natural person is one who can be identified, directly or indirectly, in particular by reference to an identifier such as a name, an identification number, location data, an online identifier or to one or more factors specific to the physical, physiological, genetic, mental, economic, cultural or social identity of that natural person;",
+											"@type": [
+												"src:LeafElement"
+											]
+										}
+									],
+									"@type": [
+										"src:NonLeafElement",
+										"src:ListItem"
+									],
+									"numbering": "(1)",
+									"typelabel": "enum"
+								},
+								{
+									"IRI": "Document/00tn_Chapter_I/00tB_Article_4/00JZ_enum_(2)",
+									"id": "00JZ",
+									"children": [
+										{
+											"IRI": "Document/00tn_Chapter_I/00tB_Article_4/00JZ_enum_(2)/006t_chunk",
+											"id": "006t",
+											"content": "(2)",
+											"@type": [
+												"src:LeafElement"
+											]
+										},
+										{
+											"IRI": "Document/00tn_Chapter_I/00tB_Article_4/00JZ_enum_(2)/006u_chunk",
+											"id": "006u",
+											"content": "‘processing’ means any operation or set of operations which is performed on personal data or on sets of personal data, whether or not by automated means, such as collection, recording, organisation, structuring, storage, adaptation or alteration, retrieval, consultation, use, disclosure by transmission, dissemination or otherwise making available, alignment or combination, restriction, erasure or destruction;",
+											"@type": [
+												"src:LeafElement"
+											]
+										}
+									],
+									"@type": [
+										"src:NonLeafElement",
+										"src:ListItem"
+									],
+									"numbering": "(2)",
+									"typelabel": "enum"
+								},
+								{
+									"IRI": "Document/00tn_Chapter_I/00tB_Article_4/00K2_enum_(5)",
+									"id": "00K2",
+									"children": [
+										{
+											"IRI": "Document/00tn_Chapter_I/00tB_Article_4/00K2_enum_(5)/006z_chunk",
+											"id": "006z",
+											"content": "(5)",
+											"@type": [
+												"src:LeafElement"
+											]
+										},
+										{
+											"IRI": "Document/00tn_Chapter_I/00tB_Article_4/00K2_enum_(5)/006A_chunk",
+											"id": "006A",
+											"content": "‘pseudonymisation’ means the processing of personal data in such a manner that the personal data can no longer be attributed to a specific data subject without the use of additional information, provided that such additional information is kept separately and is subject to technical and organisational measures to ensure that the personal data are not attributed to an identified or identifiable natural person;",
+											"@type": [
+												"src:LeafElement"
+											]
+										}
+									],
+									"@type": [
+										"src:NonLeafElement",
+										"src:ListItem"
+									],
+									"numbering": "(5)",
+									"typelabel": "enum"
+								},
+								{
+									"IRI": "Document/00tn_Chapter_I/00tB_Article_4/00K4_enum_(7)",
+									"id": "00K4",
+									"children": [
+										{
+											"IRI": "Document/00tn_Chapter_I/00tB_Article_4/00K4_enum_(7)/006D_chunk",
+											"id": "006D",
+											"content": "(7)",
+											"@type": [
+												"src:LeafElement"
+											]
+										},
+										{
+											"IRI": "Document/00tn_Chapter_I/00tB_Article_4/00K4_enum_(7)/006E_chunk",
+											"id": "006E",
+											"content": "‘controller’ means the natural or legal person, public authority, agency or other body which, alone or jointly with others, determines the purposes and means of the processing of personal data; where the purposes and means of such processing are determined by Union or Member State law, the controller or the specific criteria for its nomination may be provided for by Union or Member State law;",
+											"@type": [
+												"src:LeafElement"
+											]
+										}
+									],
+									"@type": [
+										"src:NonLeafElement",
+										"src:ListItem"
+									],
+									"numbering": "(7)",
+									"typelabel": "enum"
+								},
+								{
+									"IRI": "Document/00tn_Chapter_I/00tB_Article_4/00K5_enum_(8)",
+									"id": "00K5",
+									"children": [
+										{
+											"IRI": "Document/00tn_Chapter_I/00tB_Article_4/00K5_enum_(8)/006F_chunk",
+											"id": "006F",
+											"content": "(8)",
+											"@type": [
+												"src:LeafElement"
+											]
+										},
+										{
+											"IRI": "Document/00tn_Chapter_I/00tB_Article_4/00K5_enum_(8)/006G_chunk",
+											"id": "006G",
+											"content": "‘processor’ means a natural or legal person, public authority, agency or other body which processes personal data on behalf of the controller;",
+											"@type": [
+												"src:LeafElement"
+											]
+										}
+									],
+									"@type": [
+										"src:NonLeafElement",
+										"src:ListItem"
+									],
+									"numbering": "(8)",
+									"typelabel": "enum"
+								}
+							],
+							"@type": [
+								"src:NonLeafElement"
+							],
+							"containsAsHeader": "Document/00tn_Chapter_I/00tB_Article_4/006o_chunk",
+							"numbering": "4",
+							"typelabel": "Article"
+						}
+					],
+					"@type": [
+						"src:NonLeafElement"
+					],
+					"containsAsHeader": "Document/00tn_Chapter_I/005U_chunk",
+					"numbering": "I",
+					"typelabel": "Chapter"
+				},
+				{
+					"IRI": "Document/00to_Chapter_II",
+					"id": "00to",
+					"children": [
+						{
+							"IRI": "Document/00to_Chapter_II/007v_chunk",
+							"id": "007v",
+							"content": "CHAPTER II",
+							"@type": [
+								"src:LeafElement"
+							]
+						},
+						{
+							"IRI": "Document/00to_Chapter_II/007w_chunk",
+							"id": "007w",
+							"content": "Principles",
+							"@type": [
+								"src:LeafElement"
+							]
+						},
+						{
+							"IRI": "Document/00to_Chapter_II/00tC_Article_5",
+							"id": "00tC",
+							"children": [
+								{
+									"IRI": "Document/00to_Chapter_II/00tC_Article_5/007x_chunk",
+									"id": "007x",
+									"content": "Article 5",
+									"@type": [
+										"src:LeafElement"
+									]
+								},
+								{
+									"IRI": "Document/00to_Chapter_II/00tC_Article_5/007y_chunk",
+									"id": "007y",
+									"content": "Principles relating to processing of personal data",
+									"@type": [
+										"src:LeafElement"
+									]
+								},
+								{
+									"IRI": "Document/00to_Chapter_II/00tC_Article_5/00vy_member_1",
+									"id": "00vy",
+									"children": [
+										{
+											"IRI": "Document/00to_Chapter_II/00tC_Article_5/00vy_member_1/007z_chunk",
+											"id": "007z",
+											"content": "1.   Personal data shall be:",
+											"@type": [
+												"src:LeafElement"
+											]
+										},
+										{
+											"IRI": "Document/00to_Chapter_II/00tC_Article_5/00vy_member_1/00BB_sub_(a)",
+											"id": "00BB",
+											"children": [
+												{
+													"IRI": "Document/00to_Chapter_II/00tC_Article_5/00vy_member_1/00BB_sub_(a)/007A_chunk",
+													"id": "007A",
+													"content": "(a)",
+													"@type": [
+														"src:LeafElement"
+													]
+												},
+												{
+													"IRI": "Document/00to_Chapter_II/00tC_Article_5/00vy_member_1/00BB_sub_(a)/007B_chunk",
+													"id": "007B",
+													"content": "processed lawfully, fairly and in a transparent manner in relation to the data subject (‘lawfulness, fairness and transparency’);",
+													"@type": [
+														"src:LeafElement"
+													]
+												}
+											],
+											"@type": [
+												"src:NonLeafElement",
+												"src:ListItem"
+											],
+											"numbering": "(a)",
+											"typelabel": "sub"
+										},
+										{
+											"IRI": "Document/00to_Chapter_II/00tC_Article_5/00vy_member_1/00BC_sub_(b)",
+											"id": "00BC",
+											"children": [
+												{
+													"IRI": "Document/00to_Chapter_II/00tC_Article_5/00vy_member_1/00BC_sub_(b)/007C_chunk",
+													"id": "007C",
+													"content": "(b)",
+													"@type": [
+														"src:LeafElement"
+													]
+												},
+												{
+													"IRI": "Document/00to_Chapter_II/00tC_Article_5/00vy_member_1/00BC_sub_(b)/007D_chunk",
+													"id": "007D",
+													"content": "collected for specified, explicit and legitimate purposes and not further processed in a manner that is incompatible with those purposes; further processing for archiving purposes in the public interest, scientific or historical research purposes or statistical purposes shall, in accordance with Article 89(1), not be considered to be incompatible with the initial purposes (‘purpose limitation’);",
+													"@type": [
+														"src:LeafElement"
+													]
+												}
+											],
+											"@type": [
+												"src:NonLeafElement",
+												"src:ListItem"
+											],
+											"numbering": "(b)",
+											"typelabel": "sub"
+										},
+										{
+											"IRI": "Document/00to_Chapter_II/00tC_Article_5/00vy_member_1/00BD_sub_(c)",
+											"id": "00BD",
+											"children": [
+												{
+													"IRI": "Document/00to_Chapter_II/00tC_Article_5/00vy_member_1/00BD_sub_(c)/007E_chunk",
+													"id": "007E",
+													"content": "(c)",
+													"@type": [
+														"src:LeafElement"
+													]
+												},
+												{
+													"IRI": "Document/00to_Chapter_II/00tC_Article_5/00vy_member_1/00BD_sub_(c)/007F_chunk",
+													"id": "007F",
+													"content": "adequate, relevant and limited to what is necessary in relation to the purposes for which they are processed (‘data minimisation’);",
+													"@type": [
+														"src:LeafElement"
+													]
+												}
+											],
+											"@type": [
+												"src:NonLeafElement",
+												"src:ListItem"
+											],
+											"numbering": "(c)",
+											"typelabel": "sub"
+										},
+										{
+											"IRI": "Document/00to_Chapter_II/00tC_Article_5/00vy_member_1/00BE_sub_(d)",
+											"id": "00BE",
+											"children": [
+												{
+													"IRI": "Document/00to_Chapter_II/00tC_Article_5/00vy_member_1/00BE_sub_(d)/007G_chunk",
+													"id": "007G",
+													"content": "(d)",
+													"@type": [
+														"src:LeafElement"
+													]
+												},
+												{
+													"IRI": "Document/00to_Chapter_II/00tC_Article_5/00vy_member_1/00BE_sub_(d)/007H_chunk",
+													"id": "007H",
+													"content": "accurate and, where necessary, kept up to date; every reasonable step must be taken to ensure that personal data that are inaccurate, having regard to the purposes for which they are processed, are erased or rectified without delay (‘accuracy’);",
+													"@type": [
+														"src:LeafElement"
+													]
+												}
+											],
+											"@type": [
+												"src:NonLeafElement",
+												"src:ListItem"
+											],
+											"numbering": "(d)",
+											"typelabel": "sub"
+										},
+										{
+											"IRI": "Document/00to_Chapter_II/00tC_Article_5/00vy_member_1/00BF_sub_(e)",
+											"id": "00BF",
+											"children": [
+												{
+													"IRI": "Document/00to_Chapter_II/00tC_Article_5/00vy_member_1/00BF_sub_(e)/007I_chunk",
+													"id": "007I",
+													"content": "(e)",
+													"@type": [
+														"src:LeafElement"
+													]
+												},
+												{
+													"IRI": "Document/00to_Chapter_II/00tC_Article_5/00vy_member_1/00BF_sub_(e)/007J_chunk",
+													"id": "007J",
+													"content": "kept in a form which permits identification of data subjects for no longer than is necessary for the purposes for which the personal data are processed; personal data may be stored for longer periods insofar as the personal data will be processed solely for archiving purposes in the public interest, scientific or historical research purposes or statistical purposes in accordance with Article 89(1) subject to implementation of the appropriate technical and organisational measures required by this Regulation in order to safeguard the rights and freedoms of the data subject (‘storage limitation’);",
+													"@type": [
+														"src:LeafElement"
+													]
+												}
+											],
+											"@type": [
+												"src:NonLeafElement",
+												"src:ListItem"
+											],
+											"numbering": "(e)",
+											"typelabel": "sub"
+										},
+										{
+											"IRI": "Document/00to_Chapter_II/00tC_Article_5/00vy_member_1/00BG_sub_(f)",
+											"id": "00BG",
+											"children": [
+												{
+													"IRI": "Document/00to_Chapter_II/00tC_Article_5/00vy_member_1/00BG_sub_(f)/007K_chunk",
+													"id": "007K",
+													"content": "(f)",
+													"@type": [
+														"src:LeafElement"
+													]
+												},
+												{
+													"IRI": "Document/00to_Chapter_II/00tC_Article_5/00vy_member_1/00BG_sub_(f)/007L_chunk",
+													"id": "007L",
+													"content": "processed in a manner that ensures appropriate security of the personal data, including protection against unauthorised or unlawful processing and against accidental loss, destruction or damage, using appropriate technical or organisational measures (‘integrity and confidentiality’).",
+													"@type": [
+														"src:LeafElement"
+													]
+												}
+											],
+											"@type": [
+												"src:NonLeafElement",
+												"src:ListItem"
+											],
+											"numbering": "(f)",
+											"typelabel": "sub"
+										}
+									],
+									"@type": [
+										"src:NonLeafElement",
+										"src:ListItem"
+									],
+									"numbering": "1",
+									"typelabel": "member"
+								}
+							],
+							"@type": [
+								"src:NonLeafElement"
+							],
+							"containsAsHeader": "Document/00to_Chapter_II/00tC_Article_5/007x_chunk",
+							"numbering": "5",
+							"typelabel": "Article"
+						},
+						{
+							"IRI": "Document/00to_Chapter_II/00tD_Article_6",
+							"id": "00tD",
+							"children": [
+								{
+									"IRI": "Document/00to_Chapter_II/00tD_Article_6/007N_chunk",
+									"id": "007N",
+									"content": "Article 6",
+									"@type": [
+										"src:LeafElement"
+									]
+								},
+								{
+									"IRI": "Document/00to_Chapter_II/00tD_Article_6/007O_chunk",
+									"id": "007O",
+									"content": "Lawfulness of processing",
+									"@type": [
+										"src:LeafElement"
+									]
+								},
+								{
+									"IRI": "Document/00to_Chapter_II/00tD_Article_6/00vA_member_1",
+									"id": "00vA",
+									"children": [
+										{
+											"IRI": "Document/00to_Chapter_II/00tD_Article_6/00vA_member_1/007P_chunk",
+											"id": "007P",
+											"content": "1.   Processing shall be lawful only if and to the extent that at least one of the following applies:",
+											"@type": [
+												"src:LeafElement"
+											]
+										},
+										{
+											"IRI": "Document/00to_Chapter_II/00tD_Article_6/00vA_member_1/00BH_sub_(a)",
+											"id": "00BH",
+											"children": [
+												{
+													"IRI": "Document/00to_Chapter_II/00tD_Article_6/00vA_member_1/00BH_sub_(a)/007Q_chunk",
+													"id": "007Q",
+													"content": "(a)",
+													"@type": [
+														"src:LeafElement"
+													]
+												},
+												{
+													"IRI": "Document/00to_Chapter_II/00tD_Article_6/00vA_member_1/00BH_sub_(a)/007R_chunk",
+													"id": "007R",
+													"content": "the data subject has given consent to the processing of his or her personal data for one or more specific purposes;",
+													"@type": [
+														"src:LeafElement"
+													]
+												}
+											],
+											"@type": [
+												"src:NonLeafElement",
+												"src:ListItem"
+											],
+											"numbering": "(a)",
+											"typelabel": "sub"
+										},
+										{
+											"IRI": "Document/00to_Chapter_II/00tD_Article_6/00vA_member_1/00BI_sub_(b)",
+											"id": "00BI",
+											"children": [
+												{
+													"IRI": "Document/00to_Chapter_II/00tD_Article_6/00vA_member_1/00BI_sub_(b)/007S_chunk",
+													"id": "007S",
+													"content": "(b)",
+													"@type": [
+														"src:LeafElement"
+													]
+												},
+												{
+													"IRI": "Document/00to_Chapter_II/00tD_Article_6/00vA_member_1/00BI_sub_(b)/007T_chunk",
+													"id": "007T",
+													"content": "processing is necessary for the performance of a contract to which the data subject is party or in order to take steps at the request of the data subject prior to entering into a contract;",
+													"@type": [
+														"src:LeafElement"
+													]
+												}
+											],
+											"@type": [
+												"src:NonLeafElement",
+												"src:ListItem"
+											],
+											"numbering": "(b)",
+											"typelabel": "sub"
+										},
+										{
+											"IRI": "Document/00to_Chapter_II/00tD_Article_6/00vA_member_1/00BJ_sub_(c)",
+											"id": "00BJ",
+											"children": [
+												{
+													"IRI": "Document/00to_Chapter_II/00tD_Article_6/00vA_member_1/00BJ_sub_(c)/007U_chunk",
+													"id": "007U",
+													"content": "(c)",
+													"@type": [
+														"src:LeafElement"
+													]
+												},
+												{
+													"IRI": "Document/00to_Chapter_II/00tD_Article_6/00vA_member_1/00BJ_sub_(c)/007V_chunk",
+													"id": "007V",
+													"content": "processing is necessary for compliance with a legal obligation to which the controller is subject;",
+													"@type": [
+														"src:LeafElement"
+													]
+												}
+											],
+											"@type": [
+												"src:NonLeafElement",
+												"src:ListItem"
+											],
+											"numbering": "(c)",
+											"typelabel": "sub"
+										},
+										{
+											"IRI": "Document/00to_Chapter_II/00tD_Article_6/00vA_member_1/00BK_sub_(d)",
+											"id": "00BK",
+											"children": [
+												{
+													"IRI": "Document/00to_Chapter_II/00tD_Article_6/00vA_member_1/00BK_sub_(d)/007W_chunk",
+													"id": "007W",
+													"content": "(d)",
+													"@type": [
+														"src:LeafElement"
+													]
+												},
+												{
+													"IRI": "Document/00to_Chapter_II/00tD_Article_6/00vA_member_1/00BK_sub_(d)/007X_chunk",
+													"id": "007X",
+													"content": "processing is necessary in order to protect the vital interests of the data subject or of another natural person;",
+													"@type": [
+														"src:LeafElement"
+													]
+												}
+											],
+											"@type": [
+												"src:NonLeafElement",
+												"src:ListItem"
+											],
+											"numbering": "(d)",
+											"typelabel": "sub"
+										},
+										{
+											"IRI": "Document/00to_Chapter_II/00tD_Article_6/00vA_member_1/00BL_sub_(e)",
+											"id": "00BL",
+											"children": [
+												{
+													"IRI": "Document/00to_Chapter_II/00tD_Article_6/00vA_member_1/00BL_sub_(e)/007Y_chunk",
+													"id": "007Y",
+													"content": "(e)",
+													"@type": [
+														"src:LeafElement"
+													]
+												},
+												{
+													"IRI": "Document/00to_Chapter_II/00tD_Article_6/00vA_member_1/00BL_sub_(e)/007Z_chunk",
+													"id": "007Z",
+													"content": "processing is necessary for the performance of a task carried out in the public interest or in the exercise of official authority vested in the controller;",
+													"@type": [
+														"src:LeafElement"
+													]
+												}
+											],
+											"@type": [
+												"src:NonLeafElement",
+												"src:ListItem"
+											],
+											"numbering": "(e)",
+											"typelabel": "sub"
+										},
+										{
+											"IRI": "Document/00to_Chapter_II/00tD_Article_6/00vA_member_1/00BM_sub_(f)",
+											"id": "00BM",
+											"children": [
+												{
+													"IRI": "Document/00to_Chapter_II/00tD_Article_6/00vA_member_1/00BM_sub_(f)/0080_chunk",
+													"id": "0080",
+													"content": "(f)",
+													"@type": [
+														"src:LeafElement"
+													]
+												},
+												{
+													"IRI": "Document/00to_Chapter_II/00tD_Article_6/00vA_member_1/00BM_sub_(f)/0081_chunk",
+													"id": "0081",
+													"content": "processing is necessary for the purposes of the legitimate interests pursued by the controller or by a third party, except where such interests are overridden by the interests or fundamental rights and freedoms of the data subject which require protection of personal data, in particular where the data subject is a child.",
+													"@type": [
+														"src:LeafElement"
+													]
+												},
+												{
+													"IRI": "Document/00to_Chapter_II/00tD_Article_6/00vA_member_1/00BM_sub_(f)/0082_chunk",
+													"id": "0082",
+													"content": "Point (f) of the first subparagraph shall not apply to processing carried out by public authorities in the performance of their tasks.",
+													"@type": [
+														"src:LeafElement"
+													]
+												}
+											],
+											"@type": [
+												"src:NonLeafElement",
+												"src:ListItem"
+											],
+											"numbering": "(f)",
+											"typelabel": "sub"
+										}
+									],
+									"@type": [
+										"src:NonLeafElement",
+										"src:ListItem"
+									],
+									"numbering": "1",
+									"typelabel": "member"
+								}
+							],
+							"@type": [
+								"src:NonLeafElement"
+							],
+							"containsAsHeader": "Document/00to_Chapter_II/00tD_Article_6/007N_chunk",
+							"numbering": "6",
+							"typelabel": "Article"
+						}
+					],
+					"@type": [
+						"src:NonLeafElement"
+					],
+					"containsAsHeader": "Document/00to_Chapter_II/007v_chunk",
+					"numbering": "II",
+					"typelabel": "Chapter"
+				}
+			],
+			"title": "General Data Protection Regulation",
+			"version": null,
+			"decompositionVersion": "0.1",
+			"generatedBy": "http://choppr.app/documents/1701332075054/DecompositionEvent/",
+			"original": "",
+			"hasOrigin": "https://eur-lex.europa.eu/eli/reg/2016/679"
+		},
+		{
+			"@type": "src:DecompositionEvent",
+			"@id": "http://choppr.app/documents/1701332075054/DecompositionEvent/",
+			"begins": "2024-08-16T08:27:45.292Z",
+			"ends": "2024-08-16T08:37:42.384Z",
+			"generates": "http://choppr.app/documents/1701332075054/document"
+		}
+	]
+}

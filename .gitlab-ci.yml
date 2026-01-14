@@ -1,0 +1,29 @@
+variables:
+  IMAGE_TAG: "${CI_REGISTRY_IMAGE}:${CI_COMMIT_TAG}"
+
+build:
+  stage: build
+  image:
+    name: gcr.io/kaniko-project/executor:v1.9.1-debug
+    entrypoint: [""]
+  script:
+    - /kaniko/executor
+      --context "${PROJECT_DIR}"
+      --dockerfile "${PROJECT_DIR}/Dockerfile"
+      --destination "${IMAGE_TAG}"
+  rules:
+    - if: $CI_COMMIT_TAG && $CI_COMMIT_TAG =~ /^v.*/
+  variables:
+    PROJECT_DIR: ${CI_PROJECT_DIR}/gui
+
+deploy:
+  stage: deploy
+  image:
+    name: bitnami/kubectl:1.26
+    entrypoint: [""]
+  script:
+    - export IMAGE_TAG=$(echo $IMAGE_TAG | sed 's/ci.tno.nl:4567/ci.tno.nl/')
+    - sed -i "s|<imagetag>|${IMAGE_TAG}|g" deploy/gui.yaml
+    - kubectl --kubeconfig=${K8S_CONFIG} apply -f deploy/gui.yaml
+  rules:
+    - if: $CI_COMMIT_TAG && $CI_COMMIT_TAG =~ /^v.*/

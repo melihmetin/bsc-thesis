@@ -1,0 +1,15 @@
+{% for frame in frames %}
+    {% if frame.typeId == 'fact' %}
+        {% if 'agent' in frame.subTypeIds %}
+Fact [{{ frame.label }}] Identified by string
+        {% endif %}
+    {% endif %}
+{% endfor %}
+
+{% for frame in frames %}
+    {% if frame.typeId == 'fact' %}
+        {% if 'condition' in frame.subTypeIds or 'object' in frame.subTypeIds or frame.subTypeIds == [None] %}
+Bool [{{ frame.label }}]
+        {% endif %}
+    {% endif %}
+{% endfor %}

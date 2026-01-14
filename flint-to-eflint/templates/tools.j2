@@ -1,0 +1,64 @@
+{% macro op_symbol(op) -%}
+    {%- if op == 'and' -%}&&
+    {%- elif op == 'or' -%}||
+    {%- elif op == 'plus' -%}+
+    {%- elif op == 'minus' -%}-
+    {%- elif op == 'lessThan' -%}<
+    {%- elif op == 'greaterThan' -%}>
+    {%- elif op == 'greaterThanOrEqualTo' -%}>=
+    {%- elif op == 'lessThanOrEqualTo' -%}<=
+    {%- elif op == 'equals' -%}==
+    {%- elif op == 'not' -%}!
+    {%- endif -%}
+{%- endmacro %}
+
+{% macro op_prec(op) -%}
+    {%- if op == 'IF' -%}0
+    {%- elif op == 'or' -%}1
+    {%- elif op == 'and' -%}2
+    {%- elif op in ['lessThan','greaterThan','greaterThanOrEqualTo','lessThanOrEqualTo','equals'] -%}3
+    {%- elif op in ['plus','minus'] -%}4
+    {%- else -%}5
+    {%- endif -%}
+{%- endmacro %}
+
+{% macro frame_label(frame_id, frames) -%}
+    {%- for f in frames -%}
+        {%- if f.id == frame_id -%}{{ f.label }}{%- endif -%}
+    {%- endfor -%}
+{%- endmacro %}
+
+{% macro render_condition(node, frames, parent_op=None) -%}
+    {%- set children = node.children or [] -%}
+    {%- set op = node.operatorToJoinChildren -%}
+
+    {%- set need_parens = false -%}
+    {%- if parent_op is not none and children|length > 1 -%}
+        {%- if (op_prec(op)|int) < (op_prec(parent_op)|int) -%}
+            {%- set need_parens = true -%}
+        {%- endif -%}
+    {%- endif -%}
+
+    {%- if children|length == 0 -%}
+        {%- set expr -%}[{{ frame_label(node.frame, frames) }}]{%- endset -%}
+
+    {%- elif op == 'IF' and children|length == 2 -%}
+        {%- set expr -%}(!( {{ render_condition(children[0], frames, 'or') }} ) || {{ render_condition(children[1], frames, 'or') }}){%- endset -%}
+
+    {%- elif children|length == 1 -%}
+        {%- set expr -%}{{ render_condition(children[0], frames, parent_op) }}{%- endset -%}
+
+    {%- else -%}
+        {%- set ns = namespace(s=render_condition(children[0], frames, op)) -%}
+        {%- for child in children[1:] -%}
+            {%- set ns.s = ns.s ~ ' ' ~ op_symbol(op) ~ ' ' ~ render_condition(child, frames, op) -%}
+        {%- endfor -%}
+        {%- set expr -%}{{ ns.s }}{%- endset -%}
+    {%- endif -%}
+
+    {%- if need_parens -%}
+        {%- set expr -%}({{ expr }}){%- endset -%}
+    {%- endif -%}
+
+    {%- if node.isNegated -%}!({{ expr }}){%- else -%}{{ expr }}{%- endif -%}
+{%- endmacro %}

@@ -1,0 +1,2223 @@
+{
+	"@context": {
+		"choppr": "http://ontology.tno.nl/normengineering/choppr#",
+		"separators": "@graph",
+		"recipe": "@graph",
+		"document": "@graph"
+	},
+	"@graph": [
+		{
+			"@id": "http://choppr.app/separators/1674744197514/",
+			"@context": {
+				"choppr": "http://ontology.tno.nl/normengineering/choppr#",
+				"rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+				"rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+				"src": "http://ontology.tno.nl/normengineering/source#",
+				"@base": "http://choppr.app/separators/1674744197514/",
+				"id": "@id",
+				"code": "choppr:separatorContent",
+				"type": "choppr:typeLabel",
+				"label": "choppr:captureLabel",
+				"numbering": "choppr:captureNumbering",
+				"title": "choppr:captureTitle"
+			},
+			"separators": [
+				{
+					"id": "aanwijzing-1",
+					"name": "Aanwijzing",
+					"description": "Bijvoorbeeld: \"Aanwijzing 1.1. Reikwijdte\"",
+					"code": "^Aanwijzing ([0-9]+\\.[0-9]+[a-z]?)\\. (.*)$",
+					"type": "aanwijzing",
+					"label": "Aanwijzing",
+					"numbering": "$1",
+					"title": "$2",
+					"@type": "choppr:Separator"
+				},
+				{
+					"id": "afkorting",
+					"name": "Afkorting",
+					"description": "Bijvoorbeeld: \"amvb algemene maatregel van bestuur\"",
+					"code": "^([a-zA-Z\\-]+\\s?[a-zA-Z]+?\\.?)\\s{2}",
+					"type": "afkorting",
+					"label": "Afkorting",
+					"numbering": "$1",
+					"title": "$2",
+					"@type": "choppr:Separator"
+				},
+				{
+					"id": "afkortingen",
+					"name": "Afkortingen",
+					"description": "Een lijst met afkortingen.",
+					"code": "^Afkortingen$",
+					"type": "Afkortingen",
+					"label": "Afkortingen",
+					"numbering": "",
+					"title": "",
+					"@type": "choppr:Separator"
+				},
+				{
+					"id": "artikel",
+					"name": "Artikel",
+					"description": "Bijvoorbeeld: 1a",
+					"code": "^Artikel\\s(\\d+?) (.*?)$",
+					"type": "artikel",
+					"label": "Artikel",
+					"numbering": "$1",
+					"title": "$2",
+					"delete": "0",
+					"@type": "choppr:Separator"
+				},
+				{
+					"id": "genaamd-lid",
+					"name": "Genaamd lid",
+					"description": "Bijvoorbeeld: \"Eerste lid.\"",
+					"code": "^([a-zA-Z]+) lid\\.|^(.+) lid: [a-zA-Z]+\\.",
+					"type": "lid",
+					"label": "Lid",
+					"numbering": "$1$2",
+					"title": "",
+					"@type": "choppr:Separator"
+				},
+				{
+					"id": "graad",
+					"name": "Graad",
+					"description": "Onderdeel aangeduid door een nummer en het karakter °",
+					"code": "^\\t\\t*(\\d)[°]\\..*$",
+					"type": "Graad",
+					"label": "$1°.",
+					"numbering": "$1",
+					"title": "",
+					"@type": "choppr:Separator"
+				},
+				{
+					"id": "hoofdstuk",
+					"name": "Hoofdstuk",
+					"description": "Hoofdstuk",
+					"code": "^Hoofdstuk\\s(.*)\\.(.*)$",
+					"type": "Hoofdstuk",
+					"label": "Hoofdstuk $1. $2",
+					"numbering": "$1",
+					"title": "$2",
+					"@type": "choppr:Separator"
+				},
+				{
+					"id": "lid",
+					"name": "Lid",
+					"description": "Genummerd lid zonder het woord Lid",
+					"code": "^\\t?(\\d*)\\.\\s(.*)",
+					"type": "Lid",
+					"label": "Lid $1.",
+					"numbering": "$1",
+					"title": "$2",
+					"@type": "choppr:Separator"
+				},
+				{
+					"id": "onderdeel-1-2",
+					"name": "Onderdeel",
+					"description": "Bijvoorbeeld: \"Onderdeel a:\"",
+					"code": "^Onderdeel\\s([a-zA-Z])[\\.:]",
+					"type": "onderdeel",
+					"label": "Onderdeel",
+					"numbering": "$1",
+					"title": "",
+					"@type": "choppr:Separator"
+				},
+				{
+					"id": "opsomming",
+					"name": "Opsomming *",
+					"description": "Opsomming aangeduid met een *",
+					"code": "^\\t+\\*(.*)$",
+					"type": "Opsomming",
+					"label": "opsomming",
+					"numbering": "",
+					"title": "",
+					"@type": "choppr:Separator"
+				},
+				{
+					"id": "opsomming-1",
+					"name": "Opsomming -",
+					"description": "Opsomming aangeduid met een - of een –",
+					"code": "^\\t+[−–]+[\\.]?\\t",
+					"type": "opsomming",
+					"label": "Opsomming",
+					"numbering": "",
+					"title": "",
+					"@type": "choppr:Separator"
+				},
+				{
+					"id": "paragraaf",
+					"name": "Paragraaf",
+					"description": "Paragraaf",
+					"code": "^§ ([0-9]+\\.?[0-9]+)\\.?(.*)$",
+					"type": "Paragraaf",
+					"label": "Paragraaf",
+					"numbering": "$1",
+					"title": "$2",
+					"@type": "choppr:Separator"
+				},
+				{
+					"id": "sentence-1",
+					"name": "Zin",
+					"description": "Alle zinnen",
+					"code": "\\.\\s",
+					"type": "zin",
+					"label": "Zin",
+					"numbering": "",
+					"title": "",
+					"@type": "choppr:Separator"
+				},
+				{
+					"id": "sub",
+					"name": "Sub",
+					"description": "Onderverdeling aangeduid door een letter.",
+					"code": "^\\t\\t*([a-zA-Z])\\.",
+					"type": "Sub",
+					"label": "Sub $1",
+					"numbering": "$1",
+					"title": "",
+					"@type": "choppr:Separator"
+				},
+				{
+					"id": "toelichting",
+					"name": "Toelichting",
+					"description": "Toelichting bij een aanwijzing of artikel.",
+					"code": "^Toelichting (.*?)$",
+					"type": "toelichting",
+					"label": "Toelichting",
+					"numbering": "",
+					"title": "$1",
+					"delete": "0",
+					"@type": "choppr:Separator"
+				},
+				{
+					"id": "voorbeeld",
+					"name": "Voorbeeld",
+					"description": "Bijvoorbeeld: \"Voorbeeld bij het eerste lid.\"",
+					"code": "^Voorbeeld.*$",
+					"type": "voorbeeld",
+					"label": "Voorbeeld",
+					"numbering": "",
+					"title": "",
+					"@type": "choppr:Separator"
+				},
+				{
+					"id": "separator-16",
+					"name": "Separator",
+					"@type": "choppr:Separator",
+					"type": "",
+					"code": "",
+					"label": "",
+					"title": "",
+					"numbering": "",
+					"description": "",
+					"user": "choppr"
+				},
+				{
+					"id": "separator-17",
+					"name": "Artikelsgewijze toelichting",
+					"description": "",
+					"code": "^Artikelsgewijze toelichting$",
+					"type": "Artikelsgewijze toelichting",
+					"label": "",
+					"numbering": "",
+					"title": "Artikelsgewijze toelichting",
+					"delete": "0",
+					"@type": "choppr:Separator"
+				},
+				{
+					"id": "separator-18",
+					"name": "Opsomming",
+					"description": "",
+					"code": "\\t•\\t(.*?)",
+					"type": "Opsomming",
+					"label": "",
+					"numbering": "$1",
+					"title": "",
+					"delete": "0",
+					"@type": "choppr:Separator"
+				},
+				{
+					"id": "separator-19",
+					"name": "Sub opsomming",
+					"description": "",
+					"code": "\\t◦\\t(.*)",
+					"type": "Sub",
+					"label": "",
+					"numbering": "",
+					"title": "",
+					"delete": "0",
+					"@type": "choppr:Separator"
+				},
+				{
+					"id": "separator-20",
+					"name": "Opsomming Separator",
+					"description": "",
+					"code": "^(.)[.:](.*?)$",
+					"type": "Opsomming",
+					"label": "",
+					"numbering": "$1",
+					"title": "",
+					"delete": "0",
+					"@type": "choppr:Separator"
+				}
+			]
+		},
+		{
+			"@id": "http://choppr.app/recipes/1674744197514/",
+			"recipe": {
+				"@id": "http://choppr.app/recipes/1674744197514/",
+				"@type": "choppr:Recipe",
+				"@context": {
+					"choppr": "http://ontology.tno.nl/normengineering/choppr#",
+					"rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+					"rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+					"src": "http://ontology.tno.nl/normengineering/source#",
+					"@base": "http://choppr.app/recipes/1674744197514/",
+					"id": "@id",
+					"code": "choppr:separatorContent",
+					"type": "choppr:typeLabel",
+					"label": "choppr:captureLabel",
+					"numbering": "choppr:captureNumbering",
+					"title": "choppr:captureTitle",
+					"children": {
+						"@id": "choppr:stepSeparators",
+						"@container": "@list"
+					},
+					"class": "@type"
+				},
+				"children": [
+					{
+						"class": "choppr:Separator",
+						"action": "choppr.regexp",
+						"id": "toelichting",
+						"code": "^Toelichting (.*?)$",
+						"type": "toelichting",
+						"label": "Toelichting",
+						"numbering": "",
+						"title": "$1",
+						"output": "0.0.toelichting",
+						"index": [
+							"0001"
+						],
+						"step": 0
+					},
+					{
+						"class": "choppr:Separator",
+						"action": "choppr.regexp",
+						"id": "separator-17",
+						"code": "^Artikelsgewijze toelichting$",
+						"type": "Artikelsgewijze toelichting",
+						"label": "",
+						"numbering": "",
+						"title": "Artikelsgewijze toelichting",
+						"output": "1.0.separator-17",
+						"index": [
+							"0001"
+						],
+						"step": 1
+					},
+					{
+						"class": "choppr:Separator",
+						"action": "choppr.regexp",
+						"id": "artikel",
+						"code": "^Artikel\\s(\\d+?) (.*?)$",
+						"type": "artikel",
+						"label": "Artikel",
+						"numbering": "$1",
+						"title": "$2",
+						"output": "0.0.artikel",
+						"index": [
+							"0001"
+						],
+						"step": 2
+					},
+					{
+						"class": "choppr:Separator",
+						"action": "choppr.regexp",
+						"id": "separator-18",
+						"code": "\\t•\\t(.*?)",
+						"type": "Opsomming",
+						"label": "",
+						"numbering": "$1",
+						"title": "",
+						"output": "0.0.separator-18",
+						"index": [
+							"0001"
+						],
+						"step": 3
+					},
+					{
+						"class": "choppr:Separator",
+						"action": "choppr.regexp",
+						"id": "separator-18",
+						"code": "\\t•\\t(.*?)",
+						"type": "Opsomming",
+						"label": "",
+						"numbering": "$1",
+						"title": "",
+						"output": "0.0.separator-18",
+						"index": [
+							"0001"
+						],
+						"step": 3
+					},
+					{
+						"class": "choppr:Separator",
+						"action": "choppr.regexp",
+						"id": "separator-20",
+						"code": "^(.)[.:].*$",
+						"type": "Opsomming",
+						"label": "",
+						"numbering": "$1",
+						"title": "",
+						"output": "0.0.separator-20",
+						"index": [
+							"0001"
+						],
+						"step": 4,
+						"inactive": true
+					},
+					{
+						"class": "choppr:Separator",
+						"action": "choppr.regexp",
+						"id": "separator-20",
+						"code": "^(.)[.:](.*?)$",
+						"type": "Opsomming",
+						"label": "",
+						"numbering": "$1",
+						"title": "",
+						"output": "0.0.separator-20",
+						"index": [
+							"0001"
+						],
+						"step": 4,
+						"inactive": true
+					}
+				]
+			}
+		},
+		{
+			"@id": "http://choppr.app/documents/1674744197514",
+			"document": {
+				"@id": "http://choppr.app/documents/1674744197514/document",
+				"@type": "src:Document",
+				"type": "Document",
+				"@context": {
+					"choppr": "http://ontology.tno.nl/normengineering/choppr#",
+					"rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+					"rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+					"src": "http://ontology.tno.nl/normengineering/source#",
+					"recipe": "http://choppr.app/recipes/1674744197514/",
+					"@base": "http://choppr.app/documents/1674744197514/",
+					"IRI": "@id",
+					"type": "src:hasTypeLabel",
+					"label": "src:hasRenderLabel",
+					"numbering": "choppr:chunkNumber",
+					"title": "choppr:chunkTitle",
+					"content": "src:hasContent",
+					"containsAsTitle": {
+						"@type": "@id",
+						"@id": "src:containsAsTitle"
+					},
+					"separator": {
+						"@type": "@id",
+						"@id": "choppr:chunkSeparator"
+					},
+					"children": {
+						"@id": "src:hasChildElementOrdering",
+						"@container": "@list"
+					},
+					"class": "@type"
+				},
+				"children": [
+					{
+						"type": "chunk",
+						"id": "0002",
+						"class": "src:LeafElement",
+						"content": "Intitulé",
+						"IRI": "Document/0002_chunk"
+					},
+					{
+						"type": "chunk",
+						"id": "0003",
+						"class": "src:LeafElement",
+						"content": "Subsidieregeling IMF 2020 Fryslân",
+						"IRI": "Document/0003_chunk"
+					},
+					{
+						"type": "artikel",
+						"id": "002e",
+						"label": "Artikel",
+						"numbering": "1",
+						"title": "Begripsomschrijvingen",
+						"separator": "recipe:artikel",
+						"class": "src:NonLeafElement",
+						"children": [
+							{
+								"type": "chunk",
+								"id": "0004",
+								"class": "src:LeafElement",
+								"content": "Artikel 1 Begripsomschrijvingen",
+								"IRI": "Document/002e_artikel_1/0004_chunk"
+							},
+							{
+								"type": "chunk",
+								"id": "0005",
+								"class": "src:LeafElement",
+								"content": "In deze regeling wordt verstaan onder:",
+								"IRI": "Document/002e_artikel_1/0005_chunk"
+							},
+							{
+								"type": "chunk",
+								"id": "002H",
+								"class": "src:LeafElement",
+								"content": "a. Asv: Algemene subsidieverordening provincie Fryslân 2013;\n",
+								"IRI": "Document/002e_artikel_1/002H_chunk"
+							},
+							{
+								"type": "chunk",
+								"id": "002I",
+								"class": "src:LeafElement",
+								"content": "b. bestaande periodiek terugkerende activiteit: een activiteit die vaker dan eens per vijf jaar wordt gehouden of uitgevoerd;\n",
+								"IRI": "Document/002e_artikel_1/002I_chunk"
+							},
+							{
+								"type": "chunk",
+								"id": "002J",
+								"class": "src:LeafElement",
+								"content": "c. evenement: samengesteld geheel van voor publiek toegankelijke culturele, informatieve of historische activiteiten met een tijdelijk karakter;\n",
+								"IRI": "Document/002e_artikel_1/002J_chunk"
+							},
+							{
+								"type": "chunk",
+								"id": "002K",
+								"class": "src:LeafElement",
+								"content": "d. ontmoetingsplekken: een locatie die voor iedereen uit het dorp of stad, ongeacht godsdienstige of politieke overtuiging, vrij en onbeperkt toegankelijk is ten behoeve van verenigingsleven en sociaal-culturele activiteiten met multifunctioneel gebruik van de beschikbare ruimtes;\n",
+								"IRI": "Document/002e_artikel_1/002K_chunk"
+							},
+							{
+								"type": "chunk",
+								"id": "002L",
+								"class": "src:LeafElement",
+								"content": "e. reguliere de-minimisverordening: Verordening (EU) Nr. 1407/2013 van de Commissie van 18 december 2013 betreffende de toepassing van de artikelen 107 en 108 van het Verdrag betreffende werking van de Europese Unie op de-minimissteun (2013 / L351);\n",
+								"IRI": "Document/002e_artikel_1/002L_chunk"
+							},
+							{
+								"type": "chunk",
+								"id": "002M",
+								"class": "src:LeafElement",
+								"content": "f. landbouw de-minimisverordening: Verordening (EU) Nr. 1408/2013 van de Commissie van 18 december 2013 inzake de toepassing van de artikelen 107 en 108 van het Verdrag betreffende de werking van de Europese Unie op de-minimissteun in de landbouwsector (2013/ L252);\n",
+								"IRI": "Document/002e_artikel_1/002M_chunk"
+							},
+							{
+								"type": "chunk",
+								"id": "002N",
+								"class": "src:LeafElement",
+								"content": "g. economische activiteit: iedere activiteit waarbij goederen of diensten op een markt worden aangeboden;\n",
+								"IRI": "Document/002e_artikel_1/002N_chunk"
+							},
+							{
+								"type": "chunk",
+								"id": "002O",
+								"class": "src:LeafElement",
+								"content": "h. micro-onderneming: onderneming met minder dan tien werknemers en een jaarlijkse omzet (het in een bepaalde periode omgezette bedrag) of balans (een staat van de activa en passiva van een onderneming) van minder dan twee miljoen euro, zoals omschreven in artikel 2, punt 1, van de bijlage bij Aanbeveling 2003/361 van de Commissie.\n",
+								"IRI": "Document/002e_artikel_1/002O_chunk"
+							},
+							{
+								"type": "chunk",
+								"id": "002P",
+								"class": "src:LeafElement",
+								"content": "i. kleine onderneming: minder dan vijftig werknemers en een jaarlijkse omzet of balans van minder dan tien miljoen euro, zoals omschreven in artikel 2, punt 1, van de bijlage bij Aanbeveling 2003/361 van de Commissie.",
+								"IRI": "Document/002e_artikel_1/002P_chunk"
+							}
+						],
+						"IRI": "Document/002e_artikel_1",
+						"containsAsTitle": "Document/002e_artikel_1/0004_chunk"
+					},
+					{
+						"type": "artikel",
+						"id": "002f",
+						"label": "Artikel",
+						"numbering": "2",
+						"title": "Subsidiabele activiteiten",
+						"separator": "recipe:artikel",
+						"class": "src:NonLeafElement",
+						"children": [
+							{
+								"type": "chunk",
+								"id": "0007",
+								"class": "src:LeafElement",
+								"content": "Artikel 2 Subsidiabele activiteiten",
+								"IRI": "Document/002f_artikel_2/0007_chunk"
+							},
+							{
+								"type": "chunk",
+								"id": "0008",
+								"class": "src:LeafElement",
+								"content": "Gedeputeerde staten kunnen ter bevordering van de leefbaarheid in de provincie Fryslân subsidie verstrekken voor:",
+								"IRI": "Document/002f_artikel_2/0008_chunk"
+							},
+							{
+								"type": "chunk",
+								"id": "002Q",
+								"class": "src:LeafElement",
+								"content": "a. kleine maatschappelijke initiatieven, waaronder nieuwe evenementen;\n",
+								"IRI": "Document/002f_artikel_2/002Q_chunk"
+							},
+							{
+								"type": "chunk",
+								"id": "002R",
+								"class": "src:LeafElement",
+								"content": "b. middelgrote maatschappelijke initiatieven, niet zijnde een nieuw evenement;\n",
+								"IRI": "Document/002f_artikel_2/002R_chunk"
+							},
+							{
+								"type": "chunk",
+								"id": "002S",
+								"class": "src:LeafElement",
+								"content": "c. grote maatschappelijke initiatieven, niet zijnde een nieuw evenement.",
+								"IRI": "Document/002f_artikel_2/002S_chunk"
+							}
+						],
+						"IRI": "Document/002f_artikel_2",
+						"containsAsTitle": "Document/002f_artikel_2/0007_chunk"
+					},
+					{
+						"type": "artikel",
+						"id": "002g",
+						"label": "Artikel",
+						"numbering": "3",
+						"title": "Doelgroep",
+						"separator": "recipe:artikel",
+						"class": "src:NonLeafElement",
+						"children": [
+							{
+								"type": "chunk",
+								"id": "000a",
+								"class": "src:LeafElement",
+								"content": "Artikel 3 Doelgroep",
+								"IRI": "Document/002g_artikel_3/000a_chunk"
+							},
+							{
+								"type": "chunk",
+								"id": "002T",
+								"class": "src:LeafElement",
+								"content": "1.Subsidie voor kleine maatschappelijke initiatieven en nieuwe evenementen wordt uitsluitend verstrekt aan kleine of micro-ondernemingen, zoals besloten vennootschappen, naamloze vennootschappen en coöperaties, als ook aan verenigingen, stichtingen, groepen van ten minste vijf natuurlijke personen en Staatsbosbeheer.\n",
+								"IRI": "Document/002g_artikel_3/002T_chunk"
+							},
+							{
+								"type": "chunk",
+								"id": "002U",
+								"class": "src:LeafElement",
+								"content": "2.Subsidie voor middelgroot en grote maatschappelijke initiatieven, niet zijnde nieuwe evenementen, wordt uitsluitend verstrekt aan verenigingen, stichtingen, coöperaties en Staatsbosbeheer.",
+								"IRI": "Document/002g_artikel_3/002U_chunk"
+							}
+						],
+						"IRI": "Document/002g_artikel_3",
+						"containsAsTitle": "Document/002g_artikel_3/000a_chunk"
+					},
+					{
+						"type": "artikel",
+						"id": "002h",
+						"label": "Artikel",
+						"numbering": "4",
+						"title": "Gebieden",
+						"separator": "recipe:artikel",
+						"class": "src:NonLeafElement",
+						"children": [
+							{
+								"type": "chunk",
+								"id": "000c",
+								"class": "src:LeafElement",
+								"content": "Artikel 4 Gebieden",
+								"IRI": "Document/002h_artikel_4/000c_chunk"
+							},
+							{
+								"type": "chunk",
+								"id": "000d",
+								"class": "src:LeafElement",
+								"content": "Ten behoeve van de subsidieverstrekking hanteren gedeputeerde staten de volgende gebiedsindeling:",
+								"IRI": "Document/002h_artikel_4/000d_chunk"
+							},
+							{
+								"type": "chunk",
+								"id": "002V",
+								"class": "src:LeafElement",
+								"content": "a. Waddeneilanden, bestaande uit de gemeenten: Ameland, Schiermonnikoog, Terschelling en Vlieland;\n",
+								"IRI": "Document/002h_artikel_4/002V_chunk"
+							},
+							{
+								"type": "chunk",
+								"id": "002W",
+								"class": "src:LeafElement",
+								"content": "b. Noordoost Fryslân, bestaande uit de gemeenten: Noardeast- Fryslân, Dantumadiel, Achtkarspelen en Tytsjerksteradiel;\n",
+								"IRI": "Document/002h_artikel_4/002W_chunk"
+							},
+							{
+								"type": "chunk",
+								"id": "002X",
+								"class": "src:LeafElement",
+								"content": "c. Noordwest Fryslân, bestaande uit de gemeenten: Harlingen, de Waadhoeke en Leeuwarden;\n",
+								"IRI": "Document/002h_artikel_4/002X_chunk"
+							},
+							{
+								"type": "chunk",
+								"id": "002Y",
+								"class": "src:LeafElement",
+								"content": "d. Zuidwest Fryslân, bestaande uit de gemeenten: de Fryske Marren en Súdwest-Fryslân;\n",
+								"IRI": "Document/002h_artikel_4/002Y_chunk"
+							},
+							{
+								"type": "chunk",
+								"id": "002Z",
+								"class": "src:LeafElement",
+								"content": "e. Zuidoost Fryslân, bestaande uit de gemeenten: Smallingerland, Opsterland, Weststellingwerf, Ooststellingwerf en Heerenveen.",
+								"IRI": "Document/002h_artikel_4/002Z_chunk"
+							}
+						],
+						"IRI": "Document/002h_artikel_4",
+						"containsAsTitle": "Document/002h_artikel_4/000c_chunk"
+					},
+					{
+						"type": "artikel",
+						"id": "002i",
+						"label": "Artikel",
+						"numbering": "5",
+						"title": "Openstelling",
+						"separator": "recipe:artikel",
+						"class": "src:NonLeafElement",
+						"children": [
+							{
+								"type": "chunk",
+								"id": "000f",
+								"class": "src:LeafElement",
+								"content": "Artikel 5 Openstelling",
+								"IRI": "Document/002i_artikel_5/000f_chunk"
+							},
+							{
+								"type": "chunk",
+								"id": "0030",
+								"class": "src:LeafElement",
+								"content": "1.Gedeputeerde staten stellen per gebied als bedoeld in artikel 4 een openstellingsbesluit vast.\n",
+								"IRI": "Document/002i_artikel_5/0030_chunk"
+							},
+							{
+								"type": "chunk",
+								"id": "0031",
+								"class": "src:LeafElement",
+								"content": "2.Een openstellingsbesluit bevat ten minste een aanvraagperiode en een subsidieplafond. Gedeputeerde Staten kunnen de hoogte van het subsidieplafond per gebied na sluiting van de openstellingsperiode wijzigen. Indien de wijziging leidt tot een verlaging van het beschikbare budget per gebied, heeft dit geen invloed op de op ingediende aanvragen.\n",
+								"IRI": "Document/002i_artikel_5/0031_chunk"
+							},
+							{
+								"type": "chunk",
+								"id": "0032",
+								"class": "src:LeafElement",
+								"content": "3.Gedeputeerde staten kunnen in het openstellingsbesluit nadere regels stellen met betrekking tot: \n\t◦\ta. de subsidiabele activiteiten;\n\t◦\tb. het indienen van een aanvraag;\n\t◦\tc. de kring van subsidieontvangers;\n\t◦\td. toetsingscriteria;\n\t◦\te. de hoogte of berekeningswijze van de subsidie; \n\t◦\tf. de subsidiabele kosten.\n",
+								"IRI": "Document/002i_artikel_5/0032_chunk"
+							},
+							{
+								"type": "chunk",
+								"id": "0033",
+								"class": "src:LeafElement",
+								"content": "4.Gedeputeerde staten kunnen ten behoeve van de openstelling advies vragen aan de in artikel 9 bedoelde adviescommissies.",
+								"IRI": "Document/002i_artikel_5/0033_chunk"
+							}
+						],
+						"IRI": "Document/002i_artikel_5",
+						"containsAsTitle": "Document/002i_artikel_5/000f_chunk"
+					},
+					{
+						"type": "artikel",
+						"id": "002j",
+						"label": "Artikel",
+						"numbering": "6",
+						"title": "Aanvraag",
+						"separator": "recipe:artikel",
+						"class": "src:NonLeafElement",
+						"children": [
+							{
+								"type": "chunk",
+								"id": "000h",
+								"class": "src:LeafElement",
+								"content": "Artikel 6 Aanvraag",
+								"IRI": "Document/002j_artikel_6/000h_chunk"
+							},
+							{
+								"type": "chunk",
+								"id": "0034",
+								"class": "src:LeafElement",
+								"content": "1.Een aanvraag wordt ingediend binnen de in het openstellingsbesluit vastgestelde aanvraagperiode.\n",
+								"IRI": "Document/002j_artikel_6/0034_chunk"
+							},
+							{
+								"type": "chunk",
+								"id": "0035",
+								"class": "src:LeafElement",
+								"content": "2.De aanvraag wordt ingediend met het door gedeputeerde staten vastgestelde aanvraagformulier.\n",
+								"IRI": "Document/002j_artikel_6/0035_chunk"
+							},
+							{
+								"type": "chunk",
+								"id": "0036",
+								"class": "src:LeafElement",
+								"content": "3.Per aanvrager worden per kalenderjaar maximaal drie aanvragen in behandeling genomen.",
+								"IRI": "Document/002j_artikel_6/0036_chunk"
+							}
+						],
+						"IRI": "Document/002j_artikel_6",
+						"containsAsTitle": "Document/002j_artikel_6/000h_chunk"
+					},
+					{
+						"type": "artikel",
+						"id": "002k",
+						"label": "Artikel",
+						"numbering": "7",
+						"title": "Weigeringsgronden",
+						"separator": "recipe:artikel",
+						"class": "src:NonLeafElement",
+						"children": [
+							{
+								"type": "chunk",
+								"id": "000j",
+								"class": "src:LeafElement",
+								"content": "Artikel 7 Weigeringsgronden",
+								"IRI": "Document/002k_artikel_7/000j_chunk"
+							},
+							{
+								"type": "chunk",
+								"id": "000k",
+								"class": "src:LeafElement",
+								"content": "Een subsidie wordt in ieder geval geweigerd indien:",
+								"IRI": "Document/002k_artikel_7/000k_chunk"
+							},
+							{
+								"type": "chunk",
+								"id": "0037",
+								"class": "src:LeafElement",
+								"content": "a. de activiteit al geheel of deels is verricht voordat de aanvraag is ingediend;\n",
+								"IRI": "Document/002k_artikel_7/0037_chunk"
+							},
+							{
+								"type": "chunk",
+								"id": "0038",
+								"class": "src:LeafElement",
+								"content": "b. de activiteit geheel of deels gericht is op het behalen van winst; met uitzondering van die activiteiten die economische van aard zijn en door een kleine of micro-onderneming zijn ingediend, wanneer de te verlenen subsidie niet de drempelbedragen genoemd uit de de-minimisverordeningen zoals opgenomen onder artikel 1, onder e en f overschrijden;\n",
+								"IRI": "Document/002k_artikel_7/0038_chunk"
+							},
+							{
+								"type": "chunk",
+								"id": "0039",
+								"class": "src:LeafElement",
+								"content": "c. voor de activiteit een andere provinciale subsidie is of kan worden verstrekt;\n",
+								"IRI": "Document/002k_artikel_7/0039_chunk"
+							},
+							{
+								"type": "chunk",
+								"id": "003a",
+								"class": "src:LeafElement",
+								"content": "d. het aannemelijk is dat de activiteit leidt tot investeringen die ongedekte toekomstige lasten voor onderhoud of instandhouding tot gevolg hebben;\n",
+								"IRI": "Document/002k_artikel_7/003a_chunk"
+							},
+							{
+								"type": "chunk",
+								"id": "003b",
+								"class": "src:LeafElement",
+								"content": "e. de activiteit geheel of deels bestaat uit een bestaande periodiek terugkerende activiteit;\n",
+								"IRI": "Document/002k_artikel_7/003b_chunk"
+							},
+							{
+								"type": "chunk",
+								"id": "003c",
+								"class": "src:LeafElement",
+								"content": "f. er gegronde reden bestaat dat de activiteit in financiële, organisatorische of technische zin niet haalbaar is;\n",
+								"IRI": "Document/002k_artikel_7/003c_chunk"
+							},
+							{
+								"type": "chunk",
+								"id": "003d",
+								"class": "src:LeafElement",
+								"content": "g. de activiteiten niet zullen leiden tot een betaling van werkelijk gemaakte kosten;\n",
+								"IRI": "Document/002k_artikel_7/003d_chunk"
+							},
+							{
+								"type": "chunk",
+								"id": "003e",
+								"class": "src:LeafElement",
+								"content": "h. er onder activiteiten die vallen onder artikel 2, onder c geen sprake is van gemeentelijke cofinanciering door één of meer gemeenten;\n",
+								"IRI": "Document/002k_artikel_7/003e_chunk"
+							},
+							{
+								"type": "chunk",
+								"id": "003f",
+								"class": "src:LeafElement",
+								"content": "i. de subsidieaanvraag na rangschikking als bedoeld in artikel 8, eerste lid, minder dan 10 punten heeft ontvangen;\n",
+								"IRI": "Document/002k_artikel_7/003f_chunk"
+							},
+							{
+								"type": "chunk",
+								"id": "003g",
+								"class": "src:LeafElement",
+								"content": "j. de aanvraag betrekking heeft op activiteiten die worden uitgesloten van subsidie op grond van beleid van provinciale staten of gedeputeerde staten;\n",
+								"IRI": "Document/002k_artikel_7/003g_chunk"
+							},
+							{
+								"type": "chunk",
+								"id": "003h",
+								"class": "src:LeafElement",
+								"content": "k. de activiteit geheel of gedeeltelijk bestaat uit het opstellen van een dorps- stads- of wijkvisie.",
+								"IRI": "Document/002k_artikel_7/003h_chunk"
+							}
+						],
+						"IRI": "Document/002k_artikel_7",
+						"containsAsTitle": "Document/002k_artikel_7/000j_chunk"
+					},
+					{
+						"type": "artikel",
+						"id": "002l",
+						"label": "Artikel",
+						"numbering": "8",
+						"title": "Verdeelsystematiek",
+						"separator": "recipe:artikel",
+						"class": "src:NonLeafElement",
+						"children": [
+							{
+								"type": "chunk",
+								"id": "000m",
+								"class": "src:LeafElement",
+								"content": "Artikel 8 Verdeelsystematiek",
+								"IRI": "Document/002l_artikel_8/000m_chunk"
+							},
+							{
+								"type": "chunk",
+								"id": "003i",
+								"class": "src:LeafElement",
+								"content": "1.Gedeputeerde staten rangschikken de voor subsidieverlening in aanmerking komende aanvragen per gebied zodanig dat een aanvraag hoger gerangschikt wordt naarmate die naar hun oordeel meer voldoet aan de volgende criteria: \n\t◦\ta. de mate waarin er draagvlak voor de activiteit bestaat in het betrokken gebied (draagvlak);\n\t◦\tb. de mate waarin de activiteit leidt tot een voortdurende situatie of een voortdurende activiteit (continuïteit);\n\t◦\tc. de mate waarin de activiteit samenwerking bewerkstelligt in de uitvoering van het project (samenwerking);\n\t◦\td. de mate waarin de activiteit een positieve bijdrage levert aan kansen voor mensen die een minder kansrijke positie in de samenleving hebben (empowerment);\n\t◦\te. de mate waarin de activiteit een positieve bijdrage levert aan natuur en milieu (ecology);\n\t◦\tf. de mate waarin de activiteit een positieve bijdrage levert aan het zichtbaarheid van het Frysk en/of de Friese streektalen. \n",
+								"IRI": "Document/002l_artikel_8/003i_chunk"
+							},
+							{
+								"type": "chunk",
+								"id": "003j",
+								"class": "src:LeafElement",
+								"content": "2.Ten behoeve van de rangschikking worden maximaal 27 punten toegekend met de volgende maxima per criterium: \n\t◦\ta. 5 punten voor draagvlak;\n\t◦\tb. 5 punten voor continuïteit;\n\t◦\tc. 5 punten voor samenwerking;\n\t◦\td. 5 punten voor empowerment;\n\t◦\te. 5 punten voor ecology;\n\t◦\tf. 2 punten voor taal.\n",
+								"IRI": "Document/002l_artikel_8/003j_chunk"
+							},
+							{
+								"type": "chunk",
+								"id": "003k",
+								"class": "src:LeafElement",
+								"content": "3.Per criterium genoemd in het tweede lid, onderdeel a tot en met e worden: \n\t◦\ta. geen punten toegekend indien niet wordt voldaan aan het criterium;\n\t◦\tb. één punt toegekend indien er in zeer geringe mate wordt voldaan aan het criterium;\n\t◦\tc. twee punten toegekend indien er in geringe mate wordt voldaan aan het criterium;\n\t◦\td. drie punten toegekend indien gemiddeld wordt voldaan aan het criterium;\n\t◦\te. vier punten toegekend indien in ruime mate wordt voldaan aan het criterium;\n\t◦\tf. vijf punten toegekend indien in zeer ruime mate wordt voldaan aan het criterium.\n",
+								"IRI": "Document/002l_artikel_8/003k_chunk"
+							},
+							{
+								"type": "chunk",
+								"id": "003l",
+								"class": "src:LeafElement",
+								"content": "4.Voor het criterium genoemd in het tweede lid, onder f worden: \n\t◦\ta. geen punten toegekend indien het project niets doet met het Fries en/of de in het gebied gebruikte Friese streektaal. \n\t◦\tb. één punt toegekend indien het project het Fries en/of de in het gebied gebruikte Friese streektaal meer zichtbaar maakt door middel van voor de hand liggende zaken.\n\t◦\tc. twee punten toegekend indien het project bovengemiddeld bijdraagt aan de zichtbaarheid van het Fries en/of de in het gebied gebruikte Friese streektaal. \n",
+								"IRI": "Document/002l_artikel_8/003l_chunk"
+							},
+							{
+								"type": "chunk",
+								"id": "003m",
+								"class": "src:LeafElement",
+								"content": "5.Gedeputeerde staten verdelen het beschikbare bedrag in de volgorde van de rangschikking voor aanvragen die minimaal 10 punten hebben gescoord.\n",
+								"IRI": "Document/002l_artikel_8/003m_chunk"
+							},
+							{
+								"type": "chunk",
+								"id": "003n",
+								"class": "src:LeafElement",
+								"content": "6.Voor zover door verstrekking van subsidie voor aanvragen, die even hoog zijn gerangschikt, het subsidieplafond wordt overschreden, wordt de onderlinge rangschikking van die aanvragen vastgesteld door middel van loting.",
+								"IRI": "Document/002l_artikel_8/003n_chunk"
+							}
+						],
+						"IRI": "Document/002l_artikel_8",
+						"containsAsTitle": "Document/002l_artikel_8/000m_chunk"
+					},
+					{
+						"type": "artikel",
+						"id": "002m",
+						"label": "Artikel",
+						"numbering": "9",
+						"title": "Adviescommissies",
+						"separator": "recipe:artikel",
+						"class": "src:NonLeafElement",
+						"children": [
+							{
+								"type": "chunk",
+								"id": "000o",
+								"class": "src:LeafElement",
+								"content": "Artikel 9 Adviescommissies",
+								"IRI": "Document/002m_artikel_9/000o_chunk"
+							},
+							{
+								"type": "chunk",
+								"id": "003o",
+								"class": "src:LeafElement",
+								"content": "1.Gedeputeerde staten stellen per gebied adviescommissies in die in elk geval tot taak hebben te adviseren over de rangschikking van aanvragen.\n",
+								"IRI": "Document/002m_artikel_9/003o_chunk"
+							},
+							{
+								"type": "chunk",
+								"id": "003p",
+								"class": "src:LeafElement",
+								"content": "2.Gedeputeerde staten stellen voor de adviescommissies een reglement vast.",
+								"IRI": "Document/002m_artikel_9/003p_chunk"
+							}
+						],
+						"IRI": "Document/002m_artikel_9",
+						"containsAsTitle": "Document/002m_artikel_9/000o_chunk"
+					},
+					{
+						"type": "artikel",
+						"id": "002n",
+						"label": "Artikel",
+						"numbering": "10",
+						"title": "(Niet) subsidiabele kosten",
+						"separator": "recipe:artikel",
+						"class": "src:NonLeafElement",
+						"children": [
+							{
+								"type": "chunk",
+								"id": "000q",
+								"class": "src:LeafElement",
+								"content": "Artikel 10 (Niet) subsidiabele kosten",
+								"IRI": "Document/002n_artikel_10/000q_chunk"
+							},
+							{
+								"type": "chunk",
+								"id": "003q",
+								"class": "src:LeafElement",
+								"content": "1.In aanvulling op artikel 1.10 van de Asv komen kosten die verband houden met de reguliere werkzaamheden van de subsidieontvanger niet voor subsidie in aanmerking. \n",
+								"IRI": "Document/002n_artikel_10/003q_chunk"
+							},
+							{
+								"type": "chunk",
+								"id": "003r",
+								"class": "src:LeafElement",
+								"content": "2.Voor het bepalen van de subsidiabele kosten worden vrijwilligersuren gewaardeerd op het geldende minimumloon voor 22 jaar en ouder per uur per vrijwilliger op basis van een volledige werkweek van 36 uur. \n",
+								"IRI": "Document/002n_artikel_10/003r_chunk"
+							},
+							{
+								"type": "chunk",
+								"id": "003s",
+								"class": "src:LeafElement",
+								"content": "3.Tevens zijn niet subsidiabel de kosten die verband houden met: \n\t◦\t1° het organiseren van een (dorps- of buurt)feest, borrel, optocht, braderie of barbecue of daarmee gelijk te stellen activiteit;\n\t◦\t2° het schrijven of uitgeven van een boek en het produceren van een film;\n\t◦\t3° het ontwerpen, vervaardigen of plaatsen van een standbeeld of gedenkplaat;\n\t◦\t4° Kosten van rente, bankdiensten, financieringen, gerechtelijke procedures, boetes of sancties;\n\t◦\t5° Aankoop van onroerende zaken voor zover het aankoopbedrag hoger is dan 10% van de totale subsidiabele projectkosten;\n\t◦\t6° kosten die zijn gemaakt voorafgaand aan de datum van ontvangst van de subsidieaanvraag, tenzij het kosten betreft van voorbereiding, planvorming, onderzoek of voorlichting van de voorgenomen activiteit.\n\t◦\t7° Loonkosten voor zover dit eigen uren van de aanvrager betreffen. \n",
+								"IRI": "Document/002n_artikel_10/003s_chunk"
+							},
+							{
+								"type": "chunk",
+								"id": "003t",
+								"class": "src:LeafElement",
+								"content": "4.Kosten van rente, bankdiensten, financieringen, gerechtelijke procedures, boetes of sancties komen niet voor subsidie in aanmerking.\n",
+								"IRI": "Document/002n_artikel_10/003t_chunk"
+							},
+							{
+								"type": "chunk",
+								"id": "003u",
+								"class": "src:LeafElement",
+								"content": "5.Kosten die zijn gemaakt voorafgaand aan de datum van ontvangst van de subsidieaanvraag komen niet voor subsidie in aanmerking, tenzij het kosten betreft van voorbereiding, planvorming, onderzoek of voorlichting.\n",
+								"IRI": "Document/002n_artikel_10/003u_chunk"
+							},
+							{
+								"type": "chunk",
+								"id": "003v",
+								"class": "src:LeafElement",
+								"content": "6.Omzetbelasting is slechts subsidiabel voor zover deze voor de aanvrager niet verrekenbaar is. ",
+								"IRI": "Document/002n_artikel_10/003v_chunk"
+							}
+						],
+						"IRI": "Document/002n_artikel_10",
+						"containsAsTitle": "Document/002n_artikel_10/000q_chunk"
+					},
+					{
+						"type": "artikel",
+						"id": "002o",
+						"label": "Artikel",
+						"numbering": "11",
+						"title": "Subsidiehoogte",
+						"separator": "recipe:artikel",
+						"class": "src:NonLeafElement",
+						"children": [
+							{
+								"type": "chunk",
+								"id": "000s",
+								"class": "src:LeafElement",
+								"content": "Artikel 11 Subsidiehoogte",
+								"IRI": "Document/002o_artikel_11/000s_chunk"
+							},
+							{
+								"type": "chunk",
+								"id": "003w",
+								"class": "src:LeafElement",
+								"content": "1.De hoogte van de subsidie bedraagt maximaal € 10.000 voor kleine maatschappelijke initiatieven en nieuwe evenementen als bedoeld in artikel 2, aanhef en onderdeel a.\n",
+								"IRI": "Document/002o_artikel_11/003w_chunk"
+							},
+							{
+								"type": "chunk",
+								"id": "003x",
+								"class": "src:LeafElement",
+								"content": "2.De hoogte van de subsidie bedraagt maximaal € 35.000 voor middelgrote maatschappelijke initiatieven als bedoeld in artikel 2, aanhef en onderdeel b.\n",
+								"IRI": "Document/002o_artikel_11/003x_chunk"
+							},
+							{
+								"type": "chunk",
+								"id": "003y",
+								"class": "src:LeafElement",
+								"content": "3.De hoogte van de subsidie bedraagt maximaal € 75.000 voor grote maatschappelijke initiatieven als bedoeld in artikel 2, aanhef en onder c.\n",
+								"IRI": "Document/002o_artikel_11/003y_chunk"
+							},
+							{
+								"type": "chunk",
+								"id": "003z",
+								"class": "src:LeafElement",
+								"content": "4.De hoogte van de subsidie wordt vastgesteld op basis van de aard en omvang van de activiteiten en bedraagt nooit meer dan 40% van de subsidiabele kosten.\n",
+								"IRI": "Document/002o_artikel_11/003z_chunk"
+							},
+							{
+								"type": "chunk",
+								"id": "003A",
+								"class": "src:LeafElement",
+								"content": "5.[vervallen]",
+								"IRI": "Document/002o_artikel_11/003A_chunk"
+							}
+						],
+						"IRI": "Document/002o_artikel_11",
+						"containsAsTitle": "Document/002o_artikel_11/000s_chunk"
+					},
+					{
+						"type": "artikel",
+						"id": "002p",
+						"label": "Artikel",
+						"numbering": "12",
+						"title": "Verplichtingen van de subsidieontvanger",
+						"separator": "recipe:artikel",
+						"class": "src:NonLeafElement",
+						"children": [
+							{
+								"type": "chunk",
+								"id": "000u",
+								"class": "src:LeafElement",
+								"content": "Artikel 12 Verplichtingen van de subsidieontvanger",
+								"IRI": "Document/002p_artikel_12/000u_chunk"
+							},
+							{
+								"type": "chunk",
+								"id": "000v",
+								"class": "src:LeafElement",
+								"content": "Onverminderd de voorwaarden en verplichtingen in paragraaf 2.3 van de Asv, worden in ieder geval de volgende verplichtingen aan de subsidieontvanger opgelegd:",
+								"IRI": "Document/002p_artikel_12/000v_chunk"
+							},
+							{
+								"type": "chunk",
+								"id": "003B",
+								"class": "src:LeafElement",
+								"content": "a. activiteiten voor kleine maatschappelijke initiatieven en nieuwe evenementen worden binnen twaalf maanden na subsidieverstrekking verricht;\n",
+								"IRI": "Document/002p_artikel_12/003B_chunk"
+							},
+							{
+								"type": "chunk",
+								"id": "003C",
+								"class": "src:LeafElement",
+								"content": "b. activiteiten voor middelgrote en grote maatschappelijke initiatieven worden binnen 24 maanden na subsidieverstrekking verricht;\n",
+								"IRI": "Document/002p_artikel_12/003C_chunk"
+							},
+							{
+								"type": "chunk",
+								"id": "003D",
+								"class": "src:LeafElement",
+								"content": "c. na een daartoe strekkend gemotiveerd en schriftelijk verzoek kan de termijn genoemd in onderdeel a eenmalig voor de duur van ten hoogste zes maanden worden verlengd;\n",
+								"IRI": "Document/002p_artikel_12/003D_chunk"
+							},
+							{
+								"type": "chunk",
+								"id": "003E",
+								"class": "src:LeafElement",
+								"content": "d. na een daartoe strekkend gemotiveerd en schriftelijk verzoek kan de termijn genoemd in onderdeel b voor de duur van ten hoogste zes maanden worden verlengd;\n",
+								"IRI": "Document/002p_artikel_12/003E_chunk"
+							},
+							{
+								"type": "chunk",
+								"id": "003F",
+								"class": "src:LeafElement",
+								"content": "e. de subsidieontvanger toont voor subsidies tot € 25.000 desgevraagd aan dat de activiteit is verricht door middel van in de verleningsbeschikking aangegeven bewijsmiddelen;\n",
+								"IRI": "Document/002p_artikel_12/003F_chunk"
+							},
+							{
+								"type": "chunk",
+								"id": "003G",
+								"class": "src:LeafElement",
+								"content": "f. de subsidieontvanger levert ten behoeve van een provinciale website beeldmateriaal of geluidsmateriaal voorzien van een korte toelichting (maximaal 200 woorden) waaruit blijkt dat de activiteit is uitgevoerd;\n",
+								"IRI": "Document/002p_artikel_12/003G_chunk"
+							},
+							{
+								"type": "chunk",
+								"id": "003H",
+								"class": "src:LeafElement",
+								"content": "g. bij een subsidie van minimaal € 25.000 dient de subsidieontvanger bij de aanvraag tot vaststelling een activiteitenverslag inclusief financieel verslag in, waaruit genoegzaam blijkt dat de activiteit waarvoor subsidie is verstrekt overeenkomstig het besluit tot subsidieverlening is verricht en aan de aan de subsidie verbonden verplichtingen is voldaan, zie artikel 3.6 van de ASV; ",
+								"IRI": "Document/002p_artikel_12/003H_chunk"
+							}
+						],
+						"IRI": "Document/002p_artikel_12",
+						"containsAsTitle": "Document/002p_artikel_12/000u_chunk"
+					},
+					{
+						"type": "artikel",
+						"id": "002q",
+						"label": "Artikel",
+						"numbering": "13",
+						"title": "Opschortende voorwaarde",
+						"separator": "recipe:artikel",
+						"class": "src:NonLeafElement",
+						"children": [
+							{
+								"type": "chunk",
+								"id": "000x",
+								"class": "src:LeafElement",
+								"content": "Artikel 13 Opschortende voorwaarde",
+								"IRI": "Document/002q_artikel_13/000x_chunk"
+							},
+							{
+								"type": "chunk",
+								"id": "000y",
+								"class": "src:LeafElement",
+								"content": "Subsidie wordt verleend onder de opschortende voorwaarde dat alle van overheidswege vereiste vergunningen voor de activiteit zijn verkregen.",
+								"IRI": "Document/002q_artikel_13/000y_chunk"
+							}
+						],
+						"IRI": "Document/002q_artikel_13",
+						"containsAsTitle": "Document/002q_artikel_13/000x_chunk"
+					},
+					{
+						"type": "artikel",
+						"id": "002r",
+						"label": "Artikel",
+						"numbering": "14",
+						"title": "Inwerkingtreding",
+						"separator": "recipe:artikel",
+						"class": "src:NonLeafElement",
+						"children": [
+							{
+								"type": "chunk",
+								"id": "000z",
+								"class": "src:LeafElement",
+								"content": "Artikel 14 Inwerkingtreding",
+								"IRI": "Document/002r_artikel_14/000z_chunk"
+							},
+							{
+								"type": "chunk",
+								"id": "000A",
+								"class": "src:LeafElement",
+								"content": "Deze regeling treedt in werking met ingang van de dag na de datum van bekendmaking in het Provinciaal Blad.",
+								"IRI": "Document/002r_artikel_14/000A_chunk"
+							}
+						],
+						"IRI": "Document/002r_artikel_14",
+						"containsAsTitle": "Document/002r_artikel_14/000z_chunk"
+					},
+					{
+						"type": "artikel",
+						"id": "002s",
+						"label": "Artikel",
+						"numbering": "15",
+						"title": "Overgangsrecht",
+						"separator": "recipe:artikel",
+						"class": "src:NonLeafElement",
+						"children": [
+							{
+								"type": "chunk",
+								"id": "000B",
+								"class": "src:LeafElement",
+								"content": "Artikel 15 Overgangsrecht",
+								"IRI": "Document/002s_artikel_15/000B_chunk"
+							},
+							{
+								"type": "chunk",
+								"id": "003I",
+								"class": "src:LeafElement",
+								"content": "1.De Subsidieregeling Iepen Mienskipsfûns Fryslân 2016 wordt ingetrokken.\n",
+								"IRI": "Document/002s_artikel_15/003I_chunk"
+							},
+							{
+								"type": "chunk",
+								"id": "003J",
+								"class": "src:LeafElement",
+								"content": "2.De Subsidieregeling Iepen Mienskipsfûns Fryslân 2016 blijft van kracht voor subsidies die op basis van deze subsidieregeling zijn aangevraagd of verstrekt.",
+								"IRI": "Document/002s_artikel_15/003J_chunk"
+							}
+						],
+						"IRI": "Document/002s_artikel_15",
+						"containsAsTitle": "Document/002s_artikel_15/000B_chunk"
+					},
+					{
+						"type": "artikel",
+						"id": "002t",
+						"label": "Artikel",
+						"numbering": "16",
+						"title": "Citeertitel",
+						"separator": "recipe:artikel",
+						"class": "src:NonLeafElement",
+						"children": [
+							{
+								"type": "chunk",
+								"id": "000D",
+								"class": "src:LeafElement",
+								"content": "Artikel 16 Citeertitel",
+								"IRI": "Document/002t_artikel_16/000D_chunk"
+							},
+							{
+								"type": "chunk",
+								"id": "000E",
+								"class": "src:LeafElement",
+								"content": "Deze regeling wordt aangehaald als: Subsidieregeling IMF 2020 Fryslân.",
+								"IRI": "Document/002t_artikel_16/000E_chunk"
+							},
+							{
+								"type": "chunk",
+								"id": "000F",
+								"class": "src:LeafElement",
+								"content": "Ondertekening",
+								"IRI": "Document/002t_artikel_16/000F_chunk"
+							},
+							{
+								"type": "chunk",
+								"id": "000G",
+								"class": "src:LeafElement",
+								"content": "Leeuwarden 2019",
+								"IRI": "Document/002t_artikel_16/000G_chunk"
+							},
+							{
+								"type": "chunk",
+								"id": "000H",
+								"class": "src:LeafElement",
+								"content": "Voorzitter: drs. A.A.M. Brok",
+								"IRI": "Document/002t_artikel_16/000H_chunk"
+							},
+							{
+								"type": "chunk",
+								"id": "000I",
+								"class": "src:LeafElement",
+								"content": "Secretaris: R.E. Bouius - Riemersma, MBA MCM",
+								"IRI": "Document/002t_artikel_16/000I_chunk"
+							}
+						],
+						"IRI": "Document/002t_artikel_16",
+						"containsAsTitle": "Document/002t_artikel_16/000D_chunk"
+					},
+					{
+						"type": "toelichting",
+						"id": "002c",
+						"label": "Toelichting",
+						"title": "subsidieregeling lepen Mienskipsfûns",
+						"separator": "recipe:toelichting",
+						"class": "src:NonLeafElement",
+						"children": [
+							{
+								"type": "chunk",
+								"id": "000J",
+								"class": "src:LeafElement",
+								"content": "Toelichting subsidieregeling lepen Mienskipsfûns",
+								"IRI": "Document/002c_toelichting/000J_chunk"
+							},
+							{
+								"type": "chunk",
+								"id": "000K",
+								"class": "src:LeafElement",
+								"content": "Aanleiding",
+								"IRI": "Document/002c_toelichting/000K_chunk"
+							},
+							{
+								"type": "chunk",
+								"id": "000L",
+								"class": "src:LeafElement",
+								"content": "Op 26 september 2018 is er een motie aangenomen door Provinciale Staten, ingediend door CDA, waarin werd aangegeven dat de Subsidieregeling Iepen Mienskipfûns 2016 (IMF) na 2019 een vervolg diende te krijgen. In dezelfde statenvergadering is het amendement van de FNP, CDA, FFP, PvdD, VVD, PvdA, 50+ en zelfstandig statenlid Schukking, aangenomen, dat er in navolging van de oude Dorpshuizenregeling een nieuwe regeling moet komen. Bestemd voor de financiering van nieuwe en oude fysieke ontmoetingsplekken in bredere zin, ten behoeve van de lokale gemeenschap. Gedeputeerde Staten hebben onderzocht of het mogelijk was om beide onderwerpen in één subsidieregeling onder te brengen. Aangezien ook de dorpshuizenregeling uit gaat van ontwikkelingen vanuit de Mienskip is er voor gekozen om in de succesvolle IMF regeling ruimte te maken voor deze ontmoetingsplaatsen. Vooralsnog blijft de Dorpshuizenregeling in stand maar wordt deze niet meer opengesteld. 2020 zal gebruikt worden om te onderzoeken of de door Gedeputeerde Staten voorgestelde samenvoeging, voor de ontmoetingsplaatsen leidt tot het gewenste resultaat; een laagdrempelige regeling voor een grotere diversiteit van ontmoetingsplekken. Voordeel van de IMF regeling is dat per openstelling (3 maal per jaar) kan worden bijgestuurd indien dat nodig of wenselijk wordt geacht. Per openstelling kan het college besluiten om prioriteit te geven aan bijvoorbeeld ontmoetingsplekken ten opzichte van andere projecten. Uit de evaluatie van Partoer (2018) van het IMF blijkt ook dat dat een van de succesfactoren van het IMF is, alsmede de laagdrempeligheid van de regeling. Deze laagdrempeligheid blijft in stand ook met de toevoeging van de mogelijkheid voor het subsidiëren van ontmoetingsplekken. Het betreft nadrukkelijk geen exploitatiesubsidie.",
+								"IRI": "Document/002c_toelichting/000L_chunk"
+							},
+							{
+								"type": "Artikelsgewijze toelichting",
+								"id": "002d",
+								"title": "Artikelsgewijze toelichting",
+								"separator": "recipe:separator-17",
+								"class": "src:NonLeafElement",
+								"children": [
+									{
+										"type": "chunk",
+										"id": "000M",
+										"class": "src:LeafElement",
+										"content": "Artikelsgewijze toelichting",
+										"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/000M_chunk"
+									},
+									{
+										"type": "artikel",
+										"id": "002u",
+										"label": "Artikel",
+										"numbering": "1",
+										"title": "Begripsomschrijvingen",
+										"separator": "recipe:artikel",
+										"class": "src:NonLeafElement",
+										"children": [
+											{
+												"type": "chunk",
+												"id": "000N",
+												"class": "src:LeafElement",
+												"content": "Artikel 1 Begripsomschrijvingen",
+												"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002u_artikel_1/000N_chunk"
+											},
+											{
+												"type": "chunk",
+												"id": "000O",
+												"class": "src:LeafElement",
+												"content": "2: evenementen. Evenementen zijn apart benoemd in dit artikel, dit ter onderscheid van maatschappelijke initiatieven. De subsidiehoogte ten behoeve van evenementen is hetzelfde als die van kleine maatschappelijke initiatieven, maar lager dan middelgrote of grote maatschappelijke initiatieven. In het aanvraagformulier dient de aanvrager aan te geven of de subsidieaanvraag betrekking heeft op een nieuw evenement of een maatschappelijk initiatief. Aanvragen die voldoen aan het evenementenbegrip, worden als zodanig bestempeld.",
+												"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002u_artikel_1/000O_chunk"
+											},
+											{
+												"type": "chunk",
+												"id": "000P",
+												"class": "src:LeafElement",
+												"content": "3. bestaande periodiek herhaalde activiteit. Activiteiten die reeds in het verleden zijn uitgevoerd kwamen voorheen veelal in het geheel niet voor een bijdrage uit het Iepen Mienskipfûns in aanmerking, ook al lag de vorige activiteit in een langer geleden verleden. Om dergelijke activiteiten toch voor een bijdrage in aanmerking te laten komen is er gekozen om de weigeringsgrond nader te duiden. Daarbij is gekozen voor een periode van vijf jaar waarbinnen eenzelfde activiteit niet voor een bijdrage uit het Iepen Mienskipfûns in aanmerking kan komen.",
+												"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002u_artikel_1/000P_chunk"
+											}
+										],
+										"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002u_artikel_1",
+										"containsAsTitle": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002u_artikel_1/000N_chunk"
+									},
+									{
+										"type": "artikel",
+										"id": "002v",
+										"label": "Artikel",
+										"numbering": "2",
+										"title": "Wat zijn de subsidiabele activiteiten?",
+										"separator": "recipe:artikel",
+										"class": "src:NonLeafElement",
+										"children": [
+											{
+												"type": "chunk",
+												"id": "000Q",
+												"class": "src:LeafElement",
+												"content": "Artikel 2 Wat zijn de subsidiabele activiteiten?",
+												"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002v_artikel_2/000Q_chunk"
+											},
+											{
+												"type": "chunk",
+												"id": "000R",
+												"class": "src:LeafElement",
+												"content": "In dit artikel wordt een splitsing gemaakt tussen kleine initiatieven en nieuwe evenementen, middelgrote en grote initiatieven. Het soort activiteit is afhankelijk van het aangevraagde subsidiebedrag of het soort activiteit. Een initiatief is klein als het gevraagde subsidiebedrag lager dan € 10.001,- is. Een initiatief is middelgroot als het gevraagde subsidiebedrag tussen € 10.001,- en € 35.000,- ligt en een initiatief is groot als het gevraagde bedrag € 35.001,- of hoger is, tot een bedrag van € 75.000,-. Indien een aanvraag onder de definitie ‘nieuwe evenementen’ valt, kan nooit meer dan € 10.000,- subsidie worden verleend. Het kader waaraan de adviescommissie de aanvragen toetst is voor alle activiteiten gelijk. Bij de beoordeling van aanvragen worden kleine initiatieven en nieuwe evenementen gezamenlijk beoordeeld. Middelgrote en grote initiatieven worden afzonderlijk beoordeeld.",
+												"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002v_artikel_2/000R_chunk"
+											}
+										],
+										"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002v_artikel_2",
+										"containsAsTitle": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002v_artikel_2/000Q_chunk"
+									},
+									{
+										"type": "artikel",
+										"id": "002w",
+										"label": "Artikel",
+										"numbering": "3",
+										"title": "Wie kan subsidie aanvragen?",
+										"separator": "recipe:artikel",
+										"class": "src:NonLeafElement",
+										"children": [
+											{
+												"type": "chunk",
+												"id": "000S",
+												"class": "src:LeafElement",
+												"content": "Artikel 3 Wie kan subsidie aanvragen?",
+												"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002w_artikel_3/000S_chunk"
+											},
+											{
+												"type": "chunk",
+												"id": "000T",
+												"class": "src:LeafElement",
+												"content": "De doelgroepbepaling beperkt de groep van aanvragers tot verenigingen, stichtingen, coöperaties, Staatsbosbeheer en groepen van vijf natuurlijke personen.",
+												"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002w_artikel_3/000T_chunk"
+											},
+											{
+												"type": "chunk",
+												"id": "000U",
+												"class": "src:LeafElement",
+												"content": "Groepen van ten minste vijf natuurlijke personen kunnen in het kader van Iepen Mienskipsfûns enkel een subsidieaanvraag indienen die betrekking heeft op kleine initiatieven en nieuwe evenementen. Coöperaties dienen rekening te houden met het bepaalde in artikel 7, onderdeel a, van de regeling. Het behalen van winst mag geen doel zijn van de activiteit.",
+												"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002w_artikel_3/000U_chunk"
+											}
+										],
+										"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002w_artikel_3",
+										"containsAsTitle": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002w_artikel_3/000S_chunk"
+									},
+									{
+										"type": "artikel",
+										"id": "002x",
+										"label": "Artikel",
+										"numbering": "4",
+										"title": "Gebieden",
+										"separator": "recipe:artikel",
+										"class": "src:NonLeafElement",
+										"children": [
+											{
+												"type": "chunk",
+												"id": "000V",
+												"class": "src:LeafElement",
+												"content": "Artikel 4 Gebieden",
+												"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002x_artikel_4/000V_chunk"
+											},
+											{
+												"type": "chunk",
+												"id": "000W",
+												"class": "src:LeafElement",
+												"content": "Subsidies worden verstrekt ter verbetering van leefbaarheid van de in dit artikel genoemde gebieden. In dit artikel wordt eveneens een geografische afbakening gegeven voor het werkterrein van de adviescommissie. Gedeputeerde staten kunnen op grond van artikel 5 besluiten om de openstelling per gebied te laten plaatsvinden.",
+												"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002x_artikel_4/000W_chunk"
+											}
+										],
+										"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002x_artikel_4",
+										"containsAsTitle": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002x_artikel_4/000V_chunk"
+									},
+									{
+										"type": "artikel",
+										"id": "002y",
+										"label": "Artikel",
+										"numbering": "5",
+										"title": "Openstelling",
+										"separator": "recipe:artikel",
+										"class": "src:NonLeafElement",
+										"children": [
+											{
+												"type": "chunk",
+												"id": "000X",
+												"class": "src:LeafElement",
+												"content": "Artikel 5 Openstelling",
+												"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002y_artikel_5/000X_chunk"
+											},
+											{
+												"type": "chunk",
+												"id": "000Y",
+												"class": "src:LeafElement",
+												"content": "Dit artikel geeft gedeputeerde staten de mogelijkheid om aparte openstellingen te regelen per gebied als bedoeld in artikel 4. In het openstellingsbesluit wordt het subsidieplafond (de maximaal te verlenen subsidies per gebied) en de periode voor ontvangst van subsidieaanvragen bepaald. Op grond van het derde lid is het mogelijk dat maatwerk wordt toegepast in het openstellingsbesluit. Gedeputeerde staten kunnen per gebied naar aanleiding van het advies van de adviescommissie, bepalen waar de prioritering van subsidieaanvragen ligt. Hiermee wordt beoogd aan de vraag in een gebied te kunnen voldoen in de subsidiëring van projecten. Op grond van het vierde lid kan de behoefte in het gebied gepeild worden door de adviescommissie te vragen om advies voor de openstelling.",
+												"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002y_artikel_5/000Y_chunk"
+											}
+										],
+										"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002y_artikel_5",
+										"containsAsTitle": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002y_artikel_5/000X_chunk"
+									},
+									{
+										"type": "artikel",
+										"id": "002z",
+										"label": "Artikel",
+										"numbering": "6",
+										"title": "Bepalingen over de aanvraag",
+										"separator": "recipe:artikel",
+										"class": "src:NonLeafElement",
+										"children": [
+											{
+												"type": "chunk",
+												"id": "000Z",
+												"class": "src:LeafElement",
+												"content": "Artikel 6 Bepalingen over de aanvraag",
+												"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002z_artikel_6/000Z_chunk"
+											},
+											{
+												"type": "chunk",
+												"id": "0010",
+												"class": "src:LeafElement",
+												"content": "In het openstellingsbesluit wordt een openstellingsperiode genoemd. Aanvragen die zijn ontvangen binnen de in het openstellingsbesluit genoemde termijn worden in behandeling genomen indien deze volledig zijn. Uit het bepaalde in het eerste lid volgt dat de ontvangstleer wordt toegepast. Dit betekent dat bij de provincie naar de datum van ontvangst van de volledige aanvraag wordt gekeken.",
+												"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002z_artikel_6/0010_chunk"
+											},
+											{
+												"type": "chunk",
+												"id": "0011",
+												"class": "src:LeafElement",
+												"content": "Gedeputeerde staten hebben een aanvraagformulier vastgesteld. Een aanvrager kan voor het gehele Iepen Mienskipsfûns, dus alle gebieden gezamenlijk, maximaal drie aanvragen per jaar indienen.",
+												"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002z_artikel_6/0011_chunk"
+											}
+										],
+										"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002z_artikel_6",
+										"containsAsTitle": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002z_artikel_6/000Z_chunk"
+									},
+									{
+										"type": "artikel",
+										"id": "002A",
+										"label": "Artikel",
+										"numbering": "7",
+										"title": "Wanneer weigeren wij de subsidieaanvraag?",
+										"separator": "recipe:artikel",
+										"class": "src:NonLeafElement",
+										"children": [
+											{
+												"type": "chunk",
+												"id": "0012",
+												"class": "src:LeafElement",
+												"content": "Artikel 7 Wanneer weigeren wij de subsidieaanvraag?",
+												"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002A_artikel_7/0012_chunk"
+											},
+											{
+												"type": "chunk",
+												"id": "0013",
+												"class": "src:LeafElement",
+												"content": "Een subsidie komt niet voor rangschikking in aanmerking indien er sprake is van een weigeringsgrond. In aanvulling op artikel 2.7 van de Algemene subsidieverordening provincie Fryslân 2013 en artikel 4:35 van de Algemene wet bestuursrecht is aantal specifieke weigeringsgronden opgenomen.",
+												"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002A_artikel_7/0013_chunk"
+											},
+											{
+												"type": "chunk",
+												"id": "0014",
+												"class": "src:LeafElement",
+												"content": "Onderdeel a. bepaalt dat de subsidie wordt geweigerd als deze geheel of gedeeltelijk in uitvoering is, omdat het niet de bedoeling is voor reeds (deels) gerealiseerde activiteiten subsidie te verstrekken. Van de subsidie moet een stimulerend effect uitgaan die het mogelijk maakt om de activiteiten te gaan verrichten.",
+												"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002A_artikel_7/0014_chunk"
+											},
+											{
+												"type": "chunk",
+												"id": "0015",
+												"class": "src:LeafElement",
+												"content": "Onderdeel b wordt zo toegepast, dat wanneer een bepaalde activiteit als onderdeel van de totale subsidieaanvraag gericht is op het behalen van winst, deze deelactiviteit wordt geweigerd. Uit een gedeeltelijke weigering kan volgen dat de subsidieaanvraag niet meer financieel technisch of organisatorisch haalbaar is, waardoor een volledige weigering plaatsvindt. De enige uitzondering op deze regel is, wanneer een economische activiteit wordt uitgevoerd door een micro-onderneming. En dan alleen in de gevallen voor zover in die aanvragen het drempelbedrag uit de toepasselijke Europese de-minimisverordening (zowel reguliere als voor de landbouw) niet wordt overschreden.",
+												"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002A_artikel_7/0015_chunk"
+											},
+											{
+												"type": "chunk",
+												"id": "0016",
+												"class": "src:LeafElement",
+												"content": "Onderdeel c is van toepassing op alle door de provincie Fryslân verstrekte subsidies. Subsidie kan worden verleend op basis van regelingen, op incidentele basis, of de provinciale begroting. Dit artikel is van toepassing op alle soorten provinciale subsidies. Dubbele subsidies worden niet verstrekt teneinde de diversiteit van projecten te stimuleren. Regelmatig komt de vraag aan de orde of onder de ‘kan’ bepaling ook vallen die gevallen waarbij er wel een regeling bestaat maar de betreffende regeling op dat moment niet opengesteld is. Indien een bestaande regeling op het moment van de openstelling van onderhavige regeling is gesloten, ‘kan voor de betreffende activiteit desondanks géén aanvraag bij het Iepen mienskipfûns en moetingsplakken worden ingediend. Ook indien een subsidieaanvraag voor een andere regeling geweigerd is wegens het overschrijden van het vastgestelde plafond, kan geen aanvraag bij het Iepen mienskipfûns en moetingsplakken worden ingediend. De gedachte hier achter is om shoppen tussen de diverse regelingen te voorkomen, maar bovenal omdat met het instellen van specifieke regelingen Gedeputeerde Staten voor bepaalde onderwerpen en voor de betreffende activiteiten uitputtend regels en voorwaarden en een budget beschikbaar hebben gesteld. Daarmee is het betreffende onderwerp dus ‘geregeld’ en staat voor dat onderwerp en of deze activiteit de onderhavige regeling niet open. Aanvragers kunnen bij vragen of twijfel r de betreffende adviseurs van de Streekwurk om advies vragen.",
+												"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002A_artikel_7/0016_chunk"
+											},
+											{
+												"type": "chunk",
+												"id": "0017",
+												"class": "src:LeafElement",
+												"content": "Onderdeel d is bedoeld om te voorkomen dat er initiatieven worden ontplooid waarvoor ook in de toekomst kosten moeten worden gemaakt maar waarvoor geen dekking aanwezig is. Initiatieven met een doorloop naar de toekomst moeten dus ook een beschrijving geven van de dekking van de kosten na de subsidieverlening.",
+												"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002A_artikel_7/0017_chunk"
+											},
+											{
+												"type": "chunk",
+												"id": "0018",
+												"class": "src:LeafElement",
+												"content": "Onderdeel e geeft aan dat Gedeputeerde Staten alleen nieuwe initiatieven ondersteunen. Een activiteit die niet vaker dan eens in de vijf jaren wordt georganiseerd wordt in het kader van de aanvraag wel als nieuw aangemerkt. Voor vernieuwingen binnen bestaande activiteiten kan wel een aanvraag worden ingediend. Daarbij moet in de aanvraag, begroting en dekking evident blijken welk onderdeel nieuw is en welke kosten daarmee annex zijn. Na het indienen van de aanvraag kan vanwege de systematiek van de tenderprocedure geen aanvullende informatie worden opgevraagd om de aanvraag nader te duiden. Blijkt het vernieuwende element niet duidelijk uit de aanvraag dan wordt de aanvraag geweigerd als zijnde terugkerend evenement.",
+												"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002A_artikel_7/0018_chunk"
+											},
+											{
+												"type": "chunk",
+												"id": "0019",
+												"class": "src:LeafElement",
+												"content": "Onderdeel f. weigering omdat er gegronde reden bestaat dat de activiteit in financiële, organisatorische of technische zin niet haalbaar is. Te denken valt aan initiatieven waarbij vergunningen nodig zijn die nog niet verleend zijn en waarbij het twijfelachtig is of de vergunningprocedure tijdig kan worden afgerond zodat de uitvoeringstermijn kan worden gehaald , begrotingen waarbij een groot deel van de dekking bestaat uit overige fondsen of bijdragen van derden die nog niet gerealiseerd zijn, zijn voorbeelden waarop de aanvraag kan worden geweigerd.",
+												"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002A_artikel_7/0019_chunk"
+											},
+											{
+												"type": "chunk",
+												"id": "001a",
+												"class": "src:LeafElement",
+												"content": "Onderdeel g. Als er geen sprake is van een dekkende projectbegroting wordt de aanvraag geweigerd. Hiermee wordt voorkomen dat het voor Gedeputeerde Staten niet duidelijk is hoe het project gefinancierd wordt. De aanvrager dient een sluitende begroting met dekkingsplan in te dienen. Bij een tendersubsidie als de onderhavige kunnen na sluiting van de openstellingsperiode geen inhoudelijk aanvullende stukken opgevraagd worden aangezien dit niet strookt met het systeem van de tendersubsidie. Ontbrekende gegevens zoals inschrijving KvK, statuten of ontbrekende handtekeningen, oftewel die gegevens die niet leiden tot een inhoudelijke wijziging van de aanvraag, worden wel opgevraagd na sluiting van de openstellingsperiode. Bij het ontbreken van een dekkende begroting zal er dus geen aanvulling worden opgevraagd door het bestuursorgaan. Hierbij dient wel het volgende te worden opgemerkt; ondanks het aanleveren van een dekkende begroting kan wel worden geoordeeld dat het financieringsplaatje veel onzekerheden bevat of de begroting als onrealistisch of onwaarschijnlijk bijvoorbeeld omdat geen offertes zijn meegezonden of de begroting grotendeels uit aannames bestaat. Qua dekking moet gedacht worden aan onrealistische inschatting van het aantal vrijwilligersuren omdat deze niet in verhouding staan tot de aard van de activiteit of veel onzekerheden over derde financiers, zoals overige fondsen. Als dat het geval is wordt de aanvraag geweigerd met toepassing van het bepaalde in onderdeel f.",
+												"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002A_artikel_7/001a_chunk"
+											},
+											{
+												"type": "chunk",
+												"id": "001b",
+												"class": "src:LeafElement",
+												"content": "Onderdeel h. Voor grote maatschappelijke initiatieven dient sprake te zijn van gemeentelijke cofinanciering door één of meer gemeenten. Met financiering wordt een geldelijke bijdrage bedoeld.",
+												"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002A_artikel_7/001b_chunk"
+											},
+											{
+												"type": "chunk",
+												"id": "001c",
+												"class": "src:LeafElement",
+												"content": "Onderdeel i. is bedoeld voor die projecten die volledig zijn en waarvoor geen weigeringsgrond geldt. Deze projecten worden doorgeleid naar de adviescommissie. Als de adviescommissie het project echter minder dan 10 punten toekent, levert dit alsnog een weigeringsgrond op. De gedachte er achter is dat het project dan te weinig voldoet aan de criteria uit artikel 8",
+												"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002A_artikel_7/001c_chunk"
+											},
+											{
+												"type": "chunk",
+												"id": "001d",
+												"class": "src:LeafElement",
+												"content": "Onderdeel j. bepaalt dat indien het beleid van provinciale staten of gedeputeerde staten een bepaald onderwerp in dat beleid is uitgesloten de subsidie wordt geweigerd.",
+												"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002A_artikel_7/001d_chunk"
+											},
+											{
+												"type": "chunk",
+												"id": "001e",
+												"class": "src:LeafElement",
+												"content": "Onderdeel k. bepaalt dat aanvragen voor het opstellen van een dorps-, stads-, of wijkvisie worden geweigerd. Doarpswurk ondersteunt hierin kosteloos. Ga voor meer informatie naar:",
+												"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002A_artikel_7/001e_chunk"
+											},
+											{
+												"type": "chunk",
+												"id": "001f",
+												"class": "src:LeafElement",
+												"content": "Externe link:",
+												"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002A_artikel_7/001f_chunk"
+											},
+											{
+												"type": "chunk",
+												"id": "001g",
+												"class": "src:LeafElement",
+												"content": "http://www.doarpswurk.frl/.",
+												"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002A_artikel_7/001g_chunk"
+											}
+										],
+										"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002A_artikel_7",
+										"containsAsTitle": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002A_artikel_7/0012_chunk"
+									},
+									{
+										"type": "artikel",
+										"id": "002B",
+										"label": "Artikel",
+										"numbering": "8",
+										"title": "Hoe worden de subsidieaanvragen gerangschikt?",
+										"separator": "recipe:artikel",
+										"class": "src:NonLeafElement",
+										"children": [
+											{
+												"type": "chunk",
+												"id": "001h",
+												"class": "src:LeafElement",
+												"content": "Artikel 8 Hoe worden de subsidieaanvragen gerangschikt?",
+												"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002B_artikel_8/001h_chunk"
+											},
+											{
+												"type": "chunk",
+												"id": "001i",
+												"class": "src:LeafElement",
+												"content": "Pas wanneer voldaan is aan de artikelen die betrekking hebben op de aanvraagvereisten, de doelgroep en het doel van de regeling, komt een subsidieaanvraag in aanmerking voor rangschikking door gedeputeerde staten. Dit betekent dat aanvragen voor rangschikking niet in behandeling kunnen worden genomen of geweigerd worden wegens het niet voldoen aan het doel van de regeling. Indien een weigeringsgrond van toepassing is, wordt de subsidieaanvraag geweigerd en komt de aanvraag niet voor rangschikking en subsidie in aanmerking.",
+												"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002B_artikel_8/001i_chunk"
+											},
+											{
+												"type": "chunk",
+												"id": "001j",
+												"class": "src:LeafElement",
+												"content": "In een tender wordt tussen alle projecten een rangorde bepaald aan de hand van kwalitatieve criteria. De adviescommissie adviseert gedeputeerde staten over de kwaliteit van de subsidieaanvragen. De commissie heeft een reglement (Reglement Adviescommissie Gebiedsplatform Streekwurk) en bestaat uit onafhankelijke leden uit het gebied. De adviescommissie beoordeelt alle aanvragen die in een gebied zijn ingediend en waarvoor geen weigeringsgrond op van toepassing is, van op de navolgende criteria. Bij de beoordeling worden alle projecten met elkaar vergeleken. Uit die beoordeling volgt een puntentoekenning.",
+												"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002B_artikel_8/001j_chunk"
+											},
+											{
+												"type": "chunk",
+												"id": "001k",
+												"class": "src:LeafElement",
+												"content": "In totaal zijn er 27 punten per subsidieaanvraag te verkrijgen. De rangschikking bepaalt welke subsidieaanvragen wel of niet in aanmerking komen voor subsidie. Wanneer het subsidieplafond uitgeput is, wordt een subsidieaanvraag geweigerd wegens overschrijding van het subsidieplafond. Er is dan onvoldoende subsidie beschikbaar om alle projecten subsidie te geven. Subsidieaanvragen die voor rangschikking in aanmerking komen, worden door gedeputeerde staten gerangschikt. Voor de rangschikking kan gedeputeerde staten gebruik maken van een adviescommissie die belast is met advisering over ingediende aanvragen. Bij de rangschikking wordt de subsidieaanvraag getoetst aan het bepaalde in het tweede lid, waarna een puntentoekenning op basis van het derde en het vierde lid plaatsvindt. Wanneer de punten toegekend zijn, is duidelijk welke aanvraag voor subsidie in aanmerking komt.",
+												"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002B_artikel_8/001k_chunk"
+											},
+											{
+												"type": "chunk",
+												"id": "001l",
+												"class": "src:LeafElement",
+												"content": "Omdat het subsidieplafond (het totale bedrag dat per gebied per tender per onderdeel beschikbaar is) ontoereikend kan zijn, wordt op grond van het zevende lid de subsidieaanvraag geweigerd. Een weigering kan eveneens volgen uit het niet behalen van voldoende punten om voor subsidie in aanmerking te komen op grond van het zesde lid.",
+												"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002B_artikel_8/001l_chunk"
+											},
+											{
+												"type": "chunk",
+												"id": "001m",
+												"class": "src:LeafElement",
+												"content": "De criteria worden in de onderstaande tabellen toegelicht:",
+												"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002B_artikel_8/001m_chunk"
+											},
+											{
+												"type": "chunk",
+												"id": "001n",
+												"class": "src:LeafElement",
+												"content": "Draagvlak (5 punten)",
+												"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002B_artikel_8/001n_chunk"
+											},
+											{
+												"type": "chunk",
+												"id": "001o",
+												"class": "src:LeafElement",
+												"content": "Bij de term draagvlak wordt getoetst op betrokkenheid. Betrokkenheid wil zeggen de relatie tot het gebied van het project, (overheids)organisaties en mensen onderling. Dit wil zeggen dat een groot deel van de gemeenschap het project draagt. Een subsidieaanvraag ontvangt meer punten voor draagvlak naarmate een project een relatie heeft met meerdere onderdelen van de term betrokkenheid. Vraag gestuurde aanvragen hebben draagvlak. Met vraag gestuurd wordt bedoeld dat van buiten de aanvragende partijen een vraag bestaat voor de in de subsidieaanvraag genoemde activiteiten.",
+												"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002B_artikel_8/001o_chunk"
+											},
+											{
+												"type": "chunk",
+												"id": "001p",
+												"class": "src:LeafElement",
+												"content": "Dit blijkt uit financieringsbronnen, deelnemende partners, en de betrokkenheid van vrijwilligers. Indicatoren zijn: aantoonbare behoefte in het gebied, de mate van cofinanciering voor de relatie tot overheidsorganisaties en tot slot het gebied waaruit de deelnemers komen voor de spreiding en dus het gebied. Foar de Mienskip (vraaggestuurd, voor de samenleving), betrokkenheid in relatie tot het gebied van het project en toegankelijkheid van de activiteit.",
+												"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002B_artikel_8/001p_chunk"
+											},
+											{
+												"type": "chunk",
+												"id": "001q",
+												"class": "src:LeafElement",
+												"content": "Continuïteit (max 5 punten)",
+												"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002B_artikel_8/001q_chunk"
+											},
+											{
+												"type": "chunk",
+												"id": "001r",
+												"class": "src:LeafElement",
+												"content": "De term continuïteit wordt uitgelegd als herhalend en duurzaam. Getoetst wordt of een project toekomstbestendig is en een langdurig effect op de Mienskip heeft. Een activiteit kan beide effecten bewerkstelligen, maar kan ook alleen zorgen voor een langdurig effect.",
+												"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002B_artikel_8/001r_chunk"
+											},
+											{
+												"type": "chunk",
+												"id": "001s",
+												"class": "src:LeafElement",
+												"content": "Continuïteit blijkt uit de ontwikkeling van het project. Indicatoren hiervoor zijn de volgende aspecten: meerjarige exploitatie met dekking, financiële onderbouwing, afspraken over beheer, onderhoud en eigendom.",
+												"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002B_artikel_8/001s_chunk"
+											},
+											{
+												"type": "chunk",
+												"id": "001t",
+												"class": "src:LeafElement",
+												"content": "Eenmalige subsidie voor langdurig effect, het project heeft een gegarandeerde looptijd voor langere periode.",
+												"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002B_artikel_8/001t_chunk"
+											},
+											{
+												"type": "chunk",
+												"id": "001u",
+												"class": "src:LeafElement",
+												"content": "Samenwerking (max 5 punten)",
+												"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002B_artikel_8/001u_chunk"
+											},
+											{
+												"type": "chunk",
+												"id": "001v",
+												"class": "src:LeafElement",
+												"content": "Samenwerking gaat over de uitvoering van het project. Komen verschillende partijen en groepen mensen, organisaties en andere projecten in de uitvoering van het project samen?",
+												"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002B_artikel_8/001v_chunk"
+											},
+											{
+												"type": "chunk",
+												"id": "001w",
+												"class": "src:LeafElement",
+												"content": "Samenwerking blijkt uit de volgende indicatoren: brengt het project verschillende personen/verenigingen bij elkaar in de uitvoering, zijn de samenwerkende partijen mensen die elkaar anders niet vinden. Gezamenlijke uitvoering, nieuwe samenwerkingen.",
+												"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002B_artikel_8/001w_chunk"
+											},
+											{
+												"type": "chunk",
+												"id": "001x",
+												"class": "src:LeafElement",
+												"content": "Empowerment (max 5 punten)",
+												"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002B_artikel_8/001x_chunk"
+											},
+											{
+												"type": "chunk",
+												"id": "001y",
+												"class": "src:LeafElement",
+												"content": "Onder empowerment wordt veelal de ‘kracht’ van eigen mensen verstaan. Verschillende doelgroepen daarbij zijn o.a.:",
+												"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002B_artikel_8/001y_chunk"
+											},
+											{
+												"type": "chunk",
+												"id": "003K",
+												"class": "src:LeafElement",
+												"content": "• Mindervaliden (lichamelijk/geestelijk)\n",
+												"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002B_artikel_8/003K_chunk"
+											},
+											{
+												"type": "chunk",
+												"id": "003L",
+												"class": "src:LeafElement",
+												"content": "• Werkloze jongeren\n",
+												"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002B_artikel_8/003L_chunk"
+											},
+											{
+												"type": "chunk",
+												"id": "003M",
+												"class": "src:LeafElement",
+												"content": "• Arbeidsongeschikten\n",
+												"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002B_artikel_8/003M_chunk"
+											},
+											{
+												"type": "chunk",
+												"id": "003N",
+												"class": "src:LeafElement",
+												"content": "• Mensen met een afstand tot de arbeidsmarkt\n",
+												"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002B_artikel_8/003N_chunk"
+											},
+											{
+												"type": "chunk",
+												"id": "003O",
+												"class": "src:LeafElement",
+												"content": "• Eenzame mensen\n",
+												"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002B_artikel_8/003O_chunk"
+											},
+											{
+												"type": "chunk",
+												"id": "003P",
+												"class": "src:LeafElement",
+												"content": "• Vluchtelingen",
+												"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002B_artikel_8/003P_chunk"
+											},
+											{
+												"type": "chunk",
+												"id": "001A",
+												"class": "src:LeafElement",
+												"content": "Het begrip kansarme doelgroep is relatief. Bovenstaande doelgroepen hebben in het kader van het Iepen Mienskipsfûns prioriteit. Projecten scoren dan ook hoger naarmate deze meer aanhaken bij bovenstaande groepen mensen. Aanhaken betekent: actief betrokken maken van de doelgroepen waardoor de doelgroepen vanuit eigen kracht meedoen.",
+												"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002B_artikel_8/001A_chunk"
+											},
+											{
+												"type": "chunk",
+												"id": "001B",
+												"class": "src:LeafElement",
+												"content": "Empowerment blijkt uit de volgende indicatoren: maakt het project bovenstaande groepen minder kwetsbaar/afhankelijk, worden bovenstaande groepen betrokken bij de uitvoering van het project en de mate van maatschappelijke participatie (diversiteit).",
+												"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002B_artikel_8/001B_chunk"
+											},
+											{
+												"type": "chunk",
+												"id": "001C",
+												"class": "src:LeafElement",
+												"content": "Sociale aspecten in de uitvoering en het effect van de activiteit.",
+												"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002B_artikel_8/001C_chunk"
+											},
+											{
+												"type": "chunk",
+												"id": "001D",
+												"class": "src:LeafElement",
+												"content": "Effect kan zijn: vanuit de eigen kracht is een doelgroep in staat zelf problemen op te lossen en initiatieven te ontplooien. Uitvoering: actieve deelname van diverse doelgroepen.",
+												"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002B_artikel_8/001D_chunk"
+											},
+											{
+												"type": "chunk",
+												"id": "001E",
+												"class": "src:LeafElement",
+												"content": "Ecology (max 5 punten)",
+												"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002B_artikel_8/001E_chunk"
+											},
+											{
+												"type": "chunk",
+												"id": "001F",
+												"class": "src:LeafElement",
+												"content": "Onder ecology verstaan wij o.a.:",
+												"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002B_artikel_8/001F_chunk"
+											},
+											{
+												"type": "chunk",
+												"id": "003Q",
+												"class": "src:LeafElement",
+												"content": "• Duurzaamheid\n",
+												"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002B_artikel_8/003Q_chunk"
+											},
+											{
+												"type": "chunk",
+												"id": "003R",
+												"class": "src:LeafElement",
+												"content": "• Natuur\n",
+												"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002B_artikel_8/003R_chunk"
+											},
+											{
+												"type": "chunk",
+												"id": "003S",
+												"class": "src:LeafElement",
+												"content": "• Energietransitie\n",
+												"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002B_artikel_8/003S_chunk"
+											},
+											{
+												"type": "chunk",
+												"id": "003T",
+												"class": "src:LeafElement",
+												"content": "• Milieu\n",
+												"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002B_artikel_8/003T_chunk"
+											},
+											{
+												"type": "chunk",
+												"id": "003U",
+												"class": "src:LeafElement",
+												"content": "• Voedsel\n",
+												"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002B_artikel_8/003U_chunk"
+											},
+											{
+												"type": "chunk",
+												"id": "003V",
+												"class": "src:LeafElement",
+												"content": "• Versterking landschappelijke en cultuurhistorische structuren\n",
+												"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002B_artikel_8/003V_chunk"
+											},
+											{
+												"type": "chunk",
+												"id": "003W",
+												"class": "src:LeafElement",
+												"content": "• Archeologie\n",
+												"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002B_artikel_8/003W_chunk"
+											},
+											{
+												"type": "chunk",
+												"id": "003X",
+												"class": "src:LeafElement",
+												"content": "• Circulariteit",
+												"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002B_artikel_8/003X_chunk"
+											},
+											{
+												"type": "chunk",
+												"id": "001H",
+												"class": "src:LeafElement",
+												"content": "Het aantonen van een duurzaam effect. Wat zijn de verbeteringen ten opzichte van de huidige situatie en welke (duurzame) materialen worden daarbij gebruikt? Daarnaast zou je kunnen meten door te kijken naar de effecten voor educatie.",
+												"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002B_artikel_8/001H_chunk"
+											},
+											{
+												"type": "chunk",
+												"id": "001I",
+												"class": "src:LeafElement",
+												"content": "Binnen ecology kan een project scoren op het doel landschap en cultuurhistorie. Een project scoort hoger naarmate het bijdraagt aan de versterking van de landschappelijke en cultuurhistorische structuren van provinciaal belang die in de thematische structuurvisie “Grutsk op ‘e romte” zijn opgenomen. Zie ook",
+												"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002B_artikel_8/001I_chunk"
+											},
+											{
+												"type": "chunk",
+												"id": "001J",
+												"class": "src:LeafElement",
+												"content": "Externe link:",
+												"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002B_artikel_8/001J_chunk"
+											},
+											{
+												"type": "chunk",
+												"id": "001K",
+												"class": "src:LeafElement",
+												"content": "http://www.fryslan.frl/grutsk.",
+												"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002B_artikel_8/001K_chunk"
+											},
+											{
+												"type": "chunk",
+												"id": "001L",
+												"class": "src:LeafElement",
+												"content": "Projecten die zo duurzaam mogelijk worden uitgevoerd, ontvangen een hogere score op basis van bovenstaand criterium.",
+												"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002B_artikel_8/001L_chunk"
+											},
+											{
+												"type": "chunk",
+												"id": "001M",
+												"class": "src:LeafElement",
+												"content": "Taal (max 2 punten)",
+												"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002B_artikel_8/001M_chunk"
+											},
+											{
+												"type": "chunk",
+												"id": "001N",
+												"class": "src:LeafElement",
+												"content": "Taal heeft betrekking op de mate waarin het project gebruik maakt van het Fries en/of de in het gebied gebruikte Friese streektaal. Het doel van de taalpunten is om de zichtbaarheid van het Fries en/of de Friese streektalen in de openbare ruimte te vergroten. Afhankelijk van de mate waarin het Fries en/of de in het gebied gebruikte Friese streektaal worden gebruikt in het project, kan een project één of twee punten toegekend krijgen. Voor het onderscheid tussen één of twee punten geldt dat - één punt wordt toegekend indien het project het Fries en/of de in het gebied gebruikte Friese streektaal meer zichtbaar maakt door middel van voor de hand liggende zaken, zoals teksten op naambordjes of wegwijzers. De vertalingen zijn gemakkelijk te realiseren. - twee punten worden toegekend indien het project bovengemiddeld bijdraagt aan de zichtbaarheid van het Fries en/of de in het gebied gebruikte Friese streektaal. Er is binnen het project echt ruimte gecreëerd voor het Fries en/of de in het gebied gebruikte Friese streektaal, of bijvoorbeeld creatieve invulling gegeven aan de zichtbaarheid van het Fries of de streektaal door een streekdichter te vragen een gedicht te maken voor/over het betreffende gebied of gebouw. Er is gekeken naar onze beleidsdoelen als het gaat om (de zichtbaarheid van) de Friese taal of de streektaal. Kost meer moeite om te realiseren, er is meer tijd nodig om tekst(en) te (laten) vertalen. De gebruikte taal of talen sluiten goed aan bij de omgeving/mienskip. ",
+												"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002B_artikel_8/001N_chunk"
+											},
+											{
+												"type": "chunk",
+												"id": "001O",
+												"class": "src:LeafElement",
+												"content": "N.B. Het doel van de taalpunten is het actieve gebruik van het Fries en/of de in het gebied gebruikte streektaal tijdens de uitvoering en invulling van het project te stimuleren om de zichtbaarheid van het Fries en de streektalen in de openbare ruimte te vergroten. Voor correspondentie over de aanvraag of de aanvraag zelf in het Fries/streektaal kunnen geen taalpunten worden verdiend.",
+												"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002B_artikel_8/001O_chunk"
+											}
+										],
+										"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002B_artikel_8",
+										"containsAsTitle": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002B_artikel_8/001h_chunk"
+									},
+									{
+										"type": "artikel",
+										"id": "002C",
+										"label": "Artikel",
+										"numbering": "9",
+										"title": "Adviescommissies",
+										"separator": "recipe:artikel",
+										"class": "src:NonLeafElement",
+										"children": [
+											{
+												"type": "chunk",
+												"id": "001P",
+												"class": "src:LeafElement",
+												"content": "Artikel 9 Adviescommissies",
+												"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002C_artikel_9/001P_chunk"
+											},
+											{
+												"type": "chunk",
+												"id": "001Q",
+												"class": "src:LeafElement",
+												"content": "Gedeputeerde staten hebben in elk gebied als bedoeld in artikel 1.4 van de regeling een adviescommissie ingesteld. Hiervoor wordt een reglement vastgesteld. De commissie is onder andere belast met het adviseren over ingediende subsidieaanvragen.",
+												"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002C_artikel_9/001Q_chunk"
+											}
+										],
+										"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002C_artikel_9",
+										"containsAsTitle": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002C_artikel_9/001P_chunk"
+									},
+									{
+										"type": "artikel",
+										"id": "002D",
+										"label": "Artikel",
+										"numbering": "10",
+										"title": "Welke kosten komen al dan niet voor subsidie in aanmerking?",
+										"separator": "recipe:artikel",
+										"class": "src:NonLeafElement",
+										"children": [
+											{
+												"type": "chunk",
+												"id": "001R",
+												"class": "src:LeafElement",
+												"content": "Artikel 10 Welke kosten komen al dan niet voor subsidie in aanmerking?",
+												"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002D_artikel_10/001R_chunk"
+											},
+											{
+												"type": "chunk",
+												"id": "001S",
+												"class": "src:LeafElement",
+												"content": "Deze bepaling regelt welke kosten wel of niet voor subsidie in aanmerking komen. Het eerste lid regelt dat de reguliere werkzaamheden van de subsidieaanvrager, niet voor subsidie in aanmerking komen. De exploitatie van aanvragers is uitgesloten op grond van de regeling.",
+												"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002D_artikel_10/001S_chunk"
+											},
+											{
+												"type": "chunk",
+												"id": "001T",
+												"class": "src:LeafElement",
+												"content": "Voor het bepalen van de subsidiabele kosten worden vrijwilligersuren gewaardeerd op het geldende minimumloon voor 22 jaar en ouder per uur per vrijwilliger op basis van een volledige werkweek van 36 uur.",
+												"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002D_artikel_10/001T_chunk"
+											},
+											{
+												"type": "chunk",
+												"id": "001U",
+												"class": "src:LeafElement",
+												"content": "In lid 3 zijn niet subsidiabel gesteld de kosten die verband houden met :",
+												"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002D_artikel_10/001U_chunk"
+											},
+											{
+												"type": "chunk",
+												"id": "003Y",
+												"class": "src:LeafElement",
+												"content": "1° het organiseren van een (dorps- of buurt)feest, borrel, optocht, braderie of barbecue of daarmee gelijk te stellen activiteit;2° het schrijven of uitgeven van een boek en het produceren van een film; 3° het ontwerpen, vervaardigen of plaatsen van een standbeeld of gedenkplaat; 4° Kosten van rente, bankdiensten, financieringen, gerechtelijke procedures, boetes of sancties komen niet voor subsidie in aanmerking;5° Aankoop van onroerende zaken voor zover het aankoopbedrag hoger is dan 10% van de totale subsidiabele projectkosten komen niet voor subsidie in aanmerking;6° kosten die zijn gemaakt voorafgaand aan de datum van ontvangst van de subsidieaanvraag komen niet voor subsidie in aanmerking, tenzij het kosten betreft van voorbereiding, planvorming, onderzoek of voorlichting.",
+												"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002D_artikel_10/003Y_chunk"
+											},
+											{
+												"type": "chunk",
+												"id": "001W",
+												"class": "src:LeafElement",
+												"content": "Een begroting dient dus duidelijk te zijn, zodanig dat daaruit de subsidiabele kosten kunnen worden gedistilleerd. De hoofdregel is: het gaat om kosten die de aanvrager redelijkerwijs moet maken om de activiteiten in het project uit te voeren en dat deze kosten rechtstreeks verbonden zijn met deze activiteiten.",
+												"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002D_artikel_10/001W_chunk"
+											},
+											{
+												"type": "chunk",
+												"id": "001X",
+												"class": "src:LeafElement",
+												"content": " ",
+												"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002D_artikel_10/001X_chunk"
+											}
+										],
+										"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002D_artikel_10",
+										"containsAsTitle": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002D_artikel_10/001R_chunk"
+									},
+									{
+										"type": "artikel",
+										"id": "002E",
+										"label": "Artikel",
+										"numbering": "11",
+										"title": "Hoeveel subsidie kan een aanvrager krijgen?",
+										"separator": "recipe:artikel",
+										"class": "src:NonLeafElement",
+										"children": [
+											{
+												"type": "chunk",
+												"id": "001Y",
+												"class": "src:LeafElement",
+												"content": "Artikel 11 Hoeveel subsidie kan een aanvrager krijgen?",
+												"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002E_artikel_11/001Y_chunk"
+											},
+											{
+												"type": "chunk",
+												"id": "001Z",
+												"class": "src:LeafElement",
+												"content": "Een subsidie kan nooit meer dan 40% van de subsidiabele kosten bedragen.",
+												"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002E_artikel_11/001Z_chunk"
+											},
+											{
+												"type": "chunk",
+												"id": "0020",
+												"class": "src:LeafElement",
+												"content": "Kleine initiatieven en nieuwe evenementen komen in aanmerking voor maximaal € 10.000,- subsidie. Middelgrote initiatieven komen in aanmerking voor maximaal € 35.000 subsidie. Grote initiatieven komen in aanmerking voor maximaal € 75.000 subsidie.",
+												"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002E_artikel_11/0020_chunk"
+											},
+											{
+												"type": "chunk",
+												"id": "0021",
+												"class": "src:LeafElement",
+												"content": " ",
+												"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002E_artikel_11/0021_chunk"
+											}
+										],
+										"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002E_artikel_11",
+										"containsAsTitle": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002E_artikel_11/001Y_chunk"
+									},
+									{
+										"type": "artikel",
+										"id": "002F",
+										"label": "Artikel",
+										"numbering": "12",
+										"title": "Welke verplichtingen zijn verbonden aan de subsidiebeschikking?",
+										"separator": "recipe:artikel",
+										"class": "src:NonLeafElement",
+										"children": [
+											{
+												"type": "chunk",
+												"id": "0022",
+												"class": "src:LeafElement",
+												"content": "Artikel 12 Welke verplichtingen zijn verbonden aan de subsidiebeschikking?",
+												"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002F_artikel_12/0022_chunk"
+											},
+											{
+												"type": "chunk",
+												"id": "0023",
+												"class": "src:LeafElement",
+												"content": "Onverminderd de voorwaarden en verplichtingen in paragraaf 2.3 van de Asv, wordt aan de subsidieontvanger in ieder geval de verplichting opgelegd om aan te geven op de website van de provincie Fryslân wat het resultaat is van het project. Dit kan de subsidieontvanger doen door een foto of een geluidsfragment te uploaden op",
+												"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002F_artikel_12/0023_chunk"
+											},
+											{
+												"type": "chunk",
+												"id": "0024",
+												"class": "src:LeafElement",
+												"content": "Externe link:",
+												"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002F_artikel_12/0024_chunk"
+											},
+											{
+												"type": "chunk",
+												"id": "0025",
+												"class": "src:LeafElement",
+												"content": "www.streekwurk.frl.",
+												"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002F_artikel_12/0025_chunk"
+											},
+											{
+												"type": "chunk",
+												"id": "0026",
+												"class": "src:LeafElement",
+												"content": "Voor subsidies vanaf € 25.000,- zal ook een financieel verslag moeten worden aangeleverd. Hiervoor geldt dat bij afrekening gekeken wordt of het maximale subsidiepercentage van 40% van de subsidiabele kosten niet wordt overschreden. Ook kunnen Gedeputeerde Staten bij de verleningsbeschikking nadere eisen stellen waaraan het verzoek tot vaststelling moet voldoen.",
+												"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002F_artikel_12/0026_chunk"
+											},
+											{
+												"type": "chunk",
+												"id": "0027",
+												"class": "src:LeafElement",
+												"content": " ",
+												"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002F_artikel_12/0027_chunk"
+											},
+											{
+												"type": "chunk",
+												"id": "0028",
+												"class": "src:LeafElement",
+												"content": "De projectperiode is voor kleine initiatieven en nieuwe evenementen maximaal 12 maanden met een mogelijkheid tot verlenging (voor de duur van 6 maanden). Hiermee wordt beoogd initiatieven zo spoedig mogelijk een effect te laten hebben op de leefbaarheid. Voor middelgrote en grote initiatieven is, wegens de omvang, een langere projectperiode mogelijk van maximaal 24 maanden met een mogelijkheid tot verlenging (voor de duur van 6 maanden).",
+												"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002F_artikel_12/0028_chunk"
+											},
+											{
+												"type": "chunk",
+												"id": "0029",
+												"class": "src:LeafElement",
+												"content": " ",
+												"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002F_artikel_12/0029_chunk"
+											}
+										],
+										"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002F_artikel_12",
+										"containsAsTitle": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002F_artikel_12/0022_chunk"
+									},
+									{
+										"type": "artikel",
+										"id": "002G",
+										"label": "Artikel",
+										"numbering": "13",
+										"title": "Wat betekent een opschortende voorwaarde?",
+										"separator": "recipe:artikel",
+										"class": "src:NonLeafElement",
+										"children": [
+											{
+												"type": "chunk",
+												"id": "002a",
+												"class": "src:LeafElement",
+												"content": "Artikel 13 Wat betekent een opschortende voorwaarde?",
+												"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002G_artikel_13/002a_chunk"
+											},
+											{
+												"type": "chunk",
+												"id": "002b",
+												"class": "src:LeafElement",
+												"content": "De opschortende voorwaarde, die op grond van artikel 13 kan worden opgelegd, betekent dat indien bijvoorbeeld een omgevingsvergunning nodig is voor de uitvoering van de activiteiten, de beschikking waarbij de subsidie is verstrekt pas in werking treedt als deze omgevingsvergunning is verleend. Wordt de omgevingsvergunning niet verleend, dan krijgt de beschikking waarbij de subsidie is verstrekt geen werking en ontstaat er geen aanspraak op de subsidie.",
+												"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002G_artikel_13/002b_chunk"
+											}
+										],
+										"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002G_artikel_13",
+										"containsAsTitle": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/002G_artikel_13/002a_chunk"
+									}
+								],
+								"IRI": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting",
+								"containsAsTitle": "Document/002c_toelichting/002d_Artikelsgewijze%20toelichting/000M_chunk"
+							}
+						],
+						"IRI": "Document/002c_toelichting",
+						"containsAsTitle": "Document/002c_toelichting/000J_chunk"
+					}
+				]
+			}
+		}
+	]
+}

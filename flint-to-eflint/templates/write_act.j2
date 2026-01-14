@@ -1,0 +1,22 @@
+{% import "tools.j2" as tools %}
+
+{% for frame in frames %}
+    {% if frame.typeId == 'act' %}
+
+Act [{{ frame.label }}] Actor [{{ frame.actorId }}] Recipient [{{ frame.recipientId }}]
+        {% if frame.objectId %}
+Related to [{{ frame.objectId }}]
+        {%- endif %}
+        {% if frame.precondition['children'] %}
+Holds when (
+{{ tools.render_condition(frame.precondition, frames) }}
+)
+        {% endif %}
+        {% if frame.creates %}
+Creates [{{ frame.creates[0] }}]
+        {%- endif %}
+        {% if frame.terminates %}
+Terminates [{{ frame.terminates[0] }}]
+        {%- endif %}
+    {%- endif %}
+{% endfor %}

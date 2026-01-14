@@ -1,0 +1,1380 @@
+{
+  "id": "http://ontology.tno.nl/normengineering/editor#task-a8e21f90-5ab4-4ac0-904e-e4976e95fea9",
+  "type": "Task",
+  "description": "",
+  "label": "renovation rentals demo",
+  "hasEditor": "Demo editor",
+  "sourceDocs": [
+    {
+      "jsonLd": {
+        "@context": {
+          "choppr": "http://ontology.tno.nl/normengineering/choppr#",
+          "src": "http://ontology.tno.nl/normengineering/source#",
+          "xsd": "http://www.w3.org/2001/XMLSchema#",
+          "po": "http://www.essepuntato.it/2008/12/pattern",
+          "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+          "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+          "choppr.recipe": "http://choppr.app/decompositions/3275a4e6-117b-472c-8000-4aa907d9f5b5/recipe/",
+          "choppr.separators": "http://choppr.app/decompositions/3275a4e6-117b-472c-8000-4aa907d9f5b5/separators/",
+          "@base": "http://choppr.app/decompositions/3275a4e6-117b-472c-8000-4aa907d9f5b5/",
+          "IRI": "@id",
+          "id": "choppr:originalId",
+          "typelabel": "src:hasTypeLabel",
+          "actorLabel": "rdfs:label",
+          "numbering": "src:hasNumbering",
+          "content": "src:hasContent",
+          "hasOrigin": "src:hasOrigin",
+          "original": "choppr:originalSrc",
+          "containsAsHeader": {
+            "@type": "@id",
+            "@id": "src:containsAsHeader"
+          },
+          "separator": {
+            "@type": "@id",
+            "@id": "choppr:chunkSeparator"
+          },
+          "children": {
+            "@id": "src:hasChildElementOrdering",
+            "@container": "@list"
+          },
+          "decompositionPreprocessors": "choppr:decompositionPreprocessors",
+          "decompositionSeparators": "choppr:decompositionSeparators",
+          "decompositionRecipe": "choppr:decompositionRecipe",
+          "delete": "choppr:delete",
+          "begins": "src:begins",
+          "ends": "src:ends",
+          "authoredBy": "src:authoredBy",
+          "editedBy": "src:editedBy",
+          "title": "src:hasTitle",
+          "version": "src:hasVersion",
+          "decompositionVersion": "src:hasDecompositionVersion",
+          "applicableAt": "src:applicableAt",
+          "applicableFrom": {
+            "@id": "src:applicableFrom",
+            "@type": "xsd:dateTime"
+          },
+          "applicableUntil": {
+            "@id": "src:applicableUntil",
+            "@type": "xsd:dateTime"
+          },
+          "generatedBy": {
+            "@type": "@id",
+            "@id": "src:generatedBy"
+          },
+          "generates": {
+            "@type": "@id",
+            "@id": "src:generates"
+          },
+          "chopprCommit": "choppr:chopprCommit",
+          "sourceOnthologyCommit": "choppr:sourceOnthologyCommit",
+          "chopprOnthologyCommit": "choppr:chopprOnthologyCommit"
+        },
+        "@id": "http://choppr.app/decompositions/3275a4e6-117b-472c-8000-4aa907d9f5b5",
+        "@graph": [
+          {
+            "@type": "src:Source",
+            "@id": "http://choppr.app/decompositions/3275a4e6-117b-472c-8000-4aa907d9f5b5",
+            "decompositionPreprocessors": {
+              "@context": {
+                "choppr": "http://ontology.tno.nl/normengineering/choppr#",
+                "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+                "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+                "src": "http://ontology.tno.nl/normengineering/source#",
+                "@base": "http://choppr.app/decompositions/3275a4e6-117b-472c-8000-4aa907d9f5b5/preprocessors/",
+                "id": "@id",
+                "regexp": "choppr:regExp",
+                "replaceBy": "choppr:replaceBy",
+                "name": "rdfs:label",
+                "description": "rdfs:comment",
+                "active": "choppr:isActive"
+              },
+              "@list": [
+                {
+                  "id": "chunks",
+                  "name": "Chunks",
+                  "regexp": "(\\r\\n|\\n\\r|\\r|\\n)",
+                  "replaceBy": "$1</choppr-chunk><choppr-chunk>",
+                  "description": "Create chunks on newlines",
+                  "active": true,
+                  "@type": "choppr:PreProcessor"
+                },
+                {
+                  "id": "dbl_chunks",
+                  "name": "Paragraph Chunks",
+                  "regexp": "(\\r\\n\\r\\n|\\n\\r\\n\\r|\\r\\r|\\n\\n)",
+                  "replaceBy": "$1</choppr-chunk><choppr-chunk>",
+                  "description": "Create chunks on double newlines",
+                  "active": false,
+                  "@type": "choppr:PreProcessor"
+                },
+                {
+                  "id": "tabs",
+                  "name": "Tabbed elements",
+                  "regexp": "(.*?\\t+)(.*?)",
+                  "replaceBy": "</choppr-chunk><choppr-chunk>$1</choppr-chunk><choppr-chunk>$2</choppr-chunk><choppr-chunk>",
+                  "description": "Create chunks on tabs",
+                  "active": false,
+                  "@type": "choppr:PreProcessor"
+                },
+                {
+                  "id": "sentence",
+                  "name": "Sentence Chunks",
+                  "regexp": "([\\.!?][\\s|(\\r\\n|\\r|\\n)])",
+                  "replaceBy": "$1</choppr-chunk><choppr-chunk>",
+                  "description": "Create chunks on period",
+                  "active": false,
+                  "@type": "choppr:PreProcessor"
+                },
+                {
+                  "id": "removeempty",
+                  "name": "Empty lines",
+                  "regexp": "<choppr-chunk>(\\s*?)<\\/choppr-chunk>",
+                  "replaceBy": "<choppr-chunk class=\"chunk-ignore\" nodata-typelabel = \"Ignore\" bidata-locked = \"Ignore\">$1</choppr-chunk>",
+                  "description": "Ignore empty lines.",
+                  "active": false,
+                  "@type": "choppr:PreProcessor"
+                }
+              ]
+            },
+            "decompositionRecipe": {
+              "@context": {
+                "choppr": "http://ontology.tno.nl/normengineering/choppr#",
+                "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+                "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+                "src": "http://ontology.tno.nl/normengineering/source#",
+                "choppr.separators": "http://choppr.app/decompositions/3275a4e6-117b-472c-8000-4aa907d9f5b5/separators/",
+                "@base": "http://choppr.app/decompositions/3275a4e6-117b-472c-8000-4aa907d9f5b5/",
+                "IRI": "@id",
+                "name": "rdfs:label",
+                "description": "rdfs:comment",
+                "class": "choppr:separatorClass",
+                "id": "choppr:originalId",
+                "originalId": "choppr:originalId",
+                "representation": "choppr:representation",
+                "hash": "choppr:separatorHash",
+                "separatorTags": "choppr:separatorTags",
+                "separatorId": {
+                  "@type": "@id",
+                  "@id": "choppr:separatorId"
+                },
+                "code": "choppr:separatorContent",
+                "typelabel": "choppr:typeLabel",
+                "numbering": "choppr:captureNumbering",
+                "title": "choppr:captureTitle",
+                "separators": {
+                  "@id": "choppr:stepSeparators",
+                  "@container": "@list"
+                },
+                "actions": {
+                  "@id": "choppr:stepActions",
+                  "@container": "@list"
+                },
+                "on": "choppr:onId",
+                "offsets": "choppr:actionOffset"
+              },
+              "@list": [
+                {
+                  "separators": [
+                    {
+                      "hash": "choppr.group",
+                      "@type": "choppr:Action",
+                      "name": "Group",
+                      "description": "Group selected chunks into 1 chunk",
+                      "on": "[\"000p\",\"000q\"]",
+                      "separatorId": "choppr.separators:choppr.group",
+                      "IRI": "recipe/step/1/choppr.group"
+                    }
+                  ],
+                  "@type": "choppr:Step",
+                  "IRI": "recipe/step/1"
+                },
+                {
+                  "separators": [
+                    {
+                      "hash": "choppr.group",
+                      "@type": "choppr:Action",
+                      "name": "Group",
+                      "description": "Group selected chunks into 1 chunk",
+                      "on": "[\"000s\",\"000t\"]",
+                      "separatorId": "choppr.separators:choppr.group",
+                      "IRI": "recipe/step/2/choppr.group"
+                    }
+                  ],
+                  "@type": "choppr:Step",
+                  "IRI": "recipe/step/2"
+                },
+                {
+                  "separators": [
+                    {
+                      "hash": "choppr.group",
+                      "@type": "choppr:Action",
+                      "name": "Group",
+                      "description": "Group selected chunks into 1 chunk",
+                      "on": "[\"000v\",\"000w\"]",
+                      "separatorId": "choppr.separators:choppr.group",
+                      "IRI": "recipe/step/3/choppr.group"
+                    }
+                  ],
+                  "@type": "choppr:Step",
+                  "IRI": "recipe/step/3"
+                },
+                {
+                  "separators": [
+                    {
+                      "hash": "choppr.group",
+                      "@type": "choppr:Action",
+                      "name": "Group",
+                      "description": "Group selected chunks into 1 chunk",
+                      "on": "[\"000A\",\"000B\"]",
+                      "separatorId": "choppr.separators:choppr.group",
+                      "IRI": "recipe/step/4/choppr.group"
+                    }
+                  ],
+                  "@type": "choppr:Step",
+                  "IRI": "recipe/step/4"
+                },
+                {
+                  "separators": [
+                    {
+                      "hash": "choppr.ungroup",
+                      "@type": "choppr:Action",
+                      "name": "Ungroup",
+                      "description": "Ungroup selected chunks",
+                      "on": "[\"000N\",\"000w\"]",
+                      "separatorId": "choppr.separators:choppr.ungroup",
+                      "IRI": "recipe/step/5/choppr.ungroup"
+                    }
+                  ],
+                  "@type": "choppr:Step",
+                  "IRI": "recipe/step/5"
+                },
+                {
+                  "separators": [
+                    {
+                      "hash": "choppr.ungroup",
+                      "@type": "choppr:Action",
+                      "name": "Ungroup",
+                      "description": "Ungroup selected chunks",
+                      "on": "[\"000v\"]",
+                      "separatorId": "choppr.separators:choppr.ungroup",
+                      "IRI": "recipe/step/6/choppr.ungroup"
+                    }
+                  ],
+                  "@type": "choppr:Step",
+                  "IRI": "recipe/step/6"
+                },
+                {
+                  "separators": [
+                    {
+                      "hash": "choppr.group",
+                      "@type": "choppr:Action",
+                      "name": "Group",
+                      "description": "Group selected chunks into 1 chunk",
+                      "on": "[\"000N\",\"000w\",\"000y\"]",
+                      "separatorId": "choppr.separators:choppr.group",
+                      "IRI": "recipe/step/7/choppr.group"
+                    }
+                  ],
+                  "@type": "choppr:Step",
+                  "IRI": "recipe/step/7"
+                },
+                {
+                  "separators": [
+                    {
+                      "hash": "choppr.group",
+                      "@type": "choppr:Action",
+                      "name": "Group",
+                      "description": "Group selected chunks into 1 chunk",
+                      "on": "[\"000N\",\"000y\"]",
+                      "separatorId": "choppr.separators:choppr.group",
+                      "IRI": "recipe/step/8/choppr.group"
+                    }
+                  ],
+                  "@type": "choppr:Step",
+                  "IRI": "recipe/step/8"
+                },
+                {
+                  "separators": [
+                    {
+                      "hash": "choppr.group",
+                      "@type": "choppr:Action",
+                      "name": "Group",
+                      "description": "Group selected chunks into 1 chunk",
+                      "on": "[\"000D\",\"000E\"]",
+                      "separatorId": "choppr.separators:choppr.group",
+                      "IRI": "recipe/step/9/choppr.group"
+                    }
+                  ],
+                  "@type": "choppr:Step",
+                  "IRI": "recipe/step/9"
+                },
+                {
+                  "separators": [
+                    {
+                      "hash": "choppr.group",
+                      "@type": "choppr:Action",
+                      "name": "Group",
+                      "description": "Group selected chunks into 1 chunk",
+                      "on": "[\"000G\",\"000H\"]",
+                      "separatorId": "choppr.separators:choppr.group",
+                      "IRI": "recipe/step/10/choppr.group"
+                    }
+                  ],
+                  "@type": "choppr:Step",
+                  "IRI": "recipe/step/10"
+                },
+                {
+                  "separators": [
+                    {
+                      "hash": "choppr.group",
+                      "@type": "choppr:Action",
+                      "name": "Group",
+                      "description": "Group selected chunks into 1 chunk",
+                      "on": "[\"000J\",\"000K\"]",
+                      "separatorId": "choppr.separators:choppr.group",
+                      "IRI": "recipe/step/11/choppr.group"
+                    }
+                  ],
+                  "@type": "choppr:Step",
+                  "IRI": "recipe/step/11"
+                }
+              ]
+            },
+            "decompositionSeparators": {
+              "@context": {
+                "choppr": "http://ontology.tno.nl/normengineering/choppr#",
+                "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+                "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+                "src": "http://ontology.tno.nl/normengineering/source#",
+                "@base": "http://choppr.app/decompositions/3275a4e6-117b-472c-8000-4aa907d9f5b5/separators/",
+                "hash": "@id",
+                "code": "choppr:separatorContent",
+                "typelabel": "choppr:typeLabel",
+                "numbering": "choppr:captureNumbering",
+                "title": "choppr:captureTitle",
+                "name": "rdfs:label",
+                "description": "rdfs:comment",
+                "separatorTags": "choppr:separatorTags",
+                "representation": "choppr:representation"
+              },
+              "@list": []
+            },
+            "children": [
+              {
+                "id": "0002",
+                "content": "https://dudoklegal.nl/en/current-events/subsidy-for-the-sustainability-of-rental-housing/?utm_source=chatgpt.com\n",
+                "@type": [
+                  "src:LeafElement"
+                ],
+                "IRI": "Document/0002"
+              },
+              {
+                "id": "0003",
+                "content": "\n",
+                "@type": [
+                  "src:LeafElement"
+                ],
+                "IRI": "Document/0003"
+              },
+              {
+                "id": "0004",
+                "content": "\n",
+                "@type": [
+                  "src:LeafElement"
+                ],
+                "IRI": "Document/0004"
+              },
+              {
+                "id": "0005",
+                "content": "Subsidy for the Sustainability of Rental Housing\n",
+                "@type": [
+                  "src:LeafElement"
+                ],
+                "IRI": "Document/0005"
+              },
+              {
+                "id": "0006",
+                "content": "\n",
+                "@type": [
+                  "src:LeafElement"
+                ],
+                "IRI": "Document/0006"
+              },
+              {
+                "id": "0007",
+                "content": "On 10 October, the Minister submitted the draft of the Subsidy Scheme for Sustainability and Maintenance of Rental Housing (hereinafter: SVOH) to the House of Representatives. The revision of the SVOH is expected to come into effect on 1 January 2025.\n",
+                "@type": [
+                  "src:LeafElement"
+                ],
+                "IRI": "Document/0007"
+              },
+              {
+                "id": "0008",
+                "content": "\n",
+                "@type": [
+                  "src:LeafElement"
+                ],
+                "IRI": "Document/0008"
+              },
+              {
+                "id": "0009",
+                "content": "This article briefly outlines the changes to the SVOH, with some minor exceptions, so that it can be determined whether and to what extent an application for the subsidy scheme is possible.\n",
+                "@type": [
+                  "src:LeafElement"
+                ],
+                "IRI": "Document/0009"
+              },
+              {
+                "id": "000a",
+                "content": "\n",
+                "@type": [
+                  "src:LeafElement"
+                ],
+                "IRI": "Document/000a"
+              },
+              {
+                "id": "000b",
+                "content": "The Current Scheme\n",
+                "@type": [
+                  "src:LeafElement"
+                ],
+                "IRI": "Document/000b"
+              },
+              {
+                "id": "000c",
+                "content": "\n",
+                "@type": [
+                  "src:LeafElement"
+                ],
+                "IRI": "Document/000c"
+              },
+              {
+                "id": "000d",
+                "content": "On 1 April 2022, the Subsidy Scheme for Sustainability and Maintenance of Rental Housing (SVOH) was introduced with the aim of supporting (small) landlords of regulated rental properties in expenditures for energy savings, maintenance, and energy advice. The SVOH largely mirrors the ISDE subsidy (Investment Subsidy for Sustainable Energy and Energy Savings), which only applies to private homeowners who use the property themselves.\n",
+                "@type": [
+                  "src:LeafElement"
+                ],
+                "IRI": "Document/000d"
+              },
+              {
+                "id": "000e",
+                "content": "\n",
+                "@type": [
+                  "src:LeafElement"
+                ],
+                "IRI": "Document/000e"
+              },
+              {
+                "id": "000f",
+                "content": "Changes to the Scheme\n",
+                "@type": [
+                  "src:LeafElement"
+                ],
+                "IRI": "Document/000f"
+              },
+              {
+                "id": "000g",
+                "content": "\n",
+                "@type": [
+                  "src:LeafElement"
+                ],
+                "IRI": "Document/000g"
+              },
+              {
+                "id": "000h",
+                "content": "As of 1 April 2023, the SVOH was adjusted, shifting its focus entirely to private landlords and all types of rental housing. The goal now is to promote energy savings and related maintenance for all existing rental housing of private landlords. A specific scheme for monuments was also introduced.\n",
+                "@type": [
+                  "src:LeafElement"
+                ],
+                "IRI": "Document/000h"
+              },
+              {
+                "id": "000i",
+                "content": "\n",
+                "@type": [
+                  "src:LeafElement"
+                ],
+                "IRI": "Document/000i"
+              },
+              {
+                "id": "000j",
+                "content": "While the use of the SVOH is increasing, growth remains limited. Of the available subsidy budget of €152 million, over €141 million remained available as of 1 July 2024. Discussions with industry associations revealed that the scheme was not working well for private landlords and institutional investors. As a result, the scheme is being revised, incorporating suggestions from market parties, interest groups such as Vastgoed Belang, IVBN, monument preservation organisations, and the Netherlands Enterprise Agency (RVO).\n",
+                "@type": [
+                  "src:LeafElement"
+                ],
+                "IRI": "Document/000j"
+              },
+              {
+                "id": "000k",
+                "content": "\n",
+                "@type": [
+                  "src:LeafElement"
+                ],
+                "IRI": "Document/000k"
+              },
+              {
+                "id": "000l",
+                "content": "The revision aims to make the scheme more effective and accelerate sustainability, resulting in energy savings, which will ultimately benefit tenants through lower energy costs and improved living comfort. The government also intends to continue phasing out rental properties with energy labels E, F and G, which will be subject to legal requirements. The revision of the SVOH will come into effect on 1 January 2025. The main changes are outlined below.\n",
+                "@type": [
+                  "src:LeafElement"
+                ],
+                "IRI": "Document/000l"
+              },
+              {
+                "id": "000m",
+                "content": "\n",
+                "@type": [
+                  "src:LeafElement"
+                ],
+                "IRI": "Document/000m"
+              },
+              {
+                "id": "000n",
+                "content": "Key Points of the Scheme\n",
+                "@type": [
+                  "src:LeafElement"
+                ],
+                "IRI": "Document/000n"
+              },
+              {
+                "id": "000o",
+                "content": "\n",
+                "@type": [
+                  "src:LeafElement"
+                ],
+                "IRI": "Document/000o"
+              },
+              {
+                "typelabel": "Group",
+                "id": "000p",
+                "children": [
+                  {
+                    "id": "000L",
+                    "content": "1. Simplification\n",
+                    "@type": [
+                      "src:LeafElement"
+                    ],
+                    "IRI": "Document/000p_Group/000L"
+                  },
+                  {
+                    "id": "000q",
+                    "content": "The application process will be simplified as subsidies for heat pumps or solar boilers have been moved from the ISDE to the SVOH. By having a single point of contact for all measures, applicants will more quickly qualify for two measures, thereby increasing the subsidy amount.\n",
+                    "@type": [
+                      "src:LeafElement"
+                    ],
+                    "IRI": "Document/000p_Group/000q"
+                  }
+                ],
+                "@type": [
+                  "src:NonLeafElement"
+                ],
+                "IRI": "Document/000p_Group"
+              },
+              {
+                "id": "000r",
+                "content": "\n",
+                "@type": [
+                  "src:LeafElement"
+                ],
+                "IRI": "Document/000r"
+              },
+              {
+                "typelabel": "Group",
+                "id": "000s",
+                "children": [
+                  {
+                    "id": "000M",
+                    "content": "2. Maximum Amount per Rental Property\n",
+                    "@type": [
+                      "src:LeafElement"
+                    ],
+                    "IRI": "Document/000s_Group/000M"
+                  },
+                  {
+                    "id": "000t",
+                    "content": "The maximum amounts will be increased from €6,000 per rental property to €10,000 per property, or €15,000 if a heat pump or solar boiler is included. This provides additional support to landlords with older properties and landlords of listed monument buildings, who generally face higher sustainability costs.\n",
+                    "@type": [
+                      "src:LeafElement"
+                    ],
+                    "IRI": "Document/000s_Group/000t"
+                  }
+                ],
+                "@type": [
+                  "src:NonLeafElement"
+                ],
+                "IRI": "Document/000s_Group"
+              },
+              {
+                "id": "000u",
+                "content": "\n",
+                "@type": [
+                  "src:LeafElement"
+                ],
+                "IRI": "Document/000u"
+              },
+              {
+                "typelabel": "Group",
+                "id": "000N",
+                "children": [
+                  {
+                    "id": "000R",
+                    "children": [
+                      {
+                        "id": "000P",
+                        "content": "3. Maximum Amount per Landlord\n",
+                        "@type": [
+                          "src:LeafElement"
+                        ],
+                        "IRI": "Document/000N_Group/000R/000P"
+                      },
+                      {
+                        "id": "000w",
+                        "content": "A maximum subsidy amount per landlord could restrict landlords with many rental properties from pursuing sustainability projects.\n",
+                        "@type": [
+                          "src:LeafElement"
+                        ],
+                        "IRI": "Document/000N_Group/000R/000w"
+                      }
+                    ],
+                    "@type": [
+                      "src:NonLeafElement"
+                    ],
+                    "IRI": "Document/000N_Group/000R"
+                  }
+                ],
+                "@type": [
+                  "src:NonLeafElement"
+                ],
+                "IRI": "Document/000N_Group"
+              },
+              {
+                "id": "000x",
+                "content": "\n",
+                "@type": [
+                  "src:LeafElement"
+                ],
+                "IRI": "Document/000x"
+              },
+              {
+                "typelabel": "Group",
+                "id": "000y",
+                "children": [
+                  {
+                    "id": "000S",
+                    "children": [
+                      {
+                        "id": "000Q",
+                        "content": "The current maximum subsidy amount of €400,000 per landlord will therefore be scrapped. The goal is to ensure that as many rental properties as possible are made more sustainable.\n",
+                        "@type": [
+                          "src:LeafElement"
+                        ],
+                        "IRI": "Document/000y_Group/000S/000Q"
+                      }
+                    ],
+                    "@type": [
+                      "src:NonLeafElement"
+                    ],
+                    "IRI": "Document/000y_Group/000S"
+                  }
+                ],
+                "@type": [
+                  "src:NonLeafElement"
+                ],
+                "IRI": "Document/000y_Group"
+              },
+              {
+                "id": "000z",
+                "content": "\n",
+                "@type": [
+                  "src:LeafElement"
+                ],
+                "IRI": "Document/000z"
+              },
+              {
+                "typelabel": "Group",
+                "id": "000A",
+                "children": [
+                  {
+                    "id": "000O",
+                    "content": "4. Extension\n",
+                    "@type": [
+                      "src:LeafElement"
+                    ],
+                    "IRI": "Document/000A_Group/000O"
+                  },
+                  {
+                    "id": "000B",
+                    "content": "The scheme will be extended from 31 December 2025 to 31 December 2029. The longer duration of the SVOH aligns with the announced legal requirement that, from 2029, rental properties with energy labels E, F and G can no longer be rented out. This pertains to minimum energy performance requirements for rental properties. Landlords must reasonably meet this standard by 2029 and a subsidy scheme will support them in doing so. The SVOH extension gives landlords the opportunity to make the necessary adjustments.\n",
+                    "@type": [
+                      "src:LeafElement"
+                    ],
+                    "IRI": "Document/000A_Group/000B"
+                  }
+                ],
+                "@type": [
+                  "src:NonLeafElement"
+                ],
+                "IRI": "Document/000A_Group"
+              },
+              {
+                "id": "000C",
+                "content": "\n",
+                "@type": [
+                  "src:LeafElement"
+                ],
+                "IRI": "Document/000C"
+              },
+              {
+                "typelabel": "Group",
+                "id": "000D",
+                "children": [
+                  {
+                    "id": "000T",
+                    "content": "5. Lower Limit for Applications\n",
+                    "@type": [
+                      "src:LeafElement"
+                    ],
+                    "IRI": "Document/000D_Group/000T"
+                  },
+                  {
+                    "id": "000E",
+                    "content": "Amounts above €25,000 per project can now be requested in advance. The previous limit was €125,000. Under the old SVOH, the application and granting process differentiated between small projects (subsidy under €125,000) and large projects (subsidy of €125,000 or more). Applications under €125,000 were submitted after the activities had been carried out, while applications of €125,000 or more had to be submitted before the activities took place. The new adjustment lowers the limit to €25,000, allowing landlords to apply for subsidies before carrying out sustainability measures.\n",
+                    "@type": [
+                      "src:LeafElement"
+                    ],
+                    "IRI": "Document/000D_Group/000E"
+                  }
+                ],
+                "@type": [
+                  "src:NonLeafElement"
+                ],
+                "IRI": "Document/000D_Group"
+              },
+              {
+                "id": "000F",
+                "content": "\n",
+                "@type": [
+                  "src:LeafElement"
+                ],
+                "IRI": "Document/000F"
+              },
+              {
+                "typelabel": "Group",
+                "id": "000G",
+                "children": [
+                  {
+                    "id": "000U",
+                    "content": "6. Split Properties\n",
+                    "@type": [
+                      "src:LeafElement"
+                    ],
+                    "IRI": "Document/000G_Group/000U"
+                  },
+                  {
+                    "id": "000H",
+                    "content": "Subsidies will also be available when existing rental properties are split into two rental units. The SVOH was previously limited to properties that were, meaning landlords could not receive subsidies if a rental property was split, as it would no longer be considered “rented as such”. This requirement has now been removed, allowing split properties to qualify for subsidies. This adjustment to the subsidy scheme promotes both sustainability and the better use of existing buildings. There is no change to the subsidy amount per property, as the subsidy is applied per unit. Transformation projects, such as converting an office into a residential unit, remain excluded because they do not align with the SVOH’s objectives.\n",
+                    "@type": [
+                      "src:LeafElement"
+                    ],
+                    "IRI": "Document/000G_Group/000H"
+                  }
+                ],
+                "@type": [
+                  "src:NonLeafElement"
+                ],
+                "IRI": "Document/000G_Group"
+              },
+              {
+                "id": "000I",
+                "content": "\n",
+                "@type": [
+                  "src:LeafElement"
+                ],
+                "IRI": "Document/000I"
+              },
+              {
+                "typelabel": "Group",
+                "id": "000J",
+                "children": [
+                  {
+                    "id": "000V",
+                    "content": "7. Landlords of Listed Monuments\n",
+                    "@type": [
+                      "src:LeafElement"
+                    ],
+                    "IRI": "Document/000J_Group/000V"
+                  },
+                  {
+                    "id": "000K",
+                    "content": "Improvements will be made for landlords of listed monuments. For example, the Sustainable Monuments Advice (Dumo) will be introduced as energy advice, and small rental properties such as courtyard almshouses (hofjes) will more quickly qualify for subsidies. Landlords of very small properties, including listed courtyard almshouses, were sometimes excluded from the SVOH because their properties did not meet the minimum size requirements. This has now been adjusted; if a property is too small to meet the minimum size requirements, a subsidy can still be granted if the measure is applied to all qualifying areas. ",
+                    "@type": [
+                      "src:LeafElement"
+                    ],
+                    "IRI": "Document/000J_Group/000K"
+                  }
+                ],
+                "@type": [
+                  "src:NonLeafElement"
+                ],
+                "IRI": "Document/000J_Group"
+              }
+            ],
+            "authoredBy": {
+              "@context": {
+                "choppr": "http://ontology.tno.nl/normengineering/choppr#",
+                "src": "http://ontology.tno.nl/normengineering/source#",
+                "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+                "class": "@type",
+                "name": "rdfs:label",
+                "performs": "src:performs"
+              },
+              "@id": "http://choppr.app/decompositions/3275a4e6-117b-472c-8000-4aa907d9f5b5/Author",
+              "class": "src:Actor",
+              "name": "de Minister"
+            },
+            "editedBy": {
+              "@context": {
+                "choppr": "http://ontology.tno.nl/normengineering/choppr#",
+                "src": "http://ontology.tno.nl/normengineering/source#",
+                "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+                "class": "@type",
+                "name": "rdfs:label",
+                "performs": "src:performs"
+              },
+              "@id": "http://choppr.app/decompositions/3275a4e6-117b-472c-8000-4aa907d9f5b5/Editor",
+              "class": "src:Actor",
+              "name": "Unknown User",
+              "performs": "http://choppr.app/decompositions/3275a4e6-117b-472c-8000-4aa907d9f5b5/DecompositionEvent/"
+            },
+            "title": "Subsidy blog",
+            "version": null,
+            "decompositionVersion": "0.1",
+            "applicableAt": {
+              "@context": {
+                "choppr": "http://ontology.tno.nl/normengineering/choppr#",
+                "src": "http://ontology.tno.nl/normengineering/source#",
+                "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+                "class": "@type",
+                "name": "rdfs:label"
+              },
+              "@id": "http://choppr.app/decompositions/3275a4e6-117b-472c-8000-4aa907d9f5b5/applicableAt",
+              "class": "src:Place",
+              "name": null
+            },
+            "applicableFrom": null,
+            "applicableUntil": null,
+            "generatedBy": "http://choppr.app/decompositions/3275a4e6-117b-472c-8000-4aa907d9f5b5/DecompositionEvent/",
+            "original": "https://dudoklegal.nl/en/current-events/subsidy-for-the-sustainability-of-rental-housing/?utm_source=chatgpt.com\r\n\r\n\r\nSubsidy for the Sustainability of Rental Housing\r\n\r\nOn 10 October, the Minister submitted the draft of the Subsidy Scheme for Sustainability and Maintenance of Rental Housing (hereinafter: SVOH) to the House of Representatives. The revision of the SVOH is expected to come into effect on 1 January 2025.\r\n\r\nThis article briefly outlines the changes to the SVOH, with some minor exceptions, so that it can be determined whether and to what extent an application for the subsidy scheme is possible.\r\n\r\nThe Current Scheme\r\n\r\nOn 1 April 2022, the Subsidy Scheme for Sustainability and Maintenance of Rental Housing (SVOH) was introduced with the aim of supporting (small) landlords of regulated rental properties in expenditures for energy savings, maintenance, and energy advice. The SVOH largely mirrors the ISDE subsidy (Investment Subsidy for Sustainable Energy and Energy Savings), which only applies to private homeowners who use the property themselves.\r\n\r\nChanges to the Scheme\r\n\r\nAs of 1 April 2023, the SVOH was adjusted, shifting its focus entirely to private landlords and all types of rental housing. The goal now is to promote energy savings and related maintenance for all existing rental housing of private landlords. A specific scheme for monuments was also introduced.\r\n\r\nWhile the use of the SVOH is increasing, growth remains limited. Of the available subsidy budget of €152 million, over €141 million remained available as of 1 July 2024. Discussions with industry associations revealed that the scheme was not working well for private landlords and institutional investors. As a result, the scheme is being revised, incorporating suggestions from market parties, interest groups such as Vastgoed Belang, IVBN, monument preservation organisations, and the Netherlands Enterprise Agency (RVO).\r\n\r\nThe revision aims to make the scheme more effective and accelerate sustainability, resulting in energy savings, which will ultimately benefit tenants through lower energy costs and improved living comfort. The government also intends to continue phasing out rental properties with energy labels E, F and G, which will be subject to legal requirements. The revision of the SVOH will come into effect on 1 January 2025. The main changes are outlined below.\r\n\r\nKey Points of the Scheme\r\n\r\n1. Simplification\r\nThe application process will be simplified as subsidies for heat pumps or solar boilers have been moved from the ISDE to the SVOH. By having a single point of contact for all measures, applicants will more quickly qualify for two measures, thereby increasing the subsidy amount.\r\n\r\n2. Maximum Amount per Rental Property\r\nThe maximum amounts will be increased from €6,000 per rental property to €10,000 per property, or €15,000 if a heat pump or solar boiler is included. This provides additional support to landlords with older properties and landlords of listed monument buildings, who generally face higher sustainability costs.\r\n\r\n3. Maximum Amount per Landlord\r\nA maximum subsidy amount per landlord could restrict landlords with many rental properties from pursuing sustainability projects.\r\n\r\nThe current maximum subsidy amount of €400,000 per landlord will therefore be scrapped. The goal is to ensure that as many rental properties as possible are made more sustainable.\r\n\r\n4. Extension\r\nThe scheme will be extended from 31 December 2025 to 31 December 2029. The longer duration of the SVOH aligns with the announced legal requirement that, from 2029, rental properties with energy labels E, F and G can no longer be rented out. This pertains to minimum energy performance requirements for rental properties. Landlords must reasonably meet this standard by 2029 and a subsidy scheme will support them in doing so. The SVOH extension gives landlords the opportunity to make the necessary adjustments.\r\n\r\n5. Lower Limit for Applications\r\nAmounts above €25,000 per project can now be requested in advance. The previous limit was €125,000. Under the old SVOH, the application and granting process differentiated between small projects (subsidy under €125,000) and large projects (subsidy of €125,000 or more). Applications under €125,000 were submitted after the activities had been carried out, while applications of €125,000 or more had to be submitted before the activities took place. The new adjustment lowers the limit to €25,000, allowing landlords to apply for subsidies before carrying out sustainability measures.\r\n\r\n6. Split Properties\r\nSubsidies will also be available when existing rental properties are split into two rental units. The SVOH was previously limited to properties that were, meaning landlords could not receive subsidies if a rental property was split, as it would no longer be considered “rented as such”. This requirement has now been removed, allowing split properties to qualify for subsidies. This adjustment to the subsidy scheme promotes both sustainability and the better use of existing buildings. There is no change to the subsidy amount per property, as the subsidy is applied per unit. Transformation projects, such as converting an office into a residential unit, remain excluded because they do not align with the SVOH’s objectives.\r\n\r\n7. Landlords of Listed Monuments\r\nImprovements will be made for landlords of listed monuments. For example, the Sustainable Monuments Advice (Dumo) will be introduced as energy advice, and small rental properties such as courtyard almshouses (hofjes) will more quickly qualify for subsidies. Landlords of very small properties, including listed courtyard almshouses, were sometimes excluded from the SVOH because their properties did not meet the minimum size requirements. This has now been adjusted; if a property is too small to meet the minimum size requirements, a subsidy can still be granted if the measure is applied to all qualifying areas. ",
+            "hasOrigin": "https://dudoklegal.nl/en/current-events/subsidy-for-the-sustainability-of-rental-housing",
+            "chopprCommit": "https://gitlab.com/normativesystems/choppr/choppr-standalone/-/commit/c7c7fe8",
+            "sourceOnthologyCommit": "6bf31efb",
+            "chopprOnthologyCommit": "a25d0cb"
+          },
+          {
+            "@type": "src:DecompositionEvent",
+            "@id": "http://choppr.app/decompositions/3275a4e6-117b-472c-8000-4aa907d9f5b5/DecompositionEvent/",
+            "begins": "2025-09-15T11:45:24.881Z",
+            "ends": "2025-09-15T11:51:42.489Z",
+            "generates": "http://choppr.app/decompositions/3275a4e6-117b-472c-8000-4aa907d9f5b5"
+          }
+        ]
+      },
+      "selectedSentencesIds": [
+        "000T",
+        "000E"
+      ],
+      "collapsedSentencesIds": []
+    }
+  ],
+  "interpretation": "http://ontology.tno.nl/normengineering/editor#interpretation-a6b491d9-c8ab-4f83-b49a-93b9d9fa76bf",
+  "frames": [
+    {
+      "id": "135e958b-6cff-4804-a4a3-6859cd0352d2",
+      "label": " landlords",
+      "fact": " landlords",
+      "typeId": "fact",
+      "subTypeIds": [
+        "agent"
+      ],
+      "comments": [],
+      "isComplex": true,
+      "subdivision": {
+        "isNegated": false,
+        "children": [],
+        "operatorToJoinChildren": null
+      },
+      "annotations": [
+        {
+          "snippets": [
+            {
+              "documentId": "http://choppr.app/decompositions/3275a4e6-117b-472c-8000-4aa907d9f5b5/",
+              "sentenceId": "000E",
+              "sentenceIri": "Document/000D_Group/000E",
+              "characterRange": [
+                505,
+                515
+              ],
+              "text": " landlords"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "11775f00-2c8e-4fd4-813f-f105c489d3fa",
+      "label": "€125,000 or more",
+      "fact": "€125,000 or more",
+      "typeId": "fact",
+      "subTypeIds": [
+        "condition"
+      ],
+      "comments": [],
+      "isComplex": true,
+      "subdivision": {
+        "isNegated": false,
+        "children": [],
+        "operatorToJoinChildren": null
+      },
+      "annotations": [
+        {
+          "snippets": [
+            {
+              "documentId": "http://choppr.app/decompositions/3275a4e6-117b-472c-8000-4aa907d9f5b5/",
+              "sentenceId": "000E",
+              "sentenceIri": "Document/000D_Group/000E",
+              "characterRange": [
+                251,
+                267
+              ],
+              "text": "€125,000 or more"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a49ff0b8-c16e-4cc0-88bf-2a6b11f59c1f",
+      "label": "above €25,000",
+      "fact": "above €25,000",
+      "typeId": "fact",
+      "subTypeIds": [
+        "condition"
+      ],
+      "comments": [],
+      "isComplex": true,
+      "subdivision": {
+        "isNegated": false,
+        "children": [],
+        "operatorToJoinChildren": null
+      },
+      "annotations": [
+        {
+          "snippets": [
+            {
+              "documentId": "http://choppr.app/decompositions/3275a4e6-117b-472c-8000-4aa907d9f5b5/",
+              "sentenceId": "000E",
+              "sentenceIri": "Document/000D_Group/000E",
+              "characterRange": [
+                8,
+                21
+              ],
+              "text": "above €25,000"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "82f22e30-a2e8-4645-ab9a-6ae2adacddae",
+      "label": " under €125,000",
+      "fact": " under €125,000",
+      "typeId": "fact",
+      "subTypeIds": [
+        "condition"
+      ],
+      "comments": [],
+      "isComplex": true,
+      "subdivision": {
+        "isNegated": false,
+        "children": [],
+        "operatorToJoinChildren": null
+      },
+      "annotations": [
+        {
+          "snippets": [
+            {
+              "documentId": "http://choppr.app/decompositions/3275a4e6-117b-472c-8000-4aa907d9f5b5/",
+              "sentenceId": "000E",
+              "sentenceIri": "Document/000D_Group/000E",
+              "characterRange": [
+                282,
+                283
+              ],
+              "text": " "
+            },
+            {
+              "documentId": "http://choppr.app/decompositions/3275a4e6-117b-472c-8000-4aa907d9f5b5/",
+              "sentenceId": "000E",
+              "sentenceIri": "Document/000D_Group/000E",
+              "characterRange": [
+                283,
+                297
+              ],
+              "text": "under €125,000"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fa2bbb4e-205e-4a55-916e-24dfe629f5ca",
+      "label": " under  €25,000",
+      "fact": " limit to €25,000",
+      "typeId": "fact",
+      "subTypeIds": [
+        "condition"
+      ],
+      "comments": [],
+      "isComplex": true,
+      "subdivision": {
+        "isNegated": false,
+        "children": [],
+        "operatorToJoinChildren": null
+      },
+      "annotations": [
+        {
+          "snippets": [
+            {
+              "documentId": "http://choppr.app/decompositions/3275a4e6-117b-472c-8000-4aa907d9f5b5/",
+              "sentenceId": "000E",
+              "sentenceIri": "Document/000D_Group/000E",
+              "characterRange": [
+                478,
+                495
+              ],
+              "text": " limit to €25,000"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "0049e22a-b024-42bb-af22-c8ada9fb3d03",
+      "label": "Authority (minister)",
+      "typeId": "fact",
+      "subTypeIds": [
+        "agent"
+      ],
+      "comments": [],
+      "isComplex": true,
+      "subdivision": {
+        "isNegated": false,
+        "children": [],
+        "operatorToJoinChildren": null
+      },
+      "annotations": []
+    },
+    {
+      "id": "95439428-e56b-4cf9-a982-1a19f86e2ef5",
+      "label": "(old regulation) old SVOH, the application",
+      "fact": "old SVOH, the application",
+      "typeId": "fact",
+      "subTypeIds": [
+        "object"
+      ],
+      "comments": [],
+      "isComplex": true,
+      "subdivision": {
+        "isNegated": false,
+        "children": [],
+        "operatorToJoinChildren": null
+      },
+      "annotations": [
+        {
+          "snippets": [
+            {
+              "documentId": "http://choppr.app/decompositions/3275a4e6-117b-472c-8000-4aa907d9f5b5/",
+              "sentenceId": "000E",
+              "sentenceIri": "Document/000D_Group/000E",
+              "characterRange": [
+                110,
+                135
+              ],
+              "text": "old SVOH, the application"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "3a6ffe09-a1d9-426e-bd02-68a124d64d63",
+      "label": "(New regulation) new adjustment ",
+      "fact": "new adjustment ",
+      "typeId": "fact",
+      "subTypeIds": [
+        "object"
+      ],
+      "comments": [],
+      "isComplex": true,
+      "subdivision": {
+        "isNegated": false,
+        "children": [],
+        "operatorToJoinChildren": null
+      },
+      "annotations": [
+        {
+          "snippets": [
+            {
+              "documentId": "http://choppr.app/decompositions/3275a4e6-117b-472c-8000-4aa907d9f5b5/",
+              "sentenceId": "000E",
+              "sentenceIri": "Document/000D_Group/000E",
+              "characterRange": [
+                453,
+                468
+              ],
+              "text": "new adjustment "
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "5ca03be4-aefe-4f4c-884b-c14c31ea8436",
+      "label": "request subsidy",
+      "fact": "requested ",
+      "typeId": "fact",
+      "subTypeIds": [
+        "action"
+      ],
+      "comments": [],
+      "isComplex": true,
+      "subdivision": {
+        "isNegated": false,
+        "children": [],
+        "operatorToJoinChildren": null
+      },
+      "annotations": [
+        {
+          "snippets": [
+            {
+              "documentId": "http://choppr.app/decompositions/3275a4e6-117b-472c-8000-4aa907d9f5b5/",
+              "sentenceId": "000E",
+              "sentenceIri": "Document/000D_Group/000E",
+              "characterRange": [
+                45,
+                55
+              ],
+              "text": "requested "
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b9d874ef-b2e1-4bb5-9f5f-f9fb4f83e085",
+      "label": "process the application",
+      "typeId": "fact",
+      "subTypeIds": [
+        "duty"
+      ],
+      "comments": [],
+      "isComplex": true,
+      "subdivision": {
+        "isNegated": false,
+        "children": [],
+        "operatorToJoinChildren": null
+      },
+      "annotations": []
+    },
+    {
+      "id": "7e41c6d6-4786-4e5b-8fad-04cf081a1593",
+      "label": "after the activities had been carried out",
+      "fact": "after the activities had been carried out",
+      "typeId": "fact",
+      "subTypeIds": [
+        "condition"
+      ],
+      "comments": [],
+      "isComplex": true,
+      "subdivision": {
+        "isNegated": false,
+        "children": [],
+        "operatorToJoinChildren": null
+      },
+      "annotations": [
+        {
+          "snippets": [
+            {
+              "documentId": "http://choppr.app/decompositions/3275a4e6-117b-472c-8000-4aa907d9f5b5/",
+              "sentenceId": "000E",
+              "sentenceIri": "Document/000D_Group/000E",
+              "characterRange": [
+                313,
+                354
+              ],
+              "text": "after the activities had been carried out"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "76420496-5d20-4774-9cf0-6d2a347d8872",
+      "label": "submitted before the activities took place",
+      "fact": "submitted before the activities took place",
+      "typeId": "fact",
+      "subTypeIds": [
+        "condition"
+      ],
+      "comments": [],
+      "isComplex": true,
+      "subdivision": {
+        "isNegated": false,
+        "children": [],
+        "operatorToJoinChildren": null
+      },
+      "annotations": [
+        {
+          "snippets": [
+            {
+              "documentId": "http://choppr.app/decompositions/3275a4e6-117b-472c-8000-4aa907d9f5b5/",
+              "sentenceId": "000E",
+              "sentenceIri": "Document/000D_Group/000E",
+              "characterRange": [
+                405,
+                415
+              ],
+              "text": "submitted "
+            },
+            {
+              "documentId": "http://choppr.app/decompositions/3275a4e6-117b-472c-8000-4aa907d9f5b5/",
+              "sentenceId": "000E",
+              "sentenceIri": "Document/000D_Group/000E",
+              "characterRange": [
+                415,
+                447
+              ],
+              "text": "before the activities took place"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "18d945ea-d419-400f-a494-20e9c343fbb3",
+      "typeId": "act",
+      "label": "request subsidy (old regulation) old SVOH, the application  landlords Authority (minister)",
+      "act": "request subsidy (old regulation) old SVOH, the application  landlords Authority (minister)",
+      "actionId": "5ca03be4-aefe-4f4c-884b-c14c31ea8436",
+      "actorId": "135e958b-6cff-4804-a4a3-6859cd0352d2",
+      "objectId": "95439428-e56b-4cf9-a982-1a19f86e2ef5",
+      "precondition": {
+        "isNegated": false,
+        "children": [
+          {
+            "isNegated": false,
+            "children": [
+              {
+                "frame": "11775f00-2c8e-4fd4-813f-f105c489d3fa",
+                "isNegated": false,
+                "children": [],
+                "operatorToJoinChildren": null
+              },
+              {
+                "frame": "76420496-5d20-4774-9cf0-6d2a347d8872",
+                "isNegated": false,
+                "children": [],
+                "operatorToJoinChildren": null
+              }
+            ],
+            "operatorToJoinChildren": "and"
+          },
+          {
+            "isNegated": false,
+            "children": [
+              {
+                "frame": "82f22e30-a2e8-4645-ab9a-6ae2adacddae",
+                "isNegated": false,
+                "children": [],
+                "operatorToJoinChildren": null
+              },
+              {
+                "frame": "7e41c6d6-4786-4e5b-8fad-04cf081a1593",
+                "isNegated": false,
+                "children": [],
+                "operatorToJoinChildren": null
+              }
+            ],
+            "operatorToJoinChildren": "and"
+          }
+        ],
+        "operatorToJoinChildren": "or"
+      },
+      "recipientId": "0049e22a-b024-42bb-af22-c8ada9fb3d03",
+      "creates": [
+        "b9d874ef-b2e1-4bb5-9f5f-f9fb4f83e085"
+      ],
+      "terminates": [],
+      "comments": [],
+      "annotations": []
+    },
+    {
+      "id": "3c4cc8f9-97b4-49d7-b672-18b23cd51a42",
+      "typeId": "act",
+      "label": "request subsidy (New regulation) new adjustment   landlords Authority (minister)",
+      "act": "request subsidy (New regulation) new adjustment   landlords Authority (minister)",
+      "actionId": "5ca03be4-aefe-4f4c-884b-c14c31ea8436",
+      "actorId": "135e958b-6cff-4804-a4a3-6859cd0352d2",
+      "objectId": "3a6ffe09-a1d9-426e-bd02-68a124d64d63",
+      "precondition": {
+        "isNegated": false,
+        "children": [
+          {
+            "isNegated": false,
+            "children": [
+              {
+                "frame": "76420496-5d20-4774-9cf0-6d2a347d8872",
+                "isNegated": false,
+                "children": [],
+                "operatorToJoinChildren": null
+              },
+              {
+                "frame": "a49ff0b8-c16e-4cc0-88bf-2a6b11f59c1f",
+                "isNegated": false,
+                "children": [],
+                "operatorToJoinChildren": null
+              }
+            ],
+            "operatorToJoinChildren": "and"
+          },
+          {
+            "isNegated": false,
+            "children": [
+              {
+                "frame": "fa2bbb4e-205e-4a55-916e-24dfe629f5ca",
+                "isNegated": false,
+                "children": [],
+                "operatorToJoinChildren": null
+              },
+              {
+                "frame": "7e41c6d6-4786-4e5b-8fad-04cf081a1593",
+                "isNegated": false,
+                "children": [],
+                "operatorToJoinChildren": null
+              }
+            ],
+            "operatorToJoinChildren": "and"
+          }
+        ],
+        "operatorToJoinChildren": "or"
+      },
+      "recipientId": "0049e22a-b024-42bb-af22-c8ada9fb3d03",
+      "creates": [
+        "b9d874ef-b2e1-4bb5-9f5f-f9fb4f83e085"
+      ],
+      "terminates": [],
+      "comments": [],
+      "annotations": []
+    }
+  ]
+}

@@ -1,0 +1,199 @@
+{
+  "id": "http://ontology.tno.nl/normengineering/editor#task-8fb017d4-72c1-4f46-a3b9-ae4a5b0f7ac4",
+  "type": "Task",
+  "description": "",
+  "label": "",
+  "hasEditor": "",
+  "sourceDocs": [],
+  "interpretation": "http://ontology.tno.nl/normengineering/editor#interpretation-7be31068-f640-4ee5-a010-b118f18c2291",
+  "frames": [
+    {
+      "id": "2ca2cc03-c2b9-4a9b-8966-b0c01acd91b5",
+      "label": "Payee",
+      "typeId": "fact",
+      "subTypeIds": [
+        "agent"
+      ],
+      "comments": [],
+      "isComplex": true,
+      "subdivision": {
+        "isNegated": false,
+        "children": [],
+        "operatorToJoinChildren": null
+      },
+      "annotations": []
+    },
+    {
+      "id": "e0f7c6f4-c49e-4174-9d00-751b7826d050",
+      "label": "Request Tikkie",
+      "typeId": "fact",
+      "subTypeIds": [
+        "action"
+      ],
+      "comments": [],
+      "isComplex": true,
+      "subdivision": {
+        "isNegated": false,
+        "children": [],
+        "operatorToJoinChildren": null
+      },
+      "annotations": []
+    },
+    {
+      "id": "c39e3c10-1de8-483d-9cf3-0d4a5516f035",
+      "label": "Wi-Fi",
+      "typeId": "fact",
+      "subTypeIds": [
+        "object"
+      ],
+      "comments": [],
+      "isComplex": true,
+      "subdivision": {
+        "isNegated": false,
+        "children": [],
+        "operatorToJoinChildren": null
+      },
+      "annotations": []
+    },
+    {
+      "id": "6cfed70a-be3d-46e9-8e66-81559c4c409f",
+      "label": "Pay Tikkie",
+      "typeId": "fact",
+      "subTypeIds": [
+        "duty"
+      ],
+      "comments": [],
+      "isComplex": true,
+      "subdivision": {
+        "isNegated": false,
+        "children": [],
+        "operatorToJoinChildren": null
+      },
+      "annotations": []
+    },
+    {
+      "id": "07e2ac58-1114-44f1-bc85-2c8d5316fbcb",
+      "label": "Receivee",
+      "typeId": "fact",
+      "subTypeIds": [
+        "agent"
+      ],
+      "comments": [],
+      "isComplex": true,
+      "subdivision": {
+        "isNegated": false,
+        "children": [],
+        "operatorToJoinChildren": null
+      },
+      "annotations": []
+    },
+    {
+      "id": "baf5a3cd-7ec3-4586-9d62-a503b5bbd955",
+      "typeId": "act",
+      "label": "Request Tikkie",
+      "act": "Request Tikkie",
+      "actionId": "e0f7c6f4-c49e-4174-9d00-751b7826d050",
+      "actorId": "2ca2cc03-c2b9-4a9b-8966-b0c01acd91b5",
+      "objectId": "c39e3c10-1de8-483d-9cf3-0d4a5516f035",
+      "precondition": {
+        "isNegated": false,
+        "children": [
+          {
+            "isNegated": false,
+            "children": [
+              {
+                "frame": "adb5fef6-6979-47a0-a1a9-d60007eed824",
+                "isNegated": false,
+                "children": [],
+                "operatorToJoinChildren": null
+              },
+              {
+                "frame": "c8bd1be0-3573-45b5-b0ce-2f3d174e7b6c",
+                "isNegated": false,
+                "children": [],
+                "operatorToJoinChildren": null
+              }
+            ],
+            "operatorToJoinChildren": "or"
+          },
+          {
+            "frame": "ae7d4a47-8558-4cd9-a51d-14b07a5f3678",
+            "isNegated": false,
+            "children": [],
+            "operatorToJoinChildren": "and"
+          }
+        ],
+        "operatorToJoinChildren": "and"
+      },
+      "recipientId": "07e2ac58-1114-44f1-bc85-2c8d5316fbcb",
+      "creates": [
+        "8f682e06-080c-4b84-8781-485145400119"
+      ],
+      "terminates": [],
+      "comments": [],
+      "sourceSentences": [],
+      "annotations": []
+    },
+    {
+      "id": "8f682e06-080c-4b84-8781-485145400119",
+      "typeId": "claim_duty",
+      "label": "Pay Tikkie",
+      "claimduty": "Pay Tikkie",
+      "dutyId": "6cfed70a-be3d-46e9-8e66-81559c4c409f",
+      "actorId": "2ca2cc03-c2b9-4a9b-8966-b0c01acd91b5",
+      "claimantId": "2ca2cc03-c2b9-4a9b-8966-b0c01acd91b5",
+      "holderId": "07e2ac58-1114-44f1-bc85-2c8d5316fbcb",
+      "comments": [],
+      "sourceSentences": [],
+      "annotations": []
+    },
+    {
+      "id": "adb5fef6-6979-47a0-a1a9-d60007eed824",
+      "label": "Price > 50$",
+      "typeId": "fact",
+      "subTypeIds": [
+        "condition"
+      ],
+      "comments": [],
+      "isComplex": true,
+      "subdivision": {
+        "isNegated": false,
+        "children": [],
+        "operatorToJoinChildren": null
+      },
+      "annotations": []
+    },
+    {
+      "id": "ae7d4a47-8558-4cd9-a51d-14b07a5f3678",
+      "label": "Has Paid Food",
+      "typeId": "fact",
+      "subTypeIds": [
+        "condition"
+      ],
+      "comments": [],
+      "isComplex": true,
+      "subdivision": {
+        "isNegated": false,
+        "children": [],
+        "operatorToJoinChildren": null
+      },
+      "annotations": []
+    },
+    {
+      "id": "c8bd1be0-3573-45b5-b0ce-2f3d174e7b6c",
+      "label": "Dutch",
+      "typeId": "fact",
+      "subTypeIds": [
+        "condition"
+      ],
+      "comments": [],
+      "isComplex": true,
+      "subdivision": {
+        "isNegated": false,
+        "children": [],
+        "operatorToJoinChildren": null
+      },
+      "annotations": []
+    }
+  ]
+}

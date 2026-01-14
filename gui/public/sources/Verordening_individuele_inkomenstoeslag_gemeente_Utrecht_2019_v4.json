@@ -1,0 +1,1687 @@
+{
+	"@context": {
+		"choppr": "http://ontology.tno.nl/normengineering/choppr#",
+		"src": "http://ontology.tno.nl/normengineering/source#",
+		"xsd": "http://www.w3.org/2001/XMLSchema#",
+		"po": "http://www.essepuntato.it/2008/12/pattern",
+		"rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+		"rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+		"choppr.recipe": "http://choppr.app/decompositions/0e3e8a6b-8128-45ff-bbbc-01a75c1e8f4f/recipe/",
+		"choppr.separators": "http://choppr.app/decompositions/0e3e8a6b-8128-45ff-bbbc-01a75c1e8f4f/separators/",
+		"@base": "http://choppr.app/decompositions/0e3e8a6b-8128-45ff-bbbc-01a75c1e8f4f/",
+		"IRI": "@id",
+		"typelabel": "src:hasTypeLabel",
+		"actorLabel": "rdfs:label",
+		"numbering": "src:hasNumbering",
+		"content": "src:hasContent",
+		"hasOrigin": "src:hasOrigin",
+		"containsAsHeader": {
+			"@type": "@id",
+			"@id": "src:containsAsHeader"
+		},
+		"separator": {
+			"@type": "@id",
+			"@id": "choppr:chunkSeparator"
+		},
+		"children": {
+			"@id": "src:hasChildElementOrdering",
+			"@container": "@list"
+		},
+		"decompositionPreprocessors": "choppr:decompositionPreprocessors",
+		"decompositionSeparators": "choppr:decompositionSeparators",
+		"decompositionRecipe": "choppr:decompositionRecipe",
+		"begins": "src:begins",
+		"ends": "src:ends",
+		"authoredBy": "src:authoredBy",
+		"editedBy": "src:editedBy",
+		"title": "src:hasTitle",
+		"version": "src:hasVersion",
+		"decompositionVersion": "src:hasDecompositionVersion",
+		"applicableAt": "src:applicableAt",
+		"applicableFrom": {
+			"@id": "src:applicableFrom",
+			"@type": "xsd:dateTime"
+		},
+		"applicableUntil": {
+			"@id": "src:applicableUntil",
+			"@type": "xsd:dateTime"
+		},
+		"generatedBy": {
+			"@type": "@id",
+			"@id": "src:generatedBy"
+		},
+		"generates": {
+			"@type": "@id",
+			"@id": "src:generates"
+		}
+	},
+	"@id": "http://choppr.app/decompositions/0e3e8a6b-8128-45ff-bbbc-01a75c1e8f4f",
+	"@graph": [
+		{
+			"@type": "src:Source",
+			"@id": "http://choppr.app/documents/0e3e8a6b-8128-45ff-bbbc-01a75c1e8f4f/document",
+			"decompositionPreprocessors": {
+				"@context": {
+					"choppr": "http://ontology.tno.nl/normengineering/choppr#",
+					"rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+					"rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+					"src": "http://ontology.tno.nl/normengineering/source#",
+					"@base": "http://choppr.app/decompositions/0e3e8a6b-8128-45ff-bbbc-01a75c1e8f4f/preprocessors/",
+					"id": "@id",
+					"regexp": "choppr:regExp",
+					"replaceBy": "choppr:replaceBy",
+					"name": "rdfs:label",
+					"description": "rdfs:comment",
+					"active": "choppr:isActive"
+				},
+				"@list": []
+			},
+			"decompositionRecipe": {
+				"@context": {
+					"choppr": "http://ontology.tno.nl/normengineering/choppr#",
+					"rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+					"rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+					"src": "http://ontology.tno.nl/normengineering/source#",
+					"choppr.separators": "http://choppr.app/decompositions/0e3e8a6b-8128-45ff-bbbc-01a75c1e8f4f/separators/",
+					"@base": "http://choppr.app/decompositions/0e3e8a6b-8128-45ff-bbbc-01a75c1e8f4f/",
+					"IRI": "@id",
+					"id": "choppr:originalId",
+					"separatorId": {
+						"@type": "@id",
+						"@id": "choppr:separatorId"
+					},
+					"code": "choppr:separatorContent",
+					"typelabel": "choppr:typeLabel",
+					"numbering": "choppr:captureNumbering",
+					"title": "choppr:captureTitle",
+					"separators": {
+						"@id": "choppr:stepSeparators",
+						"@container": "@list"
+					},
+					"actions": {
+						"@id": "choppr:stepActions",
+						"@container": "@list"
+					},
+					"on": "choppr:onId",
+					"offsets": "choppr:actionOffset"
+				},
+				"@list": []
+			},
+			"decompositionSeparators": {
+				"@context": {
+					"choppr": "http://ontology.tno.nl/normengineering/choppr#",
+					"rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+					"rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+					"src": "http://ontology.tno.nl/normengineering/source#",
+					"@base": "http://choppr.app/decompositions/0e3e8a6b-8128-45ff-bbbc-01a75c1e8f4f/separators/",
+					"hash": "@id",
+					"code": "choppr:separatorContent",
+					"typelabel": "choppr:typeLabel",
+					"numbering": "choppr:captureNumbering",
+					"title": "choppr:captureTitle",
+					"name": "rdfs:label",
+					"description": "rdfs:comment",
+					"separatorTags": "choppr:separatorTags"
+				},
+				"@list": []
+			},
+			"children": [
+				{
+					"IRI": "Document/0002_chunk",
+					"id": "0002",
+					"content": "Verordening individuele inkomenstoeslag gemeente Utrecht 2019",
+					"@type": [
+						"src:LeafElement"
+					]
+				},
+				{
+					"IRI": "Document/0003_chunk",
+					"id": "0003",
+					"content": "Geldend van 01-01-2019 t/m heden",
+					"@type": [
+						"src:LeafElement"
+					]
+				},
+				{
+					"IRI": "Document/002g_intitule",
+					"id": "002g",
+					"children": [
+						{
+							"IRI": "Document/002g_intitule/0004_chunk",
+							"id": "0004",
+							"content": "Intitulé",
+							"@type": [
+								"src:LeafElement"
+							]
+						},
+						{
+							"IRI": "Document/002g_intitule/0005_chunk",
+							"id": "0005",
+							"content": "Verordening individuele inkomenstoeslag gemeente Utrecht 2019",
+							"@type": [
+								"src:LeafElement"
+							]
+						},
+						{
+							"IRI": "Document/002g_intitule/0006_chunk",
+							"id": "0006",
+							"content": "De raad van de gemeente Utrecht;",
+							"@type": [
+								"src:LeafElement"
+							]
+						},
+						{
+							"IRI": "Document/002g_intitule/0007_chunk",
+							"id": "0007",
+							"content": "gelezen het voorstel van het college van burgemeester en wethouders van 18 september 2018 met kenmerk 5628286;",
+							"@type": [
+								"src:LeafElement"
+							]
+						},
+						{
+							"IRI": "Document/002g_intitule/0008_chunk",
+							"id": "0008",
+							"content": "gelet op artikel 8, eerste lid, van de Participatiewet; artikel 149 van de Gemeentewet;",
+							"@type": [
+								"src:LeafElement"
+							]
+						},
+						{
+							"IRI": "Document/002g_intitule/0009_chunk",
+							"id": "0009",
+							"content": "overwegende dat de Participatiewet gemeenten verplicht om bij verordening regels te stellen met betrekking tot het verlenen van een individuele inkomenstoeslag als bedoeld in artikel 36 van de wet;",
+							"@type": [
+								"src:LeafElement"
+							]
+						},
+						{
+							"IRI": "Document/002g_intitule/000a_chunk",
+							"id": "000a",
+							"content": "besluit vast te stellen de Verordening individuele inkomenstoeslag gemeente Utrecht 2019",
+							"@type": [
+								"src:LeafElement"
+							]
+						}
+					],
+					"@type": [
+						"src:NonLeafElement"
+					],
+					"containsAsHeader": "Document/002g_intitule/0004_chunk",
+					"typelabel": "intitule"
+				},
+				{
+					"IRI": "Document/002h_Artikel_1",
+					"id": "002h",
+					"children": [
+						{
+							"IRI": "Document/002h_Artikel_1/000b_chunk",
+							"id": "000b",
+							"content": "Artikel 1. ",
+							"@type": [
+								"src:LeafElement"
+							]
+						},
+						{
+							"IRI": "Document/002h_Artikel_1/000c_chunk",
+							"id": "000c",
+							"content": "",
+							"@type": [
+								"src:LeafElement"
+							]
+						},
+						{
+							"IRI": "Document/002h_Artikel_1/000d_chunk",
+							"id": "000d",
+							"content": "Begrippen",
+							"@type": [
+								"src:LeafElement"
+							]
+						},
+						{
+							"IRI": "Document/002h_Artikel_1/000e_chunk",
+							"id": "000e",
+							"content": "Voor zover niet anders is bepaald, worden de begrippen in deze verordening gebruikt in dezelfde betekenis en met dezelfde reikwijdte als in de Participatiewet. ",
+							"@type": [
+								"src:LeafElement"
+							]
+						},
+						{
+							"IRI": "Document/002h_Artikel_1/000f_chunk",
+							"id": "000f",
+							"content": "",
+							"@type": [
+								"src:LeafElement"
+							]
+						},
+						{
+							"IRI": "Document/002h_Artikel_1/002s_Begrip",
+							"id": "002s",
+							"children": [
+								{
+									"IRI": "Document/002h_Artikel_1/002s_Begrip/000g_chunk",
+									"id": "000g",
+									"content": "In deze verordening wordt verstaan onder:",
+									"@type": [
+										"src:LeafElement"
+									]
+								},
+								{
+									"IRI": "Document/002h_Artikel_1/002s_Begrip/000h_chunk",
+									"id": "000h",
+									"content": "a. ",
+									"@type": [
+										"src:LeafElement"
+									]
+								},
+								{
+									"IRI": "Document/002h_Artikel_1/002s_Begrip/000i_chunk",
+									"id": "000i",
+									"content": "",
+									"@type": [
+										"src:LeafElement"
+									]
+								}
+							],
+							"@type": [
+								"src:NonLeafElement"
+							],
+							"title": "In deze verordening wordt verstaan onder",
+							"typelabel": "Begrip"
+						},
+						{
+							"IRI": "Document/002h_Artikel_1/002t_Begrip",
+							"id": "002t",
+							"children": [
+								{
+									"IRI": "Document/002h_Artikel_1/002t_Begrip/000j_chunk",
+									"id": "000j",
+									"content": "wet:",
+									"@type": [
+										"src:LeafElement"
+									]
+								},
+								{
+									"IRI": "Document/002h_Artikel_1/002t_Begrip/000k_chunk",
+									"id": "000k",
+									"content": "Participatiewet",
+									"@type": [
+										"src:LeafElement"
+									]
+								},
+								{
+									"IRI": "Document/002h_Artikel_1/002t_Begrip/000l_chunk",
+									"id": "000l",
+									"content": "b. ",
+									"@type": [
+										"src:LeafElement"
+									]
+								},
+								{
+									"IRI": "Document/002h_Artikel_1/002t_Begrip/000m_chunk",
+									"id": "000m",
+									"content": "",
+									"@type": [
+										"src:LeafElement"
+									]
+								}
+							],
+							"@type": [
+								"src:NonLeafElement"
+							],
+							"title": "wet",
+							"typelabel": "Begrip"
+						},
+						{
+							"IRI": "Document/002h_Artikel_1/002u_Begrip",
+							"id": "002u",
+							"children": [
+								{
+									"IRI": "Document/002h_Artikel_1/002u_Begrip/000n_chunk",
+									"id": "000n",
+									"content": "college:",
+									"@type": [
+										"src:LeafElement"
+									]
+								},
+								{
+									"IRI": "Document/002h_Artikel_1/002u_Begrip/000o_chunk",
+									"id": "000o",
+									"content": "het college van burgemeester en wethouders van de gemeente Utrecht;",
+									"@type": [
+										"src:LeafElement"
+									]
+								},
+								{
+									"IRI": "Document/002h_Artikel_1/002u_Begrip/000p_chunk",
+									"id": "000p",
+									"content": "c. ",
+									"@type": [
+										"src:LeafElement"
+									]
+								},
+								{
+									"IRI": "Document/002h_Artikel_1/002u_Begrip/000q_chunk",
+									"id": "000q",
+									"content": "",
+									"@type": [
+										"src:LeafElement"
+									]
+								}
+							],
+							"@type": [
+								"src:NonLeafElement"
+							],
+							"title": "college",
+							"typelabel": "Begrip"
+						},
+						{
+							"IRI": "Document/002h_Artikel_1/002v_Begrip",
+							"id": "002v",
+							"children": [
+								{
+									"IRI": "Document/002h_Artikel_1/002v_Begrip/000r_chunk",
+									"id": "000r",
+									"content": "inkomen:",
+									"@type": [
+										"src:LeafElement"
+									]
+								},
+								{
+									"IRI": "Document/002h_Artikel_1/002v_Begrip/000s_chunk",
+									"id": "000s",
+									"content": "totaal van het inkomen, bedoeld in artikel 32 van de wet, al dan niet aangevuld met algemene bijstand;",
+									"@type": [
+										"src:LeafElement"
+									]
+								},
+								{
+									"IRI": "Document/002h_Artikel_1/002v_Begrip/000t_chunk",
+									"id": "000t",
+									"content": "d. ",
+									"@type": [
+										"src:LeafElement"
+									]
+								},
+								{
+									"IRI": "Document/002h_Artikel_1/002v_Begrip/000u_chunk",
+									"id": "000u",
+									"content": "",
+									"@type": [
+										"src:LeafElement"
+									]
+								}
+							],
+							"@type": [
+								"src:NonLeafElement"
+							],
+							"title": "inkomen",
+							"typelabel": "Begrip"
+						},
+						{
+							"IRI": "Document/002h_Artikel_1/002w_Begrip",
+							"id": "002w",
+							"children": [
+								{
+									"IRI": "Document/002h_Artikel_1/002w_Begrip/000v_chunk",
+									"id": "000v",
+									"content": "gezin:",
+									"@type": [
+										"src:LeafElement"
+									]
+								},
+								{
+									"IRI": "Document/002h_Artikel_1/002w_Begrip/000w_chunk",
+									"id": "000w",
+									"content": "de gehuwden/samenwonenden tezamen en de alleenstaande met zijn of haar ten laste komende kind of kinderen;",
+									"@type": [
+										"src:LeafElement"
+									]
+								},
+								{
+									"IRI": "Document/002h_Artikel_1/002w_Begrip/000x_chunk",
+									"id": "000x",
+									"content": "e. ",
+									"@type": [
+										"src:LeafElement"
+									]
+								},
+								{
+									"IRI": "Document/002h_Artikel_1/002w_Begrip/000y_chunk",
+									"id": "000y",
+									"content": "",
+									"@type": [
+										"src:LeafElement"
+									]
+								}
+							],
+							"@type": [
+								"src:NonLeafElement"
+							],
+							"title": "gezin",
+							"typelabel": "Begrip"
+						},
+						{
+							"IRI": "Document/002h_Artikel_1/002x_Begrip",
+							"id": "002x",
+							"children": [
+								{
+									"IRI": "Document/002h_Artikel_1/002x_Begrip/000z_chunk",
+									"id": "000z",
+									"content": "individuele inkomenstoeslag:",
+									"@type": [
+										"src:LeafElement"
+									]
+								},
+								{
+									"IRI": "Document/002h_Artikel_1/002x_Begrip/000A_chunk",
+									"id": "000A",
+									"content": "toeslag zoals bedoeld in artikel 36 van de wet;",
+									"@type": [
+										"src:LeafElement"
+									]
+								},
+								{
+									"IRI": "Document/002h_Artikel_1/002x_Begrip/000B_chunk",
+									"id": "000B",
+									"content": "f. ",
+									"@type": [
+										"src:LeafElement"
+									]
+								},
+								{
+									"IRI": "Document/002h_Artikel_1/002x_Begrip/000C_chunk",
+									"id": "000C",
+									"content": "",
+									"@type": [
+										"src:LeafElement"
+									]
+								}
+							],
+							"@type": [
+								"src:NonLeafElement"
+							],
+							"title": "individuele inkomenstoeslag",
+							"typelabel": "Begrip"
+						},
+						{
+							"IRI": "Document/002h_Artikel_1/002y_Begrip",
+							"id": "002y",
+							"children": [
+								{
+									"IRI": "Document/002h_Artikel_1/002y_Begrip/000D_chunk",
+									"id": "000D",
+									"content": "peildatum:",
+									"@type": [
+										"src:LeafElement"
+									]
+								},
+								{
+									"IRI": "Document/002h_Artikel_1/002y_Begrip/000E_chunk",
+									"id": "000E",
+									"content": "datum waarop een persoon individuele inkomenstoeslag aanvraagt;",
+									"@type": [
+										"src:LeafElement"
+									]
+								},
+								{
+									"IRI": "Document/002h_Artikel_1/002y_Begrip/000F_chunk",
+									"id": "000F",
+									"content": "g. ",
+									"@type": [
+										"src:LeafElement"
+									]
+								},
+								{
+									"IRI": "Document/002h_Artikel_1/002y_Begrip/000G_chunk",
+									"id": "000G",
+									"content": "",
+									"@type": [
+										"src:LeafElement"
+									]
+								}
+							],
+							"@type": [
+								"src:NonLeafElement"
+							],
+							"title": "peildatum",
+							"typelabel": "Begrip"
+						},
+						{
+							"IRI": "Document/002h_Artikel_1/002z_Begrip",
+							"id": "002z",
+							"children": [
+								{
+									"IRI": "Document/002h_Artikel_1/002z_Begrip/000H_chunk",
+									"id": "000H",
+									"content": "referteperiode:",
+									"@type": [
+										"src:LeafElement"
+									]
+								},
+								{
+									"IRI": "Document/002h_Artikel_1/002z_Begrip/000I_chunk",
+									"id": "000I",
+									"content": "periode van drie jaar voorafgaand aan de peildatum;",
+									"@type": [
+										"src:LeafElement"
+									]
+								},
+								{
+									"IRI": "Document/002h_Artikel_1/002z_Begrip/000J_chunk",
+									"id": "000J",
+									"content": "h. ",
+									"@type": [
+										"src:LeafElement"
+									]
+								},
+								{
+									"IRI": "Document/002h_Artikel_1/002z_Begrip/000K_chunk",
+									"id": "000K",
+									"content": "",
+									"@type": [
+										"src:LeafElement"
+									]
+								}
+							],
+							"@type": [
+								"src:NonLeafElement"
+							],
+							"title": "referteperiode",
+							"typelabel": "Begrip"
+						},
+						{
+							"IRI": "Document/002h_Artikel_1/002A_Begrip",
+							"id": "002A",
+							"children": [
+								{
+									"IRI": "Document/002h_Artikel_1/002A_Begrip/000L_chunk",
+									"id": "000L",
+									"content": "kind:",
+									"@type": [
+										"src:LeafElement"
+									]
+								},
+								{
+									"IRI": "Document/002h_Artikel_1/002A_Begrip/000M_chunk",
+									"id": "000M",
+									"content": "het ten laste van de aanvrager komend kind, jonger dan 18 jaar",
+									"@type": [
+										"src:LeafElement"
+									]
+								}
+							],
+							"@type": [
+								"src:NonLeafElement"
+							],
+							"title": "kind",
+							"typelabel": "Begrip"
+						}
+					],
+					"@type": [
+						"src:NonLeafElement"
+					],
+					"containsAsHeader": "Document/002h_Artikel_1/000b_chunk",
+					"numbering": "1",
+					"typelabel": "Artikel"
+				},
+				{
+					"IRI": "Document/002i_Artikel_2",
+					"id": "002i",
+					"children": [
+						{
+							"IRI": "Document/002i_Artikel_2/000N_chunk",
+							"id": "000N",
+							"content": "Artikel 2. ",
+							"@type": [
+								"src:LeafElement"
+							]
+						},
+						{
+							"IRI": "Document/002i_Artikel_2/000O_chunk",
+							"id": "000O",
+							"content": "",
+							"@type": [
+								"src:LeafElement"
+							]
+						},
+						{
+							"IRI": "Document/002i_Artikel_2/000P_chunk",
+							"id": "000P",
+							"content": "Indienen verzoek",
+							"@type": [
+								"src:LeafElement"
+							]
+						},
+						{
+							"IRI": "Document/002i_Artikel_2/000Q_chunk",
+							"id": "000Q",
+							"content": "Een verzoek als bedoeld in artikel 36, eerste lid, van de wet, wordt ingediend middels een door het college vastgesteld formulier.",
+							"@type": [
+								"src:LeafElement"
+							]
+						}
+					],
+					"@type": [
+						"src:NonLeafElement"
+					],
+					"containsAsHeader": "Document/002i_Artikel_2/000N_chunk",
+					"numbering": "2",
+					"typelabel": "Artikel"
+				},
+				{
+					"IRI": "Document/002j_Artikel_3",
+					"id": "002j",
+					"children": [
+						{
+							"IRI": "Document/002j_Artikel_3/000R_chunk",
+							"id": "000R",
+							"content": "Artikel 3. ",
+							"@type": [
+								"src:LeafElement"
+							]
+						},
+						{
+							"IRI": "Document/002j_Artikel_3/000S_chunk",
+							"id": "000S",
+							"content": "",
+							"@type": [
+								"src:LeafElement"
+							]
+						},
+						{
+							"IRI": "Document/002j_Artikel_3/000T_chunk",
+							"id": "000T",
+							"content": "Langdurig laag inkomen",
+							"@type": [
+								"src:LeafElement"
+							]
+						},
+						{
+							"IRI": "Document/002j_Artikel_3/002q_Lid_1",
+							"id": "002q",
+							"children": [
+								{
+									"IRI": "Document/002j_Artikel_3/002q_Lid_1/000U_chunk",
+									"id": "000U",
+									"content": "1. ",
+									"@type": [
+										"src:LeafElement"
+									]
+								},
+								{
+									"IRI": "Document/002j_Artikel_3/002q_Lid_1/000V_chunk",
+									"id": "000V",
+									"content": "",
+									"@type": [
+										"src:LeafElement"
+									]
+								},
+								{
+									"IRI": "Document/002j_Artikel_3/002q_Lid_1/000W_chunk",
+									"id": "000W",
+									"content": "Een persoon heeft een langdurig laag inkomen als bedoeld in artikel 36, eerste lid, van de wet als hij aangewezen is op een inkomen dat gedurende referteperiode niet meer bedraagt dan 110% van de van toepassing zijnde bijstandsnorm, bedoeld in artikel 21 van de wet, aangevuld, indien van toepassing, met de tegemoetkoming op grond van de Wet op de kindregelingen. ",
+									"@type": [
+										"src:LeafElement"
+									]
+								},
+								{
+									"IRI": "Document/002j_Artikel_3/002q_Lid_1/000X_chunk",
+									"id": "000X",
+									"content": "",
+									"@type": [
+										"src:LeafElement"
+									]
+								},
+								{
+									"IRI": "Document/002j_Artikel_3/002q_Lid_1/000Y_chunk",
+									"id": "000Y",
+									"content": "Artikel 22a van de wet blijft hierbij buiten toepassing.",
+									"@type": [
+										"src:LeafElement"
+									]
+								}
+							],
+							"@type": [
+								"src:NonLeafElement",
+								"src:ListItem"
+							],
+							"numbering": "1",
+							"typelabel": "Lid"
+						},
+						{
+							"IRI": "Document/002j_Artikel_3/002r_Lid_2",
+							"id": "002r",
+							"children": [
+								{
+									"IRI": "Document/002j_Artikel_3/002r_Lid_2/000Z_chunk",
+									"id": "000Z",
+									"content": "2. ",
+									"@type": [
+										"src:LeafElement"
+									]
+								},
+								{
+									"IRI": "Document/002j_Artikel_3/002r_Lid_2/0010_chunk",
+									"id": "0010",
+									"content": "",
+									"@type": [
+										"src:LeafElement"
+									]
+								},
+								{
+									"IRI": "Document/002j_Artikel_3/002r_Lid_2/0011_chunk",
+									"id": "0011",
+									"content": "In afwijking van het eerste lid is bestaat een langdurig laag inkomen ook indien een gezin met kinderen van 12 jaar en ouder aangewezen is op een inkomen dat gedurende referteperiode niet meer bedraagt dan 125% van de van toepassing zijnde bijstandsnorm, bedoeld in artikel 21 van de wet, aangevuld, indien van toepassing, met de tegemoetkoming op grond van de Wet op de kindregelingen. ",
+									"@type": [
+										"src:LeafElement"
+									]
+								},
+								{
+									"IRI": "Document/002j_Artikel_3/002r_Lid_2/0012_chunk",
+									"id": "0012",
+									"content": "",
+									"@type": [
+										"src:LeafElement"
+									]
+								},
+								{
+									"IRI": "Document/002j_Artikel_3/002r_Lid_2/0013_chunk",
+									"id": "0013",
+									"content": "Artikel 22a van de wet blijft hierbij buiten toepassing.3.Het college stelt nadere regels met betrekking tot de toepassing van het eerste lid ten aanzien van bepaalde categorieën personen.",
+									"@type": [
+										"src:LeafElement"
+									]
+								}
+							],
+							"@type": [
+								"src:NonLeafElement",
+								"src:ListItem"
+							],
+							"numbering": "2",
+							"typelabel": "Lid"
+						}
+					],
+					"@type": [
+						"src:NonLeafElement"
+					],
+					"containsAsHeader": "Document/002j_Artikel_3/000R_chunk",
+					"numbering": "3",
+					"typelabel": "Artikel"
+				},
+				{
+					"IRI": "Document/002k_Artikel_4",
+					"id": "002k",
+					"children": [
+						{
+							"IRI": "Document/002k_Artikel_4/0014_chunk",
+							"id": "0014",
+							"content": "Artikel 4. ",
+							"@type": [
+								"src:LeafElement"
+							]
+						},
+						{
+							"IRI": "Document/002k_Artikel_4/0015_chunk",
+							"id": "0015",
+							"content": "",
+							"@type": [
+								"src:LeafElement"
+							]
+						},
+						{
+							"IRI": "Document/002k_Artikel_4/0016_chunk",
+							"id": "0016",
+							"content": "Hoogte individuele inkomenstoeslag",
+							"@type": [
+								"src:LeafElement"
+							]
+						},
+						{
+							"IRI": "Document/002k_Artikel_4/002B_Lid_1",
+							"id": "002B",
+							"children": [
+								{
+									"IRI": "Document/002k_Artikel_4/002B_Lid_1/0017_chunk",
+									"id": "0017",
+									"content": "1. ",
+									"@type": [
+										"src:LeafElement"
+									]
+								},
+								{
+									"IRI": "Document/002k_Artikel_4/002B_Lid_1/0018_chunk",
+									"id": "0018",
+									"content": "",
+									"@type": [
+										"src:LeafElement"
+									]
+								},
+								{
+									"IRI": "Document/002k_Artikel_4/002B_Lid_1/002L_Toewijzing",
+									"id": "002L",
+									"children": [
+										{
+											"IRI": "Document/002k_Artikel_4/002B_Lid_1/002L_Toewijzing/0019_chunk",
+											"id": "0019",
+											"content": "Een individuele inkomenstoeslag bedraagt per kalenderjaar:",
+											"@type": [
+												"src:LeafElement"
+											]
+										}
+									],
+									"@type": [
+										"src:NonLeafElement"
+									],
+									"title": "Een individuele inkomenstoeslag bedraagt per kalenderjaar",
+									"typelabel": "Toewijzing"
+								},
+								{
+									"IRI": "Document/002k_Artikel_4/002B_Lid_1/002F_Sub_a",
+									"id": "002F",
+									"children": [
+										{
+											"IRI": "Document/002k_Artikel_4/002B_Lid_1/002F_Sub_a/001a_chunk",
+											"id": "001a",
+											"content": "a. ",
+											"@type": [
+												"src:LeafElement"
+											]
+										},
+										{
+											"IRI": "Document/002k_Artikel_4/002B_Lid_1/002F_Sub_a/001b_chunk",
+											"id": "001b",
+											"content": "",
+											"@type": [
+												"src:LeafElement"
+											]
+										},
+										{
+											"IRI": "Document/002k_Artikel_4/002B_Lid_1/002F_Sub_a/002M_Toewijzing",
+											"id": "002M",
+											"children": [
+												{
+													"IRI": "Document/002k_Artikel_4/002B_Lid_1/002F_Sub_a/002M_Toewijzing/001c_chunk",
+													"id": "001c",
+													"content": "alleenstaande:",
+													"@type": [
+														"src:LeafElement"
+													]
+												},
+												{
+													"IRI": "Document/002k_Artikel_4/002B_Lid_1/002F_Sub_a/002M_Toewijzing/001d_chunk",
+													"id": "001d",
+													"content": "€ 225,00",
+													"@type": [
+														"src:LeafElement"
+													]
+												}
+											],
+											"@type": [
+												"src:NonLeafElement"
+											],
+											"title": "alleenstaande",
+											"typelabel": "Toewijzing"
+										}
+									],
+									"@type": [
+										"src:NonLeafElement",
+										"src:ListItem"
+									],
+									"numbering": "a",
+									"typelabel": "Sub"
+								},
+								{
+									"IRI": "Document/002k_Artikel_4/002B_Lid_1/002G_Sub_b",
+									"id": "002G",
+									"children": [
+										{
+											"IRI": "Document/002k_Artikel_4/002B_Lid_1/002G_Sub_b/001e_chunk",
+											"id": "001e",
+											"content": "b. ",
+											"@type": [
+												"src:LeafElement"
+											]
+										},
+										{
+											"IRI": "Document/002k_Artikel_4/002B_Lid_1/002G_Sub_b/001f_chunk",
+											"id": "001f",
+											"content": "",
+											"@type": [
+												"src:LeafElement"
+											]
+										},
+										{
+											"IRI": "Document/002k_Artikel_4/002B_Lid_1/002G_Sub_b/002N_Toewijzing",
+											"id": "002N",
+											"children": [
+												{
+													"IRI": "Document/002k_Artikel_4/002B_Lid_1/002G_Sub_b/002N_Toewijzing/001g_chunk",
+													"id": "001g",
+													"content": "alleenstaande ouder met uitsluitend kinderen jonger dan 12 jaar:",
+													"@type": [
+														"src:LeafElement"
+													]
+												},
+												{
+													"IRI": "Document/002k_Artikel_4/002B_Lid_1/002G_Sub_b/002N_Toewijzing/001h_chunk",
+													"id": "001h",
+													"content": "€ 50,00",
+													"@type": [
+														"src:LeafElement"
+													]
+												}
+											],
+											"@type": [
+												"src:NonLeafElement"
+											],
+											"title": "alleenstaande ouder met uitsluitend kinderen jonger dan 12 jaar",
+											"typelabel": "Toewijzing"
+										}
+									],
+									"@type": [
+										"src:NonLeafElement",
+										"src:ListItem"
+									],
+									"numbering": "b",
+									"typelabel": "Sub"
+								},
+								{
+									"IRI": "Document/002k_Artikel_4/002B_Lid_1/002H_Sub_c",
+									"id": "002H",
+									"children": [
+										{
+											"IRI": "Document/002k_Artikel_4/002B_Lid_1/002H_Sub_c/001i_chunk",
+											"id": "001i",
+											"content": "c. ",
+											"@type": [
+												"src:LeafElement"
+											]
+										},
+										{
+											"IRI": "Document/002k_Artikel_4/002B_Lid_1/002H_Sub_c/001j_chunk",
+											"id": "001j",
+											"content": "",
+											"@type": [
+												"src:LeafElement"
+											]
+										},
+										{
+											"IRI": "Document/002k_Artikel_4/002B_Lid_1/002H_Sub_c/002O_Toewijzing",
+											"id": "002O",
+											"children": [
+												{
+													"IRI": "Document/002k_Artikel_4/002B_Lid_1/002H_Sub_c/002O_Toewijzing/001k_chunk",
+													"id": "001k",
+													"content": "alleenstaande ouder met ten minste 1 kind van 12 jaar of ouder:",
+													"@type": [
+														"src:LeafElement"
+													]
+												},
+												{
+													"IRI": "Document/002k_Artikel_4/002B_Lid_1/002H_Sub_c/002O_Toewijzing/001l_chunk",
+													"id": "001l",
+													"content": "€ 612,00",
+													"@type": [
+														"src:LeafElement"
+													]
+												}
+											],
+											"@type": [
+												"src:NonLeafElement"
+											],
+											"title": "alleenstaande ouder met ten minste 1 kind van 12 jaar of ouder",
+											"typelabel": "Toewijzing"
+										}
+									],
+									"@type": [
+										"src:NonLeafElement",
+										"src:ListItem"
+									],
+									"numbering": "c",
+									"typelabel": "Sub"
+								},
+								{
+									"IRI": "Document/002k_Artikel_4/002B_Lid_1/002I_Sub_d",
+									"id": "002I",
+									"children": [
+										{
+											"IRI": "Document/002k_Artikel_4/002B_Lid_1/002I_Sub_d/001m_chunk",
+											"id": "001m",
+											"content": "d. ",
+											"@type": [
+												"src:LeafElement"
+											]
+										},
+										{
+											"IRI": "Document/002k_Artikel_4/002B_Lid_1/002I_Sub_d/001n_chunk",
+											"id": "001n",
+											"content": "",
+											"@type": [
+												"src:LeafElement"
+											]
+										},
+										{
+											"IRI": "Document/002k_Artikel_4/002B_Lid_1/002I_Sub_d/002P_Toewijzing",
+											"id": "002P",
+											"children": [
+												{
+													"IRI": "Document/002k_Artikel_4/002B_Lid_1/002I_Sub_d/002P_Toewijzing/001o_chunk",
+													"id": "001o",
+													"content": "gehuwden/samenwonenden zonder kinderen of met uitsluitend kinderen jonger dan 12 jaar:",
+													"@type": [
+														"src:LeafElement"
+													]
+												},
+												{
+													"IRI": "Document/002k_Artikel_4/002B_Lid_1/002I_Sub_d/002P_Toewijzing/001p_chunk",
+													"id": "001p",
+													"content": "€ 575,00",
+													"@type": [
+														"src:LeafElement"
+													]
+												}
+											],
+											"@type": [
+												"src:NonLeafElement"
+											],
+											"title": "gehuwden/samenwonenden zonder kinderen of met uitsluitend kinderen jonger dan 12 jaar",
+											"typelabel": "Toewijzing"
+										}
+									],
+									"@type": [
+										"src:NonLeafElement",
+										"src:ListItem"
+									],
+									"numbering": "d",
+									"typelabel": "Sub"
+								},
+								{
+									"IRI": "Document/002k_Artikel_4/002B_Lid_1/002J_Sub_e",
+									"id": "002J",
+									"children": [
+										{
+											"IRI": "Document/002k_Artikel_4/002B_Lid_1/002J_Sub_e/001q_chunk",
+											"id": "001q",
+											"content": "e. ",
+											"@type": [
+												"src:LeafElement"
+											]
+										},
+										{
+											"IRI": "Document/002k_Artikel_4/002B_Lid_1/002J_Sub_e/001r_chunk",
+											"id": "001r",
+											"content": "",
+											"@type": [
+												"src:LeafElement"
+											]
+										},
+										{
+											"IRI": "Document/002k_Artikel_4/002B_Lid_1/002J_Sub_e/002Q_Toewijzing",
+											"id": "002Q",
+											"children": [
+												{
+													"IRI": "Document/002k_Artikel_4/002B_Lid_1/002J_Sub_e/002Q_Toewijzing/001s_chunk",
+													"id": "001s",
+													"content": "gehuwden/samenwonenden met tenminste 1 kind van 12 jaar of ouder en een inkomen onder 110% van de bijstandsnorm voor gehuwden/samenwonenden:",
+													"@type": [
+														"src:LeafElement"
+													]
+												},
+												{
+													"IRI": "Document/002k_Artikel_4/002B_Lid_1/002J_Sub_e/002Q_Toewijzing/001t_chunk",
+													"id": "001t",
+													"content": "€ 815,00",
+													"@type": [
+														"src:LeafElement"
+													]
+												}
+											],
+											"@type": [
+												"src:NonLeafElement"
+											],
+											"title": "gehuwden/samenwonenden met tenminste 1 kind van 12 jaar of ouder en een inkomen onder 110% van de bijstandsnorm voor gehuwden/samenwonenden",
+											"typelabel": "Toewijzing"
+										}
+									],
+									"@type": [
+										"src:NonLeafElement",
+										"src:ListItem"
+									],
+									"numbering": "e",
+									"typelabel": "Sub"
+								},
+								{
+									"IRI": "Document/002k_Artikel_4/002B_Lid_1/002K_Sub_f",
+									"id": "002K",
+									"children": [
+										{
+											"IRI": "Document/002k_Artikel_4/002B_Lid_1/002K_Sub_f/001u_chunk",
+											"id": "001u",
+											"content": "f. ",
+											"@type": [
+												"src:LeafElement"
+											]
+										},
+										{
+											"IRI": "Document/002k_Artikel_4/002B_Lid_1/002K_Sub_f/001v_chunk",
+											"id": "001v",
+											"content": "",
+											"@type": [
+												"src:LeafElement"
+											]
+										},
+										{
+											"IRI": "Document/002k_Artikel_4/002B_Lid_1/002K_Sub_f/002R_Toewijzing",
+											"id": "002R",
+											"children": [
+												{
+													"IRI": "Document/002k_Artikel_4/002B_Lid_1/002K_Sub_f/002R_Toewijzing/001w_chunk",
+													"id": "001w",
+													"content": "gehuwden/samenwonenden met tenminste 1 kind van 12 jaar of ouder en een inkomen tussen 110 en 125% van de bijstandsnorm voor gehuwden/samenwonenden:",
+													"@type": [
+														"src:LeafElement"
+													]
+												},
+												{
+													"IRI": "Document/002k_Artikel_4/002B_Lid_1/002K_Sub_f/002R_Toewijzing/001x_chunk",
+													"id": "001x",
+													"content": "€ 408,00",
+													"@type": [
+														"src:LeafElement"
+													]
+												}
+											],
+											"@type": [
+												"src:NonLeafElement"
+											],
+											"title": "gehuwden/samenwonenden met tenminste 1 kind van 12 jaar of ouder en een inkomen tussen 110 en 125% van de bijstandsnorm voor gehuwden/samenwonenden",
+											"typelabel": "Toewijzing"
+										}
+									],
+									"@type": [
+										"src:NonLeafElement",
+										"src:ListItem"
+									],
+									"numbering": "f",
+									"typelabel": "Sub"
+								}
+							],
+							"@type": [
+								"src:NonLeafElement",
+								"src:ListItem"
+							],
+							"numbering": "1",
+							"typelabel": "Lid"
+						},
+						{
+							"IRI": "Document/002k_Artikel_4/002C_Lid_2",
+							"id": "002C",
+							"children": [
+								{
+									"IRI": "Document/002k_Artikel_4/002C_Lid_2/001y_chunk",
+									"id": "001y",
+									"content": "2. ",
+									"@type": [
+										"src:LeafElement"
+									]
+								},
+								{
+									"IRI": "Document/002k_Artikel_4/002C_Lid_2/001z_chunk",
+									"id": "001z",
+									"content": "",
+									"@type": [
+										"src:LeafElement"
+									]
+								},
+								{
+									"IRI": "Document/002k_Artikel_4/002C_Lid_2/001A_chunk",
+									"id": "001A",
+									"content": "De Individuele Inkomenstoeslag komt alle personen van het huishouden gezamenlijk toe. ",
+									"@type": [
+										"src:LeafElement"
+									]
+								},
+								{
+									"IRI": "Document/002k_Artikel_4/002C_Lid_2/001B_chunk",
+									"id": "001B",
+									"content": "",
+									"@type": [
+										"src:LeafElement"
+									]
+								},
+								{
+									"IRI": "Document/002k_Artikel_4/002C_Lid_2/001C_chunk",
+									"id": "001C",
+									"content": "Als één van de gehuwden/samenwonenden is uitgesloten van het recht op Individuele Inkomenstoeslag ingevolge de artikelen 11 of 13, eerste lid, van de wet, komt de rechthebbende echtgenoot in aanmerking voor een individuele inkomenstoeslag naar de hoogte die voor hem als alleenstaande of alleenstaande ouder zou gelden.",
+									"@type": [
+										"src:LeafElement"
+									]
+								}
+							],
+							"@type": [
+								"src:NonLeafElement",
+								"src:ListItem"
+							],
+							"numbering": "2",
+							"typelabel": "Lid"
+						},
+						{
+							"IRI": "Document/002k_Artikel_4/002D_Lid_3",
+							"id": "002D",
+							"children": [
+								{
+									"IRI": "Document/002k_Artikel_4/002D_Lid_3/001D_chunk",
+									"id": "001D",
+									"content": "3. ",
+									"@type": [
+										"src:LeafElement"
+									]
+								},
+								{
+									"IRI": "Document/002k_Artikel_4/002D_Lid_3/001E_chunk",
+									"id": "001E",
+									"content": "",
+									"@type": [
+										"src:LeafElement"
+									]
+								},
+								{
+									"IRI": "Document/002k_Artikel_4/002D_Lid_3/001F_chunk",
+									"id": "001F",
+									"content": "Voor toepassing van het eerste lid is de situatie op de peildatum bepalend.",
+									"@type": [
+										"src:LeafElement"
+									]
+								}
+							],
+							"@type": [
+								"src:NonLeafElement",
+								"src:ListItem"
+							],
+							"numbering": "3",
+							"typelabel": "Lid"
+						},
+						{
+							"IRI": "Document/002k_Artikel_4/002E_Lid_4",
+							"id": "002E",
+							"children": [
+								{
+									"IRI": "Document/002k_Artikel_4/002E_Lid_4/001G_chunk",
+									"id": "001G",
+									"content": "4. ",
+									"@type": [
+										"src:LeafElement"
+									]
+								},
+								{
+									"IRI": "Document/002k_Artikel_4/002E_Lid_4/001H_chunk",
+									"id": "001H",
+									"content": "",
+									"@type": [
+										"src:LeafElement"
+									]
+								},
+								{
+									"IRI": "Document/002k_Artikel_4/002E_Lid_4/001I_chunk",
+									"id": "001I",
+									"content": "De bedragen genoemd in het eerste lid worden jaarlijks geïndexeerd overeenkomstig de ontwikkelingen van de consumentenprijsindex volgens het Centraal Bureau voor de Statistiek. ",
+									"@type": [
+										"src:LeafElement"
+									]
+								},
+								{
+									"IRI": "Document/002k_Artikel_4/002E_Lid_4/001J_chunk",
+									"id": "001J",
+									"content": "",
+									"@type": [
+										"src:LeafElement"
+									]
+								},
+								{
+									"IRI": "Document/002k_Artikel_4/002E_Lid_4/001K_chunk",
+									"id": "001K",
+									"content": "De bedragen worden naar boven afgerond op hele euro’s.",
+									"@type": [
+										"src:LeafElement"
+									]
+								}
+							],
+							"@type": [
+								"src:NonLeafElement",
+								"src:ListItem"
+							],
+							"numbering": "4",
+							"typelabel": "Lid"
+						}
+					],
+					"@type": [
+						"src:NonLeafElement"
+					],
+					"containsAsHeader": "Document/002k_Artikel_4/0014_chunk",
+					"numbering": "4",
+					"typelabel": "Artikel"
+				},
+				{
+					"IRI": "Document/002l_Artikel_5",
+					"id": "002l",
+					"children": [
+						{
+							"IRI": "Document/002l_Artikel_5/001L_chunk",
+							"id": "001L",
+							"content": "Artikel 5. ",
+							"@type": [
+								"src:LeafElement"
+							]
+						},
+						{
+							"IRI": "Document/002l_Artikel_5/001M_chunk",
+							"id": "001M",
+							"content": "",
+							"@type": [
+								"src:LeafElement"
+							]
+						},
+						{
+							"IRI": "Document/002l_Artikel_5/001N_chunk",
+							"id": "001N",
+							"content": "Hardheidsclausule",
+							"@type": [
+								"src:LeafElement"
+							]
+						},
+						{
+							"IRI": "Document/002l_Artikel_5/001O_chunk",
+							"id": "001O",
+							"content": "Het college kan, in afwijking van de verordening, besluiten tot toekenning van de Individuele Inkomenstoeslag als afwijzing daarvan naar het oordeel van het college kennelijk onredelijk is.",
+							"@type": [
+								"src:LeafElement"
+							]
+						}
+					],
+					"@type": [
+						"src:NonLeafElement"
+					],
+					"containsAsHeader": "Document/002l_Artikel_5/001L_chunk",
+					"numbering": "5",
+					"typelabel": "Artikel"
+				},
+				{
+					"IRI": "Document/002m_Artikel_6",
+					"id": "002m",
+					"children": [
+						{
+							"IRI": "Document/002m_Artikel_6/001P_chunk",
+							"id": "001P",
+							"content": "Artikel 6. ",
+							"@type": [
+								"src:LeafElement"
+							]
+						},
+						{
+							"IRI": "Document/002m_Artikel_6/001Q_chunk",
+							"id": "001Q",
+							"content": "",
+							"@type": [
+								"src:LeafElement"
+							]
+						},
+						{
+							"IRI": "Document/002m_Artikel_6/001R_chunk",
+							"id": "001R",
+							"content": "Intrekken oude verordening",
+							"@type": [
+								"src:LeafElement"
+							]
+						},
+						{
+							"IRI": "Document/002m_Artikel_6/001S_chunk",
+							"id": "001S",
+							"content": "De Verordening individuele inkomenstoeslag Utrecht 2017 wordt ingetrokken per 1 januari 2019.",
+							"@type": [
+								"src:LeafElement"
+							]
+						}
+					],
+					"@type": [
+						"src:NonLeafElement"
+					],
+					"containsAsHeader": "Document/002m_Artikel_6/001P_chunk",
+					"numbering": "6",
+					"typelabel": "Artikel"
+				},
+				{
+					"IRI": "Document/002n_Artikel_7",
+					"id": "002n",
+					"children": [
+						{
+							"IRI": "Document/002n_Artikel_7/001T_chunk",
+							"id": "001T",
+							"content": "Artikel 7. ",
+							"@type": [
+								"src:LeafElement"
+							]
+						},
+						{
+							"IRI": "Document/002n_Artikel_7/001U_chunk",
+							"id": "001U",
+							"content": "",
+							"@type": [
+								"src:LeafElement"
+							]
+						},
+						{
+							"IRI": "Document/002n_Artikel_7/001V_chunk",
+							"id": "001V",
+							"content": "Inwerkingtreding",
+							"@type": [
+								"src:LeafElement"
+							]
+						},
+						{
+							"IRI": "Document/002n_Artikel_7/001W_chunk",
+							"id": "001W",
+							"content": "Deze verordening treedt in werking op 1 januari 2019.",
+							"@type": [
+								"src:LeafElement"
+							]
+						}
+					],
+					"@type": [
+						"src:NonLeafElement"
+					],
+					"containsAsHeader": "Document/002n_Artikel_7/001T_chunk",
+					"numbering": "7",
+					"typelabel": "Artikel"
+				},
+				{
+					"IRI": "Document/002o_Artikel_8",
+					"id": "002o",
+					"children": [
+						{
+							"IRI": "Document/002o_Artikel_8/001X_chunk",
+							"id": "001X",
+							"content": "Artikel 8. ",
+							"@type": [
+								"src:LeafElement"
+							]
+						},
+						{
+							"IRI": "Document/002o_Artikel_8/001Y_chunk",
+							"id": "001Y",
+							"content": "",
+							"@type": [
+								"src:LeafElement"
+							]
+						},
+						{
+							"IRI": "Document/002o_Artikel_8/001Z_chunk",
+							"id": "001Z",
+							"content": "Citeertitel",
+							"@type": [
+								"src:LeafElement"
+							]
+						},
+						{
+							"IRI": "Document/002o_Artikel_8/0020_chunk",
+							"id": "0020",
+							"content": "Deze verordening wordt aangehaald als: Verordening individuele inkomenstoeslag gemeente Utrecht 2019",
+							"@type": [
+								"src:LeafElement"
+							]
+						}
+					],
+					"@type": [
+						"src:NonLeafElement"
+					],
+					"containsAsHeader": "Document/002o_Artikel_8/001X_chunk",
+					"numbering": "8",
+					"typelabel": "Artikel"
+				},
+				{
+					"IRI": "Document/002p_Ondertekening",
+					"id": "002p",
+					"children": [
+						{
+							"IRI": "Document/002p_Ondertekening/0021_chunk",
+							"id": "0021",
+							"content": "Ondertekening",
+							"@type": [
+								"src:LeafElement"
+							]
+						},
+						{
+							"IRI": "Document/002p_Ondertekening/0022_chunk",
+							"id": "0022",
+							"content": "Aldus vastgesteld in de openbare vergadering van 6 december 2018,",
+							"@type": [
+								"src:LeafElement"
+							]
+						},
+						{
+							"IRI": "Document/002p_Ondertekening/0023_chunk",
+							"id": "0023",
+							"content": "De griffier,",
+							"@type": [
+								"src:LeafElement"
+							]
+						},
+						{
+							"IRI": "Document/002p_Ondertekening/0024_chunk",
+							"id": "0024",
+							"content": "mr. ",
+							"@type": [
+								"src:LeafElement"
+							]
+						},
+						{
+							"IRI": "Document/002p_Ondertekening/0025_chunk",
+							"id": "0025",
+							"content": "",
+							"@type": [
+								"src:LeafElement"
+							]
+						},
+						{
+							"IRI": "Document/002p_Ondertekening/0026_chunk",
+							"id": "0026",
+							"content": "M. ",
+							"@type": [
+								"src:LeafElement"
+							]
+						},
+						{
+							"IRI": "Document/002p_Ondertekening/0027_chunk",
+							"id": "0027",
+							"content": "",
+							"@type": [
+								"src:LeafElement"
+							]
+						},
+						{
+							"IRI": "Document/002p_Ondertekening/0028_chunk",
+							"id": "0028",
+							"content": "van Hall CMC",
+							"@type": [
+								"src:LeafElement"
+							]
+						},
+						{
+							"IRI": "Document/002p_Ondertekening/0029_chunk",
+							"id": "0029",
+							"content": "De burgemeester,",
+							"@type": [
+								"src:LeafElement"
+							]
+						},
+						{
+							"IRI": "Document/002p_Ondertekening/002a_chunk",
+							"id": "002a",
+							"content": "mr. ",
+							"@type": [
+								"src:LeafElement"
+							]
+						},
+						{
+							"IRI": "Document/002p_Ondertekening/002b_chunk",
+							"id": "002b",
+							"content": "",
+							"@type": [
+								"src:LeafElement"
+							]
+						},
+						{
+							"IRI": "Document/002p_Ondertekening/002c_chunk",
+							"id": "002c",
+							"content": "J.H.C. ",
+							"@type": [
+								"src:LeafElement"
+							]
+						},
+						{
+							"IRI": "Document/002p_Ondertekening/002d_chunk",
+							"id": "002d",
+							"content": "",
+							"@type": [
+								"src:LeafElement"
+							]
+						},
+						{
+							"IRI": "Document/002p_Ondertekening/002e_chunk",
+							"id": "002e",
+							"content": "van Zanen",
+							"@type": [
+								"src:LeafElement"
+							]
+						},
+						{
+							"IRI": "Document/002p_Ondertekening/002f_chunk",
+							"id": "002f",
+							"content": "",
+							"@type": [
+								"src:LeafElement"
+							]
+						}
+					],
+					"@type": [
+						"src:NonLeafElement"
+					],
+					"containsAsHeader": "Document/002p_Ondertekening/0021_chunk",
+					"typelabel": "Ondertekening"
+				}
+			],
+			"title": "Verordening individuele inkomenstoeslag gemeente Utrecht 2019",
+			"version": null,
+			"decompositionVersion": "0.1",
+			"generatedBy": "http://choppr.app/decompositions/0e3e8a6b-8128-45ff-bbbc-01a75c1e8f4f/DecompositionEvent/",
+			"original": "",
+			"hasOrigin": "https://lokaleregelgeving.overheid.nl/CVDR616379"
+		},
+		{
+			"@type": "src:DecompositionEvent",
+			"@id": "http://choppr.app/decompositions/0e3e8a6b-8128-45ff-bbbc-01a75c1e8f4f/DecompositionEvent/",
+			"begins": "2024-01-23T15:35:09.153Z",
+			"ends": "2024-01-23T15:35:09.153Z",
+			"generates": "http://choppr.app/decompositions/0e3e8a6b-8128-45ff-bbbc-01a75c1e8f4f"
+		}
+	]
+}

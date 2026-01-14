@@ -1,0 +1,82 @@
+import App from '@triply/triplydb'
+import N3 from 'n3'
+
+async function load_graph(dataset,iri) {
+    const graph = await dataset.getGraph(iri)
+    const store = await graph.toStore()
+    return store
+}
+
+export const handler = async function(event, context){
+
+    // check api key
+    const apiKey = event.headers["x-edge-message"];
+    const secretKey = process.env.X_API_KEY;
+    if (!apiKey || apiKey !== secretKey) {
+        return {
+            statusCode: 401,
+            body: JSON.stringify({ error: "Unauthorized: Invalid key" }),
+        };
+    }
+
+    const prefixes = {
+        calc: 'http://ontology.tno.nl/normengineering/calculemus#',
+        choppr: 'http://ontology.tno.nl/normengineering/choppr#',
+        co: 'http://purl.org/co/',
+        editor: 'http://ontology.tno.nl/normengineering/editor#',
+        flint: 'http://ontology.tno.nl/normengineering/flint#',
+        oa: 'http://www.w3.org/ns/oa#',
+        owl: 'http://www.w3.org/2002/07/owl#',
+        prov: 'http://www.w3.org/ns/prov#',
+        rdf: 'http://www.w3.org/1999/02/22-rdf-syntax-ns#',
+        rdfs: 'http://www.w3.org/2000/01/rdf-schema#',
+        src: 'http://ontology.tno.nl/normengineering/source#',
+        xsd: 'http://www.w3.org/2001/XMLSchema#'
+    }
+    const token = process.env.TRIPLY_KEY_R
+    const triply = App.get({ token: token })
+    const task_iri = JSON.parse(event.body)
+
+    const user = await triply.getAccount('TNO')
+    const dataset = await user.getDataset('editor')
+
+    const task_graph = await load_graph(dataset, task_iri.iri)
+
+    const writer = new N3.Writer({ format: 'application/trig', prefixes })
+    task_graph.forEach(quad => writer.addQuad(quad)) // Add task data to output
+
+    const required_graphs = task_graph.getObjects(task_iri.iri, `${prefixes.calc}involves`, null) // Get other required graphs (interpretation and sources)
+
+    for (const object of required_graphs) {
+        const new_graph = await load_graph(dataset,object.value) // Load the required graph (interpretation or source)
+        new_graph.forEach(quad => writer.addQuad(quad)) // Add graph data to output
+    }
+
+    let ttlString = null;
+
+
+    // Print the output
+    writer.end((error, output) => {
+        if (error) {
+            console.error('Error exporting:', error)
+            ttlString = error
+
+        } else {
+            console.log(output) // output is a string, this can be sent to unwrap_api
+            ttlString = output;
+        }
+    })
+
+    if (ttlString){
+        return {
+                statusCode: 200,
+                body: JSON.stringify({message:"Task retrieved!", task: ttlString})
+            }
+    }else {
+        return {
+            statusCode: 500,
+            body: JSON.stringify({message: `Issue retrieving the task! Error: ${ttlString}`})
+        }
+    }
+}
+

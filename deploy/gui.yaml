@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: calculemus-ui-interpretation-editor
+  namespace: ole
+  labels:
+    app: calculemus-ui-interpretation-editor
+spec:
+  selector:
+    matchLabels:
+      app: calculemus-ui-interpretation-editor
+  template:
+    metadata:
+      labels:
+        app: calculemus-ui-interpretation-editor
+    spec:
+      containers:
+      - image: <imagetag>
+        name: calculemus-ui-interpretation-editor
+      imagePullSecrets:
+      - name: k8s-gitlab-norm-engineering

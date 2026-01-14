@@ -1,0 +1,22 @@
+[
+    {
+        "title": "Participatiewet",
+        "fileName": "./sources/Participatiewet.json"
+    },
+    {
+        "title": "General Data Protection Regulation",
+        "fileName": "./sources/GDPR_trimmed.json"
+    },
+    {
+        "title": "Beleidsregel Individuele Inkomenstoeslag",
+        "fileName": "./sources/Beleidsregel_Individuele_Inkomenstoeslag_gemeente_Utrecht_v2.json"
+    },
+    {
+        "title": "Verordening individuele inkomenstoeslag",
+        "fileName": "./sources/Verordening_individuele_inkomenstoeslag_gemeente_Utrecht_2019_v4.json"
+    },
+    {
+        "title": "Algemene wet bestuursrecht",
+        "fileName": "./sources/Algemene_wet_bestuursrecht.json"
+    }
+]

@@ -1,0 +1,7 @@
+{"functions":[
+  {
+    "bundler":"esbuild",
+    "buildData":{"runtimeAPIVersion":1},
+    "priority":10,
+    "runtime":"js"}
+],"version":1}
