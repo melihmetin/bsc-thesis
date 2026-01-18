@@ -1,6 +1,5 @@
 import jinja2
 from json_extraction import extract_json
-import sys
 
 def generate_eflint(interpretation: dict, template_path: str = "eflint_template.j2") -> str:
     
@@ -18,9 +17,3 @@ def generate_eflint(interpretation: dict, template_path: str = "eflint_template.
     rendered = template.render(frames=frames)
 
     return rendered
-
-
-if __name__ == "__main__":
-    json_file = sys.argv[1]
-
-    generate_eflint(json_file)

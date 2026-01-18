@@ -9,10 +9,5 @@ class GenerateRequest(BaseModel):
 
 @app.post("/generate")
 def generate(req: GenerateRequest):
-    try:
-        eflint = generate_eflint(req.interpretation)
-        return {"eflint": eflint}
-    except KeyError as e:
-        raise HTTPException(status_code=400, detail=f"Missing key in interpretation JSON: {e}")
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+    eflint = generate_eflint(req.interpretation)
+    return {"eflint": eflint}
