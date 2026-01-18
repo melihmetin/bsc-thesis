@@ -8,7 +8,7 @@ Fact [{{ frame.label }}] Identified by string.
 
 {% for frame in frames %}
     {% if frame.typeId == 'fact' %}
-        {% if 'condition' in frame.subTypeIds or 'object' in frame.subTypeIds or frame.subTypeIds == [None] %}
+        {% if 'condition' in frame.subTypeIds or 'object' in frame.subTypeIds or frame.subTypeIds == [None] or 'duty' in frame.subTypeIds%}
 Bool [{{ frame.label }}].
         {% endif %}
     {% endif %}

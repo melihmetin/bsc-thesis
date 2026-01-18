@@ -27,41 +27,63 @@
                 <q-item-section class="cursor-pointer" @click="toggle(f.id)">
                   <q-item-label>{{ f.shortName }}</q-item-label>
                   <q-item-label caption>
-                    {{ f.typeId === 'fact' ? (f.subTypeIds?.[0] || f.typeId) : f.typeId }}
+                    {{ f.typeId === "fact" ? (f.subTypeIds?.[0] || f.typeId) : f.typeId }}
                   </q-item-label>
 
-                  <div v-if="isAgentFact(f) && selectedIds.includes(f.id)" @click.stop>
-                    <q-input
-                      dense
-                      outlined
-                      placeholder="instance name"
-                      v-model="agentInstanceNames[f.id]"
-                      class="q-mt-xs"
-                    />
+                  <div v-if="isAgentFact(f) && selectedIds.includes(f.id)" @click.stop class="q-mt-xs">
+                    <div
+                      v-for="(name, idx) in (agentInstanceNames[f.id] || [])"
+                      :key="`${f.id}-${idx}`"
+                      class="row items-center q-gutter-sm q-mb-xs"
+                    >
+                      <q-input
+                        dense
+                        outlined
+                        placeholder="instance name"
+                        :model-value="name"
+                        @update:model-value="setAgentInstanceName(f.id, idx, $event)"
+                        style="flex: 1;"
+                      />
+                      <q-btn dense flat icon="delete" @click.stop="removeAgentInstance(f.id, idx)" />
+                    </div>
+
+                    <q-btn dense flat icon="add" label="Add instance" @click.stop="addAgentInstance(f.id)" />
                   </div>
 
                   <div v-if="isAct(f) && selectedIds.includes(f.id)" @click.stop class="q-mt-xs">
                     <q-select
-                      dense outlined label="Actor type"
-                      :options="agentTypeOptions" emit-value map-options
+                      dense
+                      outlined
+                      label="Actor type"
+                      :options="agentTypeOptions"
+                      emit-value
+                      map-options
                       v-model="actSelections[f.id].actorType"
                       class="q-mb-xs"
                     />
                     <q-input
-                      dense outlined label="Actor name"
+                      dense
+                      outlined
+                      label="Actor name"
                       placeholder="instance name"
                       v-model="actSelections[f.id].actorName"
                       class="q-mb-sm"
                     />
 
                     <q-select
-                      dense outlined label="Recipient type"
-                      :options="agentTypeOptions" emit-value map-options
+                      dense
+                      outlined
+                      label="Recipient type"
+                      :options="agentTypeOptions"
+                      emit-value
+                      map-options
                       v-model="actSelections[f.id].recipientType"
                       class="q-mb-xs"
                     />
                     <q-input
-                      dense outlined label="Recipient name"
+                      dense
+                      outlined
+                      label="Recipient name"
                       placeholder="instance name"
                       v-model="actSelections[f.id].recipientName"
                     />
@@ -164,7 +186,13 @@ export default {
     },
 
     allFrames() {
-      return (this.$store.state.frames || []).concat(this.$store.state.framesOpenInEditor || []);
+      const a = this.$store.state.frames || [];
+      const b = this.$store.state.framesOpenInEditor || [];
+      const byId = new Map();
+      [...a, ...b].forEach((f) => {
+        if (f && f.id) byId.set(f.id, f);
+      });
+      return [...byId.values()];
     },
 
     framesUnion() {
@@ -180,7 +208,7 @@ export default {
       };
 
       return this.allFrames
-        .filter((f) => !(f.typeId === "fact" && ["action", "duty"].includes(f.subTypeIds?.[0])))
+        .filter((f) => !(f.typeId === "fact" && ["action"].includes(f.subTypeIds?.[0])))
         .slice()
         .sort((a, b) => {
           const ra = rank(a), rb = rank(b);
@@ -191,9 +219,18 @@ export default {
 
     selectedFrames() {
       const byId = Object.fromEntries(this.framesUnion.map((f) => [f.id, f]));
-      return this.clickOrder
-        .filter((id) => this.selectedIds.includes(id) && byId[id])
-        .map((id) => byId[id]);
+      const seen = new Set();
+      const out = [];
+
+      for (const id of this.clickOrder) {
+        if (!this.selectedIds.includes(id)) continue;
+        if (!byId[id]) continue;
+        if (seen.has(id)) continue;
+        seen.add(id);
+        out.push(byId[id]);
+      }
+
+      return out;
     },
 
     agentTypeOptions() {
@@ -203,22 +240,30 @@ export default {
     },
 
     selectionLines() {
-      return this.selectedFrames.map((f) => {
-        if (this.isAgentFact(f)) {
-          return `+[${f.shortName}]("${this.escape(this.agentInstanceNames[f.id] || "")}") .`;
-        }
+      return this.selectedFrames
+        .map((f) => {
+          if (this.isAgentFact(f)) {
+            const names = this.agentInstanceNames[f.id] || [];
+            return names
+              .filter((n) => String(n).trim().length > 0)
+              .map((n) => `+[${f.shortName}]("${this.escape(n)}") .`)
+              .join("\n");
+          }
 
-        if (this.isAct(f)) {
-          const sel = this.actSelections[f.id] || {};
-          const at = sel.actorType || "";
-          const rt = sel.recipientType || "";
-          const an = this.escape(sel.actorName || "");
-          const rn = this.escape(sel.recipientName || "");
-          return `[${f.shortName}]([${at}]("${an}"), [${rt}]("${rn}")).`;
-        }
+          if (this.isAct(f)) {
+            const sel = this.actSelections[f.id] || {};
+            const at = sel.actorType || "";
+            const rt = sel.recipientType || "";
+            const an = this.escape(sel.actorName || "");
+            const rn = this.escape(sel.recipientName || "");
+            return `[${f.shortName}]([${at}]("${an}"), [${rt}]("${rn}")).`;
+          }
 
-        return `+[${f.shortName}] .`;
-      });
+          return `+[${f.shortName}] .`;
+        })
+        .join("\n")
+        .split("\n")
+        .filter((l) => l.trim().length > 0);
     },
   },
 
@@ -235,26 +280,54 @@ export default {
       return String(s).replace(/\\/g, "\\\\").replace(/"/g, '\\"');
     },
 
+    addAgentInstance(agentId) {
+      const cur = this.agentInstanceNames[agentId] || [];
+      this.agentInstanceNames = {
+        ...this.agentInstanceNames,
+        [agentId]: [...cur, ""],
+      };
+    },
+
+    removeAgentInstance(agentId, idx) {
+      const cur = this.agentInstanceNames[agentId] || [];
+      const next = cur.filter((_, i) => i !== idx);
+      this.agentInstanceNames = {
+        ...this.agentInstanceNames,
+        [agentId]: next.length ? next : [""],
+      };
+    },
+
+    setAgentInstanceName(agentId, idx, value) {
+      const cur = this.agentInstanceNames[agentId] || [];
+      const next = cur.slice();
+      next[idx] = value;
+      this.agentInstanceNames = {
+        ...this.agentInstanceNames,
+        [agentId]: next,
+      };
+    },
+
     toggle(id) {
       if (this.selectedIds.includes(id)) {
         this.selectedIds = this.selectedIds.filter((x) => x !== id);
         this.clickOrder = this.clickOrder.filter((x) => x !== id);
-      } else {
-        this.selectedIds = [...this.selectedIds, id];
-        this.clickOrder = [...this.clickOrder, id];
+        return;
+      }
 
-        const f = this.framesUnion.find((x) => x.id === id);
+      this.selectedIds = [...this.selectedIds, id];
+      this.clickOrder = [...this.clickOrder, id];
 
-        if (f && this.isAgentFact(f) && this.agentInstanceNames[id] === undefined) {
-          this.agentInstanceNames = { ...this.agentInstanceNames, [id]: "" };
-        }
+      const f = this.framesUnion.find((x) => x.id === id);
 
-        if (f && this.isAct(f) && this.actSelections[id] === undefined) {
-          this.actSelections = {
-            ...this.actSelections,
-            [id]: { actorType: "", actorName: "", recipientType: "", recipientName: "" },
-          };
-        }
+      if (f && this.isAgentFact(f) && this.agentInstanceNames[id] === undefined) {
+        this.agentInstanceNames = { ...this.agentInstanceNames, [id]: [""] };
+      }
+
+      if (f && this.isAct(f) && this.actSelections[id] === undefined) {
+        this.actSelections = {
+          ...this.actSelections,
+          [id]: { actorType: "", actorName: "", recipientType: "", recipientName: "" },
+        };
       }
     },
 
@@ -266,7 +339,7 @@ export default {
       const acts = { ...this.actSelections };
 
       this.framesUnion.forEach((f) => {
-        if (this.isAgentFact(f) && names[f.id] === undefined) names[f.id] = "";
+        if (this.isAgentFact(f) && names[f.id] === undefined) names[f.id] = [""];
         if (this.isAct(f) && acts[f.id] === undefined) {
           acts[f.id] = { actorType: "", actorName: "", recipientType: "", recipientName: "" };
         }
@@ -282,29 +355,33 @@ export default {
     },
 
     applySelection() {
-      this.eflintFinal = this.eflintBase + "\n\n" + this.selectionLines.join("\n") + "\n";
+      this.eflintFinal = `${this.eflintBase}\n\n${this.selectionLines.join("\n")}\n`;
     },
 
     async generateEflint() {
       this.isGenerating = true;
 
-      const interpretation = convertInterpretationToJson(
-        this.$store.state.task,
-        this.allFrames,
-        this.$store.state.sourceDocuments || []
-      );
+      try {
+        const interpretation = convertInterpretationToJson(
+          this.$store.state.task,
+          this.allFrames,
+          this.$store.state.sourceDocuments || []
+        );
 
-      const resp = await fetch("/.netlify/functions/generate-eflint", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ interpretation }),
-      });
+        const resp = await fetch("/.netlify/functions/generate-eflint", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ interpretation }),
+        });
 
-      const { eflint } = await resp.json();
+        const data = await resp.json();
+        const eflint = data?.eflint || "";
 
-      this.eflintBase = eflint;
-      this.eflintFinal = eflint;
-      this.isGenerating = false;
+        this.eflintBase = eflint;
+        this.eflintFinal = eflint;
+      } finally {
+        this.isGenerating = false;
+      }
     },
   },
 };

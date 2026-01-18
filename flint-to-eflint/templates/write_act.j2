@@ -4,31 +4,45 @@
   {% if frame.typeId == 'act' %}
 
 Act [{{ frame.label }}] Actor [{{ frame.actorId }}] Recipient [{{ frame.recipientId }}]
-{% if frame.precondition %}
+{% set raw_cond = (tools.render_condition(frame.precondition, frames) if frame.precondition is not none else '') %}
+{% set cond = raw_cond | trim %}
+{% set has_cond = cond and cond != '[]' %}
+{% if frame.objectId or has_cond %}
 Holds when (
-{% if frame.objectId %}[{{ frame.objectId }}] && {% endif %}{{ tools.render_condition(frame.precondition, frames) }}
+{%- if frame.objectId -%}
+[{{ frame.objectId }}]{% if has_cond %} && {% endif %}
+{%- endif -%}
+{%- if has_cond -%}{{ cond }}{%- endif -%}
 )
 {% endif %}
 
-{% set creates = [] %}
-{% for c in frame.creates or [] %}
+{% set creates_items = [] %}
+{% for cid in frame.creates or [] %}
   {% for f in frames %}
-    {% if f.label == c and 'duty' not in (f.subTypeIds or []) %}
-      {% set _ = creates.append(c) %}
+    {% if f.id == cid or f.label == cid %}
+      {% if f.typeId in ['claim_duty', 'claim-duty'] %}
+        {% set _ = creates_items.append('[' ~ f.label ~ ']([' ~ frame.recipientId ~ '], [' ~ frame.actorId ~ '])') %}
+      {% else %}
+        {% set _ = creates_items.append('[' ~ f.label ~ ']') %}
+      {% endif %}
     {% endif %}
   {% endfor %}
 {% endfor %}
-{% if creates %}Creates [{{ creates | join('], [') }}]{% endif %}
+{% if creates_items %}Creates {{ creates_items | join(', ') }}{% endif %}
 
-{% set terminates = [] %}
-{% for t in frame.terminates or [] %}
+{% set terminates_items = [] %}
+{% for tid in frame.terminates or [] %}
   {% for f in frames %}
-    {% if f.label == t and 'duty' not in (f.subTypeIds or []) %}
-      {% set _ = terminates.append(t) %}
+    {% if f.id == tid or f.label == tid %}
+      {% if f.typeId in ['claim_duty', 'claim-duty'] %}
+        {% set _ = terminates_items.append('[' ~ f.label ~ ']([' ~ frame.recipientId ~ '], [' ~ frame.actorId ~ '])') %}
+      {% else %}
+        {% set _ = terminates_items.append('[' ~ f.label ~ ']') %}
+      {% endif %}
     {% endif %}
   {% endfor %}
 {% endfor %}
-{% if terminates %}Terminates [{{ terminates | join('], [') }}]{% endif %}
+{% if terminates_items %}Terminates {{ terminates_items | join(', ') }}{% endif %}
 .
   {% endif %}
 {% endfor %}
