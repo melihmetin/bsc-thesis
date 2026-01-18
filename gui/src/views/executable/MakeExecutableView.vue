@@ -44,10 +44,10 @@
                         @update:model-value="setAgentInstanceName(f.id, idx, $event)"
                         style="flex: 1;"
                       />
-                      <q-btn dense flat icon="delete" @click.stop="removeAgentInstance(f.id, idx)" />
+                      <q-btn dense flat label="Delete" @click.stop="removeAgentInstance(f.id, idx)" />
                     </div>
 
-                    <q-btn dense flat icon="add" label="Add instance" @click.stop="addAgentInstance(f.id)" />
+                    <q-btn dense flat label="Add instance" @click.stop="addAgentInstance(f.id)" />
                   </div>
 
                   <div v-if="isAct(f) && selectedIds.includes(f.id)" @click.stop class="q-mt-xs">
