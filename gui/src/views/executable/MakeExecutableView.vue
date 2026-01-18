@@ -1,8 +1,19 @@
 <template>
   <div class="q-pa-md">
     <div class="row items-center q-gutter-sm q-mb-md">
-      <q-btn color="primary" label="Generate eFLINT" :loading="isGenerating" @click="generateEflint" />
-      <q-btn color="primary" outline label="Apply selection" :disable="!eflintBase" @click="applySelection" />
+      <q-btn
+        color="primary"
+        label="Generate eFLINT"
+        :loading="isGenerating"
+        @click="generateEflint"
+      />
+      <q-btn
+        color="primary"
+        outline
+        label="Apply selection"
+        :disable="!eflintBase"
+        @click="applySelection"
+      />
     </div>
 
     <div class="row q-col-gutter-md">
@@ -19,16 +30,29 @@
             <q-btn flat label="Select none" @click="selectNone" />
 
             <q-list bordered separator class="q-mt-md">
-              <q-item v-for="f in framesUnion" :key="f.id" clickable @click="toggle(f.id)">
+              <q-item v-for="f in framesUnion" :key="f.id">
                 <q-item-section avatar>
-                  <q-checkbox :model-value="selectedIds.includes(f.id)" @click.stop="toggle(f.id)" />
+                  <q-checkbox
+                    :model-value="selectedIds.includes(f.id)"
+                    @click.stop="toggle(f.id)"
+                  />
                 </q-item-section>
 
-                <q-item-section>
+                <q-item-section class="cursor-pointer" @click="toggle(f.id)">
                   <q-item-label>{{ f.shortName }}</q-item-label>
                   <q-item-label caption>
-                    {{ f.typeId === 'fact' ? (f.subTypeIds[0] || f.typeId) : f.typeId }}
+                    {{ f.typeId === 'fact' ? (f.subTypeIds?.[0] || f.typeId) : f.typeId }}
                   </q-item-label>
+
+                  <div v-if="isAgentFact(f) && selectedIds.includes(f.id)" @click.stop>
+                    <q-input
+                      dense
+                      outlined
+                      placeholder="instance name"
+                      v-model="agentInstanceNames[f.id]"
+                      class="q-mt-xs"
+                    />
+                  </div>
                 </q-item-section>
               </q-item>
             </q-list>
@@ -44,7 +68,7 @@
               autogrow
               outlined
               readonly
-              input-style="font-family: ui-monospace, Menlo, Monaco, Consolas, 'Courier New', monospace;"
+              input-style="font-family: monospace;"
             />
           </q-card-section>
         </q-card>
@@ -66,7 +90,7 @@
               autogrow
               outlined
               readonly
-              input-style="font-family: ui-monospace, Menlo, Monaco, Consolas, 'Courier New', monospace;"
+              input-style="font-family: monospace;"
             />
 
             <div class="text-caption q-mt-md q-mb-xs">Scenario</div>
@@ -76,7 +100,7 @@
               autogrow
               outlined
               readonly
-              input-style="font-family: ui-monospace, Menlo, Monaco, Consolas, 'Courier New', monospace;"
+              input-style="font-family: monospace;"
             />
           </q-card-section>
         </q-card>
@@ -93,14 +117,47 @@ export default {
 
   data() {
     return {
-      selectedIds: [],
-      eflintBase: "",
-      eflintFinal: "",
       isGenerating: false,
     };
   },
 
   computed: {
+    selectedIds: {
+      get() {
+        return this.$store.state.executableSelectedIds || [];
+      },
+      set(v) {
+        this.$store.state.executableSelectedIds = v;
+      },
+    },
+
+    agentInstanceNames: {
+      get() {
+        return this.$store.state.executableAgentInstanceNames || {};
+      },
+      set(v) {
+        this.$store.state.executableAgentInstanceNames = v;
+      },
+    },
+
+    eflintBase: {
+      get() {
+        return this.$store.state.executableEflintBase || "";
+      },
+      set(v) {
+        this.$store.state.executableEflintBase = v;
+      },
+    },
+
+    eflintFinal: {
+      get() {
+        return this.$store.state.executableEflintFinal || "";
+      },
+      set(v) {
+        this.$store.state.executableEflintFinal = v;
+      },
+    },
+
     allFrames() {
       return (this.$store.state.frames || [])
         .concat(this.$store.state.framesOpenInEditor || []);
@@ -109,10 +166,7 @@ export default {
     framesUnion() {
       return this.allFrames.filter(
         (f) =>
-          !(
-            f.typeId === "fact" &&
-            ["action", "duty"].includes((f.subTypeIds && f.subTypeIds[0]) || "")
-          )
+          !(f.typeId === "fact" && ["action", "duty"].includes(f.subTypeIds?.[0]))
       );
     },
 
@@ -121,42 +175,60 @@ export default {
     },
 
     selectionLines() {
-      return this.selectedFrames.map((f) => `+[${f.shortName}] .`);
+      return this.selectedFrames.map((f) =>
+        this.isAgentFact(f)
+          ? `+[${f.shortName}]("${this.escape(this.agentInstanceNames[f.id] || "")}") .`
+          : `+[${f.shortName}] .`
+      );
     },
   },
 
   methods: {
+    isAgentFact(f) {
+      return f.typeId === "fact" && f.subTypeIds?.[0] === "agent";
+    },
+
+    escape(s) {
+      return String(s).replace(/\\/g, "\\\\").replace(/"/g, '\\"');
+    },
+
     toggle(id) {
       if (this.selectedIds.includes(id)) {
         this.selectedIds = this.selectedIds.filter((x) => x !== id);
       } else {
-        this.selectedIds = this.selectedIds.concat(id);
+        this.selectedIds = [...this.selectedIds, id];
+        if (this.agentInstanceNames[id] === undefined) {
+          this.agentInstanceNames = { ...this.agentInstanceNames, [id]: "" };
+        }
       }
-      this.$store.commit("setExecutableFrames", this.selectedIds);
     },
 
     selectAll() {
       this.selectedIds = this.framesUnion.map((f) => f.id);
-      this.$store.commit("setExecutableFrames", this.selectedIds);
+      const names = { ...this.agentInstanceNames };
+      this.framesUnion.forEach((f) => {
+        if (this.isAgentFact(f) && names[f.id] === undefined) {
+          names[f.id] = "";
+        }
+      });
+      this.agentInstanceNames = names;
     },
 
     selectNone() {
       this.selectedIds = [];
-      this.$store.commit("setExecutableFrames", this.selectedIds);
     },
 
     applySelection() {
-      const selection = this.selectionLines.join("\n");
       this.eflintFinal =
-        this.eflintBase + (selection ? "\n\n" + selection + "\n" : "");
+        this.eflintBase + "\n\n" + this.selectionLines.join("\n") + "\n";
     },
 
     async generateEflint() {
       this.isGenerating = true;
-      
+
       const interpretation = convertInterpretationToJson(
         this.$store.state.task,
-        this.allFrames, // <-- changed
+        this.allFrames,
         this.$store.state.sourceDocuments || []
       );
 
@@ -170,7 +242,6 @@ export default {
 
       this.eflintBase = eflint;
       this.eflintFinal = eflint;
-
       this.isGenerating = false;
     },
   },
