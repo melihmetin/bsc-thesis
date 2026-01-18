@@ -6,7 +6,7 @@
 Act [{{ frame.label }}] Actor [{{ frame.actorId }}] Recipient [{{ frame.recipientId }}]
         {% if frame.objectId %}
 Related to [{{ frame.objectId }}]
-        {%- endif %}
+        {% endif %}
         {% if frame.precondition['children'] %}
 Holds when (
 {{ tools.render_condition(frame.precondition, frames) }}
@@ -14,9 +14,9 @@ Holds when (
         {% endif %}
         {% if frame.creates %}
 Creates [{{ frame.creates[0] }}]
-        {%- endif %}
+        {% endif %}
         {% if frame.terminates %}
 Terminates [{{ frame.terminates[0] }}]
-        {%- endif %}
-    {%- endif %}
+        {% endif %}
+    {% endif %}
 {% endfor %}

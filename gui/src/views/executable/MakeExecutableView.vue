@@ -101,22 +101,23 @@ export default {
   },
 
   computed: {
-    framesUnion() {
+    allFrames() {
       return (this.$store.state.frames || [])
-        .concat(this.$store.state.framesOpenInEditor || [])
-        .filter(
-          (f) =>
-            !(
-              f.typeId === "fact" &&
-              ["action", "duty"].includes((f.subTypeIds && f.subTypeIds[0]) || "")
-            )
-        );
+        .concat(this.$store.state.framesOpenInEditor || []);
+    },
+
+    framesUnion() {
+      return this.allFrames.filter(
+        (f) =>
+          !(
+            f.typeId === "fact" &&
+            ["action", "duty"].includes((f.subTypeIds && f.subTypeIds[0]) || "")
+          )
+      );
     },
 
     selectedFrames() {
-      return this.framesUnion.filter((f) =>
-        this.selectedIds.includes(f.id)
-      );
+      return this.framesUnion.filter((f) => this.selectedIds.includes(f.id));
     },
 
     selectionLines() {
@@ -152,10 +153,10 @@ export default {
 
     async generateEflint() {
       this.isGenerating = true;
-
+      
       const interpretation = convertInterpretationToJson(
         this.$store.state.task,
-        this.framesUnion,
+        this.allFrames, // <-- changed
         this.$store.state.sourceDocuments || []
       );
 
