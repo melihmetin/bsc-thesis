@@ -1,19 +1,8 @@
 <template>
   <div class="q-pa-md">
     <div class="row items-center q-gutter-sm q-mb-md">
-      <q-btn
-        color="primary"
-        label="Generate eFLINT"
-        :loading="isGenerating"
-        @click="generateEflint"
-      />
-      <q-btn
-        color="primary"
-        outline
-        label="Apply selection"
-        :disable="!eflintBase"
-        @click="applySelection"
-      />
+      <q-btn color="primary" label="Generate eFLINT" :loading="isGenerating" @click="generateEflint" />
+      <q-btn color="primary" outline label="Apply selection" :disable="!eflintBase" @click="applySelection" />
     </div>
 
     <div class="row q-col-gutter-md">
@@ -32,10 +21,7 @@
             <q-list bordered separator class="q-mt-md">
               <q-item v-for="f in framesUnion" :key="f.id">
                 <q-item-section avatar>
-                  <q-checkbox
-                    :model-value="selectedIds.includes(f.id)"
-                    @click.stop="toggle(f.id)"
-                  />
+                  <q-checkbox :model-value="selectedIds.includes(f.id)" @click.stop="toggle(f.id)" />
                 </q-item-section>
 
                 <q-item-section class="cursor-pointer" @click="toggle(f.id)">
@@ -45,12 +31,40 @@
                   </q-item-label>
 
                   <div v-if="isAgentFact(f) && selectedIds.includes(f.id)" @click.stop>
+                    <q-input dense outlined placeholder="instance name" v-model="agentInstanceNames[f.id]" class="q-mt-xs" />
+                  </div>
+
+                  <div v-if="isAct(f) && selectedIds.includes(f.id)" @click.stop class="q-mt-xs">
+                    <q-select
+                      dense outlined label="Actor type"
+                      :options="agentTypeOptions" emit-value map-options
+                      v-model="actSelections[f.id].actorType"
+                      class="q-mb-xs"
+                    />
                     <q-input
-                      dense
-                      outlined
+                      dense outlined label="Actor name"
                       placeholder="instance name"
-                      v-model="agentInstanceNames[f.id]"
-                      class="q-mt-xs"
+                      v-model="actSelections[f.id].actorName"
+                      class="q-mb-sm"
+                    />
+
+                    <q-select
+                      dense outlined label="Recipient type"
+                      :options="agentTypeOptions" emit-value map-options
+                      v-model="actSelections[f.id].recipientType"
+                      class="q-mb-xs"
+                    />
+                    <q-input
+                      dense outlined label="Recipient name"
+                      placeholder="instance name"
+                      v-model="actSelections[f.id].recipientName"
+                      class="q-mb-sm"
+                    />
+
+                    <q-select
+                      dense outlined label="Object"
+                      :options="objectTypeOptions" emit-value map-options
+                      v-model="actSelections[f.id].objectType"
                     />
                   </div>
                 </q-item-section>
@@ -116,57 +130,42 @@ export default {
   name: "MakeExecutableView",
 
   data() {
-    return {
-      isGenerating: false,
-    };
+    return { isGenerating: false };
   },
 
   computed: {
     selectedIds: {
-      get() {
-        return this.$store.state.executableSelectedIds || [];
-      },
-      set(v) {
-        this.$store.state.executableSelectedIds = v;
-      },
+      get() { return this.$store.state.executableSelectedIds || []; },
+      set(v) { this.$store.state.executableSelectedIds = v; },
     },
 
     agentInstanceNames: {
-      get() {
-        return this.$store.state.executableAgentInstanceNames || {};
-      },
-      set(v) {
-        this.$store.state.executableAgentInstanceNames = v;
-      },
+      get() { return this.$store.state.executableAgentInstanceNames || {}; },
+      set(v) { this.$store.state.executableAgentInstanceNames = v; },
+    },
+
+    actSelections: {
+      get() { return this.$store.state.executableActSelections || {}; },
+      set(v) { this.$store.state.executableActSelections = v; },
     },
 
     eflintBase: {
-      get() {
-        return this.$store.state.executableEflintBase || "";
-      },
-      set(v) {
-        this.$store.state.executableEflintBase = v;
-      },
+      get() { return this.$store.state.executableEflintBase || ""; },
+      set(v) { this.$store.state.executableEflintBase = v; },
     },
 
     eflintFinal: {
-      get() {
-        return this.$store.state.executableEflintFinal || "";
-      },
-      set(v) {
-        this.$store.state.executableEflintFinal = v;
-      },
+      get() { return this.$store.state.executableEflintFinal || ""; },
+      set(v) { this.$store.state.executableEflintFinal = v; },
     },
 
     allFrames() {
-      return (this.$store.state.frames || [])
-        .concat(this.$store.state.framesOpenInEditor || []);
+      return (this.$store.state.frames || []).concat(this.$store.state.framesOpenInEditor || []);
     },
 
     framesUnion() {
       return this.allFrames.filter(
-        (f) =>
-          !(f.typeId === "fact" && ["action", "duty"].includes(f.subTypeIds?.[0]))
+        (f) => !(f.typeId === "fact" && ["action", "duty"].includes(f.subTypeIds?.[0]))
       );
     },
 
@@ -174,18 +173,49 @@ export default {
       return this.framesUnion.filter((f) => this.selectedIds.includes(f.id));
     },
 
+    agentTypeOptions() {
+      return this.framesUnion
+        .filter((f) => this.isAgentFact(f))
+        .map((f) => ({ label: f.shortName, value: f.shortName }));
+    },
+
+    objectTypeOptions() {
+      return this.framesUnion
+        .filter((f) => f.typeId === "fact" && f.subTypeIds?.[0] === "object")
+        .map((f) => ({ label: f.shortName, value: f.shortName }));
+    },
+
     selectionLines() {
-      return this.selectedFrames.map((f) =>
-        this.isAgentFact(f)
-          ? `+[${f.shortName}]("${this.escape(this.agentInstanceNames[f.id] || "")}") .`
-          : `+[${f.shortName}] .`
-      );
+      return this.selectedFrames.map((f) => {
+        if (this.isAgentFact(f)) {
+          return `+[${f.shortName}]("${this.escape(this.agentInstanceNames[f.id] || "")}") .`;
+        }
+
+        if (this.isAct(f)) {
+          const sel = this.actSelections[f.id] || {};
+          const at = sel.actorType || "";
+          const rt = sel.recipientType || "";
+          const ot = sel.objectType || "";
+
+          const an = this.escape(sel.actorName || "");
+          const rn = this.escape(sel.recipientName || "");
+
+          if (ot) return `[${f.shortName}]([${at}]("${an}"), [${rt}]("${rn}"), [${ot}]).`;
+          return `[${f.shortName}]([${at}]("${an}"), [${rt}]("${rn}")).`;
+        }
+
+        return `+[${f.shortName}] .`;
+      });
     },
   },
 
   methods: {
     isAgentFact(f) {
       return f.typeId === "fact" && f.subTypeIds?.[0] === "agent";
+    },
+
+    isAct(f) {
+      return f.typeId === "act";
     },
 
     escape(s) {
@@ -197,21 +227,37 @@ export default {
         this.selectedIds = this.selectedIds.filter((x) => x !== id);
       } else {
         this.selectedIds = [...this.selectedIds, id];
-        if (this.agentInstanceNames[id] === undefined) {
+
+        const f = this.framesUnion.find((x) => x.id === id);
+
+        if (f && this.isAgentFact(f) && this.agentInstanceNames[id] === undefined) {
           this.agentInstanceNames = { ...this.agentInstanceNames, [id]: "" };
+        }
+
+        if (f && this.isAct(f) && this.actSelections[id] === undefined) {
+          this.actSelections = {
+            ...this.actSelections,
+            [id]: { actorType: "", actorName: "", recipientType: "", recipientName: "", objectType: "" },
+          };
         }
       }
     },
 
     selectAll() {
       this.selectedIds = this.framesUnion.map((f) => f.id);
+
       const names = { ...this.agentInstanceNames };
+      const acts = { ...this.actSelections };
+
       this.framesUnion.forEach((f) => {
-        if (this.isAgentFact(f) && names[f.id] === undefined) {
-          names[f.id] = "";
+        if (this.isAgentFact(f) && names[f.id] === undefined) names[f.id] = "";
+        if (this.isAct(f) && acts[f.id] === undefined) {
+          acts[f.id] = { actorType: "", actorName: "", recipientType: "", recipientName: "", objectType: "" };
         }
       });
+
       this.agentInstanceNames = names;
+      this.actSelections = acts;
     },
 
     selectNone() {
@@ -219,8 +265,7 @@ export default {
     },
 
     applySelection() {
-      this.eflintFinal =
-        this.eflintBase + "\n\n" + this.selectionLines.join("\n") + "\n";
+      this.eflintFinal = this.eflintBase + "\n\n" + this.selectionLines.join("\n") + "\n";
     },
 
     async generateEflint() {
