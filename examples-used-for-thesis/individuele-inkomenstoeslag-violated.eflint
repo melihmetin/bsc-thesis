@@ -122,7 +122,7 @@ Terminates [aanvraag individuele inkomenstoeslag].
 
 ?([verlenen individuele inkomenstoeslag door college]([college van de gemeente Amsterdam]("Amsterdam"), [persoon]("Alice"))).
 
-// Postcondition checks
+// Condition checks
 ?([aanvraag individuele inkomenstoeslag]).
 
 ?([aan persoon is in de 12 maanden voorafgaand aan de aanvraag individuele inkomenstoeslag verleend]).
