@@ -1,0 +1,134 @@
+Fact [alleenstaande ouder] Identified by string.
+Fact [college] Identified by string.
+Fact [college van de gemeente Amsterdam] Identified by string.
+Fact [gehuwden] Identified by string.
+Fact [gemeenteraad] Identified by string.
+Fact [partner] Identified by string.
+Fact [persoon] Identified by string.
+Fact [persoon is alleenstaande] Identified by string.
+
+Bool [ de hoogte van de individuele inkomenstoeslag].
+Bool [ verzoek is ingediend via (digitaal) formulier gemeente].
+Bool [ verzoek tot verlenen individuele inkomenstoeslag].
+Bool [120% van de van toepassing zijnde bruto IOAW voor alleenstaande ouders].
+Bool [120% van de van toepassing zijnde bruto IOAW voor alleenstaanden].
+Bool [120% van de van toepassing zijnde bruto IOAW voor gehuwden].
+Bool [aan persoon is in de 12 maanden voorafgaand aan de aanvraag individuele inkomenstoeslag verleend].
+Bool [aanvraag individuele inkomenstoeslag].
+Bool [als partners slechts een gedeelte van de referteperiode een gezamenlijke huishouding voeren geeft het college een redelijke invulling  van het inkomen van beide personen].
+Bool [Amsterdam is op de aanvraagdatum de woonplaats van persoon].
+Bool [besluit tot het afwijzen van een aanvraag tot het verlenen van een individuele inkomenstoeslag].
+Bool [besluit tot verlenen individuele inkomenstoeslag].
+Bool [de referteperiode is periode van drie kalenderjaren voorafgaand aan de peildatum].
+Bool [fiscaal gezinsinkomen alleenstaande is minder dan, of gelijk aan 120% van de afhankelijk van de gezinssituatie van toepassing zijnde bruto IOAW jaarnorm in jaar 1].
+Bool [fiscaal gezinsinkomen alleenstaande is minder dan, of gelijk aan 120% van de afhankelijk van de gezinssituatie van toepassing zijnde bruto IOAW jaarnorm in jaar 2].
+Bool [fiscaal gezinsinkomen alleenstaande is minder dan, of gelijk aan 120% van de afhankelijk van de gezinssituatie van toepassing zijnde bruto IOAW jaarnorm in jaar 3].
+Bool [fiscaal gezinsinkomen alleenstaande ouder is minder dan, of gelijk aan 120% van de afhankelijk van de gezinssituatie van toepassing zijnde bruto IOAW jaarnorm in jaar 1].
+Bool [fiscaal gezinsinkomen alleenstaande ouder is minder dan, of gelijk aan 120% van de afhankelijk van de gezinssituatie van toepassing zijnde bruto IOAW jaarnorm in jaar 2].
+Bool [fiscaal gezinsinkomen alleenstaande ouder is minder dan, of gelijk aan 120% van de afhankelijk van de gezinssituatie van toepassing zijnde bruto IOAW jaarnorm in jaar 3].
+Bool [gelet op de inspanningen die de persoon heeft verricht om tot inkomensverbetering te komen].
+Bool [gelet op de krachten en bekwaamheden van de persoon].
+Bool [gelet op de omstandigheden van die persoon].
+Bool [het college kan afwijken van de bepalingen in deze beleidsregels, als de belangen die zijn gediend met toepassing van deze beleidsregels niet opwegen tegen de zwaarwegende belangen die afwijking van deze beleidsregels in een individueel en specifiek geval wenselijk maken].
+Bool [het college wijkt af van de bepalingen in deze verordening omdat dit in dit individuele en specifieke geval wenselijk is].
+Bool [het fiscaal gezinsinkomen, is minder (of gelijk aan) 120% van de afhankelijk van de gezinssituatie van toepassing zijnde bruto IOAW jaarnorm].
+Bool [het fiscaal gezinsinkomen, is op de peildatum minder (of gelijk aan) 120% van  bruto IOAW jaarnorm voor een alleenstaande].
+Bool [het fiscaal gezinsinkomen, is op de peildatum minder (of gelijk aan) 120% van  bruto IOAW jaarnorm voor een alleenstaande ouder].
+Bool [het fiscaal gezinsinkomen, is op de peildatum minder (of gelijk aan) 120% van  bruto IOAW jaarnorm voor gehuwden].
+Bool [inkomen partner].
+Bool [inkomen van verzoeker en partner gezamenlijk is minder dan, of gelijk aan 120% van de bruto IOAW jaarnorm voor gehuwden in jaar 1].
+Bool [inkomen van verzoeker en partner gezamenlijk is minder dan, of gelijk aan 120% van de bruto IOAW jaarnorm voor gehuwden in jaar 2].
+Bool [inkomen van verzoeker en partner gezamenlijk is minder dan, of gelijk aan 120% van de bruto IOAW jaarnorm voor gehuwden in jaar 3].
+Bool [inkomen verzoeker].
+Bool [jaarlijks en uiterlijk voor het einde van het loopjaar].
+Bool [met een minimumbedrag van €85,-].
+Bool [nadere regels ter beoordeling van het recht op een individuele inkomenstoeslag].
+Bool [op aanvraag van een persoon die geen in aanmerking te nemen vermogen heeft].
+Bool [op aanvraag van een persoon die geen uitzicht heeft op inkomensverbetering].
+Bool [op aanvraag van een persoon die langdurig een laag inkomen heeft].
+Bool [op aanvraag van een persoon die langdurig een laag inkomen heeft en geen in aanmerking te nemen vermogen als bedoeld in artikel 34 Pw].
+Bool [op aanvraag van een persoon jonger dan de pensioengerechtigde leeftijd].
+Bool [op aanvraag van een persoon van 21 jaar of ouder].
+Bool [op aanvraag van een persoon van 21 jaar of ouder en jonger dan de pensioengerechtigde leeftijd].
+Bool [partners hebben een geregistreerd partnerschap].
+Bool [partners voeren een gezamenlijke huishouding].
+Bool [partners zijn gehuwd].
+Bool [personen hadden als partners een laag inkomen in het kalenderjaar dat eindigt op 31 december van het derde jaar dat voorafgaat aan het jaar waarin de aanvraag is ingediend].
+Bool [personen hadden als partners een laag inkomen in het kalenderjaar dat eindigt op 31 december van het eerste jaar dat voorafgaat aan het jaar waarin de aanvraag is ingediend].
+Bool [personen hadden als partners een laag inkomen in het kalenderjaar dat eindigt op 31 december van het tweede jaar dat voorafgaat aan het jaar waarin de aanvraag is ingediend].
+Bool [persoon had een laag inkomen in het kalenderjaar dat eindigt op 31 december van het derde jaar dat voorafgaat aan het jaar waarin de aanvraag is ingediend].
+Bool [persoon had een laag inkomen in het kalenderjaar dat eindigt op 31 december van het eerste jaar dat voorafgaat aan het jaar waarin de aanvraag is ingediend].
+Bool [persoon had een laag inkomen in het kalenderjaar dat eindigt op 31 december van het tweede jaar dat voorafgaat aan het jaar waarin de aanvraag is ingediend].
+Bool [persoon heeft gedurende de gehele referteperiode een laag inkomen].
+Bool [persoon heeft gedurende de gehele referteperiode van periode van drie kalenderjaren voorafgaand aan de peildatum een laag inkomen als alleenstaande, alleenstaande ouder of als partner].
+Bool [persoon heeft gedurende de periode van drie kalenderjaren voorafgaand aan de peildatum een laag inkomen als partner].
+Bool [persoon heeft gedurende periode van drie kalenderjaren voorafgaand aan de peildatum een laag inkomen als alleenstaande].
+Bool [persoon heeft gedurende periode van drie kalenderjaren voorafgaand aan de peildatum een laag inkomen als alleenstaande ouder].
+Bool [persoon is alleenstaande].
+Bool [persoon is alleenstaande ouder].
+Bool [vermogen bedraagt minder dan de van toepassing zijnde vermogensgrens].
+Bool [vermogensgrens is € 15.150,00].
+Bool [vermogensgrens is € 7.575,00].
+Bool [vermogensgrens is voor de gehuwden tezamen: € 15.150,00].
+
+
+Act [afwijzen aanvraag individuele inkomenstoeslag college van de gemeente Amsterdam persoon] Actor [college van de gemeente Amsterdam] Recipient [persoon]
+Holds when ([aanvraag individuele inkomenstoeslag])
+
+Creates [besluit tot het afwijzen van een aanvraag tot het verlenen van een individuele inkomenstoeslag]
+Terminates [aanvraag individuele inkomenstoeslag].
+
+Act [indienen verzoek tot verlenen individuele inkomenstoeslag] Actor [persoon] Recipient [college]
+Holds when ([ verzoek tot verlenen individuele inkomenstoeslag] && [Amsterdam is op de aanvraagdatum de woonplaats van persoon] && [ verzoek is ingediend via (digitaal) formulier gemeente])
+
+Creates [aanvraag individuele inkomenstoeslag]
+.
+
+Act [jaarlijks vaststellen van de hoogte van de individuele inkomenstoeslag door het college van de gemeente Amsterdam] Actor [college van de gemeente Amsterdam] Recipient [gemeenteraad]
+Holds when ([ de hoogte van de individuele inkomenstoeslag] && [jaarlijks en uiterlijk voor het einde van het loopjaar] && [met een minimumbedrag van €85,-])
+
+Creates [ de hoogte van de individuele inkomenstoeslag]
+.
+
+Act [vaststellen nadere regels ter beoordeling van het recht op een individuele inkomenstoeslag door het college van de gemeente Amsterdam] Actor [college van de gemeente Amsterdam] Recipient [gemeenteraad]
+Holds when ([nadere regels ter beoordeling van het recht op een individuele inkomenstoeslag])
+
+Creates [nadere regels ter beoordeling van het recht op een individuele inkomenstoeslag]
+.
+
+Act [verlenen individuele inkomenstoeslag door college] Actor [college van de gemeente Amsterdam] Recipient [persoon]
+Holds when ([aanvraag individuele inkomenstoeslag] && [op aanvraag van een persoon van 21 jaar of ouder en jonger dan de pensioengerechtigde leeftijd] && [op aanvraag van een persoon die langdurig een laag inkomen heeft en geen in aanmerking te nemen vermogen als bedoeld in artikel 34 Pw] && [op aanvraag van een persoon die geen uitzicht heeft op inkomensverbetering] && [gelet op de omstandigheden van die persoon] && !([aan persoon is in de 12 maanden voorafgaand aan de aanvraag individuele inkomenstoeslag verleend]) && [Amsterdam is op de aanvraagdatum de woonplaats van persoon] || [het college wijkt af van de bepalingen in deze verordening omdat dit in dit individuele en specifieke geval wenselijk is] || [het college kan afwijken van de bepalingen in deze beleidsregels, als de belangen die zijn gediend met toepassing van deze beleidsregels niet opwegen tegen de zwaarwegende belangen die afwijking van deze beleidsregels in een individueel en specifiek geval wenselijk maken])
+
+Creates [besluit tot verlenen individuele inkomenstoeslag]
+Terminates [aanvraag individuele inkomenstoeslag].
+
+
++[persoon]("Alice") .
++[college]("College") .
++[college van de gemeente Amsterdam]("Amsterdam") .
++[ verzoek tot verlenen individuele inkomenstoeslag] .
++[Amsterdam is op de aanvraagdatum de woonplaats van persoon] .
++[ verzoek is ingediend via (digitaal) formulier gemeente] .
+[indienen verzoek tot verlenen individuele inkomenstoeslag]([persoon]("Alice"), [college]("College")).
++[op aanvraag van een persoon van 21 jaar of ouder en jonger dan de pensioengerechtigde leeftijd] .
++[op aanvraag van een persoon die langdurig een laag inkomen heeft en geen in aanmerking te nemen vermogen als bedoeld in artikel 34 Pw] .
++[op aanvraag van een persoon die geen uitzicht heeft op inkomensverbetering] .
++[gelet op de omstandigheden van die persoon] .
+[verlenen individuele inkomenstoeslag door college]([college van de gemeente Amsterdam]("Amsterdam"), [persoon]("Alice")).
+
+
+// --- Enabledness checks ---
+?([indienen verzoek tot verlenen individuele inkomenstoeslag]([persoon]("Alice"), [college]("College"))).
+
+?([verlenen individuele inkomenstoeslag door college]([college van de gemeente Amsterdam]("Amsterdam"), [persoon]("Alice"))).
+
+
+// --- State analysis ---
+?([aanvraag individuele inkomenstoeslag]).
+
+?([besluit tot verlenen individuele inkomenstoeslag]).
+
+
+// --- Postcondition verification ---
+?([aanvraag individuele inkomenstoeslag]).        // should be false after grant
+?([besluit tot verlenen individuele inkomenstoeslag]).  // should be true after grant
