@@ -117,18 +117,15 @@ Terminates [aanvraag individuele inkomenstoeslag].
 [verlenen individuele inkomenstoeslag door college]([college van de gemeente Amsterdam]("Amsterdam"), [persoon]("Alice")).
 
 
-// --- Enabledness checks ---
 ?([indienen verzoek tot verlenen individuele inkomenstoeslag]([persoon]("Alice"), [college]("College"))).
 
 ?([verlenen individuele inkomenstoeslag door college]([college van de gemeente Amsterdam]("Amsterdam"), [persoon]("Alice"))).
 
 
-// --- State analysis ---
 ?([aanvraag individuele inkomenstoeslag]).
 
 ?([besluit tot verlenen individuele inkomenstoeslag]).
 
 
-// --- Postcondition verification ---
-?([aanvraag individuele inkomenstoeslag]).        // should be false after grant
-?([besluit tot verlenen individuele inkomenstoeslag]).  // should be true after grant
+?([aanvraag individuele inkomenstoeslag]).
+?([besluit tot verlenen individuele inkomenstoeslag]).

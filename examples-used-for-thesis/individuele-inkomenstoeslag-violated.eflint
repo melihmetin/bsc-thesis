@@ -117,13 +117,12 @@ Terminates [aanvraag individuele inkomenstoeslag].
 +[aan persoon is in de 12 maanden voorafgaand aan de aanvraag individuele inkomenstoeslag verleend] .
 
 
-// --- Enabledness checks ---
+// Act enabledness checks 
 ?([indienen verzoek tot verlenen individuele inkomenstoeslag]([persoon]("Alice"), [college]("College"))).
 
 ?([verlenen individuele inkomenstoeslag door college]([college van de gemeente Amsterdam]("Amsterdam"), [persoon]("Alice"))).
 
-
-// --- State analysis ---
+// Postcondition checks
 ?([aanvraag individuele inkomenstoeslag]).
 
 ?([aan persoon is in de 12 maanden voorafgaand aan de aanvraag individuele inkomenstoeslag verleend]).
